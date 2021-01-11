@@ -1,0 +1,22 @@
+name: TestSuites
+options:
+  deploymentTarget:
+    iOS: "12.0"
+schemes:
+  TestSuites:
+    build:
+      targets:
+        TestSuites: []
+    test:
+      targets: [TestSuites]
+packages:
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    version: 1.8.0
+targets:
+  TestSuites:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Sources/TestSuites]
+    dependencies:
+      - package: SnapshotTesting
