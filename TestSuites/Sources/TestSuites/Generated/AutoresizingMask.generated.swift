@@ -1,5 +1,7 @@
 import UIKit
 
+
+
 class AutoresizingMask_0: NSObject {
     lazy var subview0: UIView = {
         let view = UIView()
@@ -11,6 +13,9 @@ class AutoresizingMask_0: NSObject {
         return subview0
     }
 }
+
+
+
 class AutoresizingMask_1: NSObject {
     lazy var subview0: UIView = {
         let view = UIView()
@@ -22,3 +27,4 @@ class AutoresizingMask_1: NSObject {
         return subview0
     }
 }
+

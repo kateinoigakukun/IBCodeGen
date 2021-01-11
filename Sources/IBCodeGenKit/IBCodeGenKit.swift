@@ -14,11 +14,7 @@ public class IBCodeGenerator {
     func generate<Target: IndentTextOutputStream>(from url: URL, target: inout Target) throws {
         let xibFile = try XibFile(url: url)
         guard let views = xibFile.document.views else { return }
-        target.writeLine(
-            """
-            import UIKit
-
-            """)
+        target.writeLine("import UIKit")
         var namespace = ViewClassNamespace(
             fileName: url.deletingPathExtension().lastPathComponent, viewCount: views.count)
 
@@ -32,8 +28,8 @@ public class IBCodeGenerator {
             let builder = RootViewCodeBuilder(
                 className: namespace.makeIdentifier(forIndex: index), id: identifiable.id)
             try codegen(from: view, rootView: builder)
-            builder.build(target: &target)
             target.writeLine("\n\n")
+            builder.build(target: &target)
         }
     }
 }
