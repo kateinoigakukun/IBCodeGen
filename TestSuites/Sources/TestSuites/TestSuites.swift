@@ -23,7 +23,17 @@ func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterva
 final class IBCodeGenKitTests: XCTestCase {
     func testSimpleView() {
         let nib = UINib(nibName: "SimpleView", bundle: Bundle(for: Self.self))
-        let view = nib.instantiate(withOwner: nil, options: nil).first! as! UIView
-        XCTAssertEqualProperties(SimpleView().contentView, view)
+        let original = nib.instantiate(withOwner: nil, options: nil).first! as! UIView
+        let translated = SimpleView().contentView
+        XCTAssertEqualProperties(translated, original)
+    }
+
+    func testAutoresizingMask() {
+        let nib = UINib(nibName: "AutoresizingMask", bundle: Bundle(for: Self.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = [AutoresizingMask_0().contentView, AutoresizingMask_1().contentView]
+        for (original, translated) in zip(views, translatedViews) {
+            XCTAssertEqualProperties(translated, original)
+        }
     }
 }

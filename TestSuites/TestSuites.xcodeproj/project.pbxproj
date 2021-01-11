@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */; };
 		3EA8CB59274BBACC5E235466 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11E39A4B8238876C70C66113 /* SnapshotTesting */; };
 		47529D85F20FA544811354F4 /* SimpleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC23A257EB690959898C0FD0 /* SimpleView.xib */; };
 		51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */; };
 		E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */; };
+		F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoresizingMask.xib; sourceTree = "<group>"; };
 		1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleView.generated.swift; sourceTree = "<group>"; };
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMask.generated.swift; sourceTree = "<group>"; };
 		FC23A257EB690959898C0FD0 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +55,7 @@
 		712A3ED7C40992C3F5F95884 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */,
 				1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */,
 			);
 			path = Generated;
@@ -59,6 +64,7 @@
 		8D6D333471E7E3A96592308F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */,
 				FC23A257EB690959898C0FD0 /* SimpleView.xib */,
 			);
 			path = Resources;
@@ -132,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */,
 				47529D85F20FA544811354F4 /* SimpleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */,
 				E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */,
 				51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */,
 			);

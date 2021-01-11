@@ -25,10 +25,10 @@ final class IBCodeGenKitTests: XCTestCase {
     private class func runTest(for testSuite: String = #function) throws {
         guard testSuite.hasPrefix("test") && testSuite.hasSuffix("()") else { XCTFail("Invalid testSuite name: \(testSuite)"); return }
         let fileName = testSuite.dropFirst("test".count).dropLast("()".count)
-        let generator = IBCodeGenerator(from: targetPath.appendingPathComponent("Resources/\(fileName).xib"))
+        let generator = IBCodeGenerator()
         do {
             var handle = try FileHandle(forWritingTo: targetPath.appendingPathComponent("Generated/\(fileName).generated.swift"))
-            generator.generate(target: &handle)
+            try generator.generate(from: targetPath.appendingPathComponent("Resources/\(fileName).xib"), target: &handle)
             handle.closeFile()
         }
         try Process.exec(bin: "/usr/bin/xcodebuild", arguments: [
@@ -39,4 +39,5 @@ final class IBCodeGenKitTests: XCTestCase {
         ])
     }
     func testSimpleView() throws { try Self.runTest() }
+    func testAutoresizingMask() throws { try Self.runTest() }
 }
