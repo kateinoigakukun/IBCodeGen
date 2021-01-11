@@ -5,7 +5,7 @@ extension Process {
         case nonZeroExit(
             TerminationReason, Int32, command: String
         )
-        
+
         public var description: String {
             switch self {
             case let .nonZeroExit(_, code, command):
@@ -41,4 +41,3 @@ extension FileHandle: TextOutputStream {
         write(Data(string.utf8))
     }
 }
-
