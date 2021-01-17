@@ -76,27 +76,56 @@ struct SubviewsNamespace {
     }
 }
 
+typealias Argument = (label: String?, value: SwiftValueRepresentable)
+
+fileprivate func formatArguments(_ arguments: [Argument]) -> String {
+    arguments.map { (label, value) in
+        guard let label = label else { return value.swiftValue() }
+        return "\(label): \(value.swiftValue())"
+    }
+    .joined(separator: ", ")
+}
+
 class SubviewCodeBuilder {
     let id: String
     let className: String
-    var properties: [(name: String, value: String)] = []
+    private var properties: [(name: String, value: String)] = []
+    private var methodCalls: [(method: String, arguments: [Argument])] = []
+    private var initArguments: [Argument] = []
+    
+
     init(id: String, className: String) {
         self.id = id
         self.className = className
     }
 
-    func setProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
+    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
         properties.append((name: name, value: value.swiftValue()))
     }
+
+    func addMethodCall(_ method: String, arguments: [Argument]) {
+        methodCalls.append((method: method, arguments: arguments))
+    }
+
+    func setInit(arguments: [(label: String, value: SwiftValueRepresentable)]) {
+        precondition(self.initArguments.isEmpty)
+        self.initArguments = arguments
+    }
+
     func build<Target: IndentTextOutputStream>(
         target: inout Target, namespace: inout SubviewsNamespace
     ) {
         let fieldIdentifier = namespace.makeIdentifier(id: id)
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
         target.indented {
-            $0.writeLine("let view = \(className)()")
+
+            $0.writeLine("let view = \(className)(\(formatArguments(initArguments)))")
             for (name, value) in properties {
                 $0.writeLine("view.\(name) = \(value)")
+            }
+
+            for (method, arguments) in methodCalls {
+                $0.writeLine("view.\(method)(\(formatArguments(arguments)))")
             }
             $0.writeLine("return view")
         }

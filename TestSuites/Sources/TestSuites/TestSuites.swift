@@ -17,7 +17,7 @@ func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterva
     guard let (failure, _) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
         return
     }
-    XCTFail(failure)
+    XCTFail(failure, file: file, line: line)
 }
 
 final class IBCodeGenKitTests: XCTestCase {
@@ -32,6 +32,15 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "AutoresizingMask", bundle: Bundle(for: Self.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = [AutoresizingMask_0().contentView, AutoresizingMask_1().contentView]
+        for (original, translated) in zip(views, translatedViews) {
+            XCTAssertEqualProperties(translated, original)
+        }
+    }
+
+    func testButton() {
+        let nib = UINib(nibName: "Button", bundle: Bundle(for: Self.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = [Button_0().contentView, Button_1().contentView, Button_2().contentView, Button_3().contentView]
         for (original, translated) in zip(views, translatedViews) {
             XCTAssertEqualProperties(translated, original)
         }

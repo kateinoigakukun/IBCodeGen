@@ -54,4 +54,5 @@ final class IBCodeGenKitTests: XCTestCase {
     }
     func testSimpleView() throws { try Self.runTest() }
     func testAutoresizingMask() throws { try Self.runTest() }
+    func testButton() throws { try Self.runTest() }
 }
