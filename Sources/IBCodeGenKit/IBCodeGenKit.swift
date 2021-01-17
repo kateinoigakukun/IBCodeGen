@@ -2,8 +2,9 @@ import Foundation
 import IBDecodable
 
 public class IBCodeGenerator {
+    let context: CodeGenContext
     public init() {
-
+        context = CodeGenContext(deploymentTarget: Version(major: 12, minor: 0, patch: 0))
     }
 
     func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws {
@@ -26,9 +27,10 @@ public class IBCodeGenerator {
         for (index, view) in views.enumerated() {
             guard let identifiable = view.view as? IBIdentifiable else { continue }
             let builder = RootViewCodeBuilder(
-                className: namespace.makeIdentifier(forIndex: index), id: identifiable.id)
-            try codegen(from: view, rootView: builder)
+                className: namespace.makeIdentifier(forIndex: index), id: identifiable.id, context: context)
+            _ = try codegen(from: view, rootView: builder)
             target.writeLine("\n\n")
+            builder.namespace.resolve()
             builder.build(target: &target)
         }
     }

@@ -12,9 +12,11 @@
 		47529D85F20FA544811354F4 /* SimpleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC23A257EB690959898C0FD0 /* SimpleView.xib */; };
 		51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */; };
 		5C3BD2A89C3273BBE31E6956 /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC3BB06F9F82CA2E318EBF /* Button.xib */; };
+		71EB8A8A05E67BF8332FD611 /* Subview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717D4E48BD3E8E4B31F3DDFC /* Subview.xib */; };
 		8577B8B541D540A04F4F8572 /* Button.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF36B475C8C16E71D821D85 /* Button.generated.swift */; };
 		E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */; };
 		F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */; };
+		F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleView.generated.swift; sourceTree = "<group>"; };
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		717D4E48BD3E8E4B31F3DDFC /* Subview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Subview.xib; sourceTree = "<group>"; };
+		AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.generated.swift; sourceTree = "<group>"; };
 		F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMask.generated.swift; sourceTree = "<group>"; };
 		FABC3BB06F9F82CA2E318EBF /* Button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Button.xib; sourceTree = "<group>"; };
 		FC23A257EB690959898C0FD0 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 				F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */,
 				0DF36B475C8C16E71D821D85 /* Button.generated.swift */,
 				1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */,
+				AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 				10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */,
 				FABC3BB06F9F82CA2E318EBF /* Button.xib */,
 				FC23A257EB690959898C0FD0 /* SimpleView.xib */,
+				717D4E48BD3E8E4B31F3DDFC /* Subview.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */,
 				5C3BD2A89C3273BBE31E6956 /* Button.xib in Resources */,
 				47529D85F20FA544811354F4 /* SimpleView.xib in Resources */,
+				71EB8A8A05E67BF8332FD611 /* Subview.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +167,7 @@
 				3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */,
 				8577B8B541D540A04F4F8572 /* Button.generated.swift in Sources */,
 				E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */,
+				F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */,
 				51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

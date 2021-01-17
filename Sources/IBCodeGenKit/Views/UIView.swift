@@ -16,5 +16,8 @@ extension AnyView: CodeGenTargetView {
         if let rect = view.rect {
             builder.addProperty("frame", value: rect)
         }
+        if let backgroundColor = view.backgroundColor {
+            builder.addProperty("backgroundColor", value: backgroundColor)
+        }
     }
 }
