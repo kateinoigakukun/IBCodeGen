@@ -21,9 +21,23 @@ protocol CodeGenTargetView {
 
 struct CodeGenContext {
     var deploymentTarget: Version
+    var document: InterfaceBuilderDocument
 
     var isSupportingDarkMode: Bool {
         Version(major: 13, minor: 0, patch: 0) <= deploymentTarget
+    }
+
+    func systemColor(name: String) -> Color? {
+        guard let resources = document.resources else {
+            return nil
+        }
+        let systemColors = resources.lazy.compactMap { resource -> SystemColor? in
+            guard let systemColor = resource.resource as? SystemColor else {
+                return nil
+            }
+            return systemColor
+        }
+        return systemColors.first(where: { $0.name == name })?.color
     }
 }
 

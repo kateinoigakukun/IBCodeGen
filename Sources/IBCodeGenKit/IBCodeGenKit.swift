@@ -2,9 +2,7 @@ import Foundation
 import IBDecodable
 
 public class IBCodeGenerator {
-    let context: CodeGenContext
     public init() {
-        context = CodeGenContext(deploymentTarget: Version(major: 12, minor: 0, patch: 0))
     }
 
     func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws {
@@ -14,6 +12,7 @@ public class IBCodeGenerator {
 
     func generate<Target: IndentTextOutputStream>(from url: URL, target: inout Target) throws {
         let xibFile = try XibFile(url: url)
+        let context = CodeGenContext(deploymentTarget: Version(major: 12, minor: 0, patch: 0), document: xibFile.document)
         guard let views = xibFile.document.views else { return }
         target.writeLine("import UIKit")
         var namespace = ViewClassNamespace(

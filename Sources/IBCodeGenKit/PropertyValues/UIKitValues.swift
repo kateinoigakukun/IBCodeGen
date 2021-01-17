@@ -88,28 +88,31 @@ extension Color: SwiftValueRepresentable {
             name.writeValue(target: &target, context: context)
             target.write(")")
         case .systemColor((_, let name)):
-            if name == "systemBackgroundColor" {
-                // systemBackgroundColor is now renamed
+            if name.range(of: #"^system(\w+)Color$"#, options: .regularExpression) != nil {
+                let systemColorName = name.dropLast("Color".count)
                 if context.isSupportingDarkMode {
-                    target.write("UIColor.systemBackground")
-                } else {
+                    target.write("UIColor.\(systemColorName)")
+                } else if let backportingColor = context.systemColor(name: name) {
                     target.write("{\n")
                     target.indented { target in
                         target.writeLine("if #available(iOS 13.0, *) {")
                         target.indented { target in
-                            target.writeLine("return UIColor.systemBackground")
+                            target.writeLine("return UIColor.\(systemColorName)")
                         }
                         target.writeLine("} else {")
                         target.indented { target in
-                            target.writeLine("return UIColor.white")
+                            target.writeIndent()
+                            target.write("return ")
+                            backportingColor.writeValue(target: &target, context: context)
+                            target.write("\n")
                         }
                         target.writeLine("}")
                     }
                     target.writeIndent()
                     target.write("}()")
+                } else {
+                    fatalError("There should be backporting systemColor resource in IB")
                 }
-            } else if name.range(of: #"^system(\w+)Color$"#, options: .regularExpression) != nil {
-                target.write("UIColor.\(name.dropLast("Color".count))")
             } else {
                 target.write("UIColor.\(name)")
             }
