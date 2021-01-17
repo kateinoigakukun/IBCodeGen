@@ -16,6 +16,8 @@ jobs:
       - run: sudo xcode-select -s "${{ matrix.xcode-version }}"
       - run: swift --version
       - run: swift test
+        env:
+          IBCODEGEN_TEST_DESTINATION: "platform=iOS Simulator,name=iPhone 11 Pro"
   coverage:
     name: Collect test coverage
     runs-on: macOS-10.15
