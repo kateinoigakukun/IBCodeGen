@@ -78,18 +78,25 @@ struct SubviewsNamespace {
 
 typealias Argument = (label: String?, value: SwiftValueRepresentable)
 
-fileprivate func formatArguments(_ arguments: [Argument]) -> String {
-    arguments.map { (label, value) in
-        guard let label = label else { return value.swiftValue() }
-        return "\(label): \(value.swiftValue())"
+struct ArgumentList: SwiftValueRepresentable {
+    let arguments: [Argument]
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        for (index, argument) in arguments.enumerated() {
+            if let label = argument.label {
+                target.write("\(label): ")
+            }
+            argument.value.writeValue(target: &target)
+            if index + 1 != arguments.endIndex {
+                target.write(", ")
+            }
+        }
     }
-    .joined(separator: ", ")
 }
 
 class SubviewCodeBuilder {
     let id: String
     let className: String
-    private var properties: [(name: String, value: String)] = []
+    private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
     
@@ -100,7 +107,7 @@ class SubviewCodeBuilder {
     }
 
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
-        properties.append((name: name, value: value.swiftValue()))
+        properties.append((name: name, value: value))
     }
 
     func addMethodCall(_ method: String, arguments: [Argument]) {
@@ -119,13 +126,26 @@ class SubviewCodeBuilder {
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
         target.indented {
 
-            $0.writeLine("let view = \(className)(\(formatArguments(initArguments)))")
+            $0.writeLine { line in
+                line.write("let view = \(className)(")
+                let argList = ArgumentList(arguments: initArguments)
+                argList.writeValue(target: &line)
+                line.write(")")
+            }
             for (name, value) in properties {
-                $0.writeLine("view.\(name) = \(value)")
+                $0.writeLine { line in
+                    line.write("view.\(name) = ")
+                    value.writeValue(target: &line)
+                }
             }
 
             for (method, arguments) in methodCalls {
-                $0.writeLine("view.\(method)(\(formatArguments(arguments)))")
+                $0.writeLine { line in
+                    line.write("view.\(method)(")
+                    let argList = ArgumentList(arguments: arguments)
+                    argList.writeValue(target: &line)
+                    line.write(")")
+                }
             }
             $0.writeLine("return view")
         }

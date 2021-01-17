@@ -1,11 +1,11 @@
 import IBDecodable
 
 internal protocol SwiftValueRepresentable {
-    func swiftValue<Target: IndentTextOutputStream>( target: inout Target)
+    func writeValue<Target: IndentTextOutputStream>(target: inout Target)
 }
 
 extension AutoresizingMask: SwiftValueRepresentable {
-    func swiftValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
         var mask: [String] = []
         if widthSizable {
             mask.append("flexibleWidth")
@@ -25,18 +25,18 @@ extension AutoresizingMask: SwiftValueRepresentable {
         if flexibleMaxY {
             mask.append("flexibleBottomMargin")
         }
-        target.writeLine(<#T##line: String##String#>) "[\(mask.map { ".\($0)" }.joined(separator: ", "))]"
+        target.write("[\(mask.map { ".\($0)" }.joined(separator: ", "))]")
     }
 }
 
 extension Rect: SwiftValueRepresentable {
-    func swiftValue() -> String {
-        return "CGRect(x: \(x), y: \(y), width: \(width), height: \(height))"
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        target.write("CGRect(x: \(x), y: \(y), width: \(width), height: \(height))")
     }
 }
 
 extension Font: SwiftValueRepresentable {
-    func swiftValue() -> String {
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
         guard let metaFont = metaFont else {
             preconditionFailure()
         }
@@ -49,37 +49,65 @@ extension Font: SwiftValueRepresentable {
         default:
             fatalError()
         }
-        return "UIFont.systemFont(ofSize: \(fontSize))"
+        target.write("UIFont.systemFont(ofSize: \(fontSize))")
     }
 }
 
 extension ParagraphStyle: SwiftValueRepresentable {
-    func swiftValue() -> String {
-        alignment
-        switch <#value#> {
-        case <#pattern#>:
-            <#code#>
-        default:
-            <#code#>
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        target.write("{\n")
+        target.indented { (target) in
+            target.writeLine("let style = NSMutableParagraphStyle()")
+            if let alignment = alignment {
+                target.writeLine { line in
+                    line.write("style.alignment = ")
+                    EnumCase(alignment).writeValue(target: &line)
+                }
+            }
+            target.writeLine("return style")
         }
+        target.writeIndent()
+        target.write("}()")
     }
 }
 
-func makeDictionary(dictionaryLiteral: [(key: SwiftValueRepresentable, value: SwiftValueRepresentable)]) -> String {
-    "[" + dictionaryLiteral.map { "\($0.key.swiftValue()): \($0.value.swiftValue())" }.joined(separator: ", ") + "]"
+struct DictionaryValue: SwiftValueRepresentable {
+    typealias Entry = (key: SwiftValueRepresentable, value: SwiftValueRepresentable)
+    let entries: [Entry]
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        target.write("[\n")
+        target.indented { target in
+            for (index, entry) in entries.enumerated() {
+                target.writeLine { target in
+                    entry.key.writeValue(target: &target)
+                    target.write(": ")
+                    entry.value.writeValue(target: &target)
+                    if index + 1 != entries.endIndex {
+                        target.write(", ")
+                    }
+                }
+            }
+        }
+        target.writeIndent()
+        target.write("]")
+    }
 }
 
 extension AttributedString: SwiftValueRepresentable {
-    func swiftValue() -> String {
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
         precondition(fragments == nil || fragments?.count == 1)
         guard let fragment = fragments?.first else {
-            return "NSAttributedString()"
+            target.write("NSAttributedString()")
+            return
         }
         let string = fragment.content
         guard let attributes = fragment.attributes else {
-            return "NSAttributedString(string: \(string.swiftValue()))"
+            target.write("NSAttributedString(string: ")
+            string.writeValue(target: &target)
+            target.write(")")
+            return
         }
-        let attributesArg = attributes.map { attr -> (key: SwiftValueRepresentable, value: SwiftValueRepresentable) in
+        let attributesEntries = attributes.map { attr -> DictionaryValue.Entry in
             switch attr.attribute {
             case let font as Font:
                 return (key: EnumCase("font"), value: font)
@@ -90,13 +118,19 @@ extension AttributedString: SwiftValueRepresentable {
             }
         }
 
-        return "NSAttributedString(string: \(string.swiftValue()), attributes: \(makeDictionary(dictionaryLiteral: attributesArg)))"
+        target.write("NSAttributedString(string: ")
+        string.writeValue(target: &target)
+        target.write(", attributes: ")
+        DictionaryValue(entries: attributesEntries).writeValue(target: &target)
+        target.write(")")
     }
 }
 
 
 extension String: SwiftValueRepresentable {
-    func swiftValue() -> String { "\"\(self)\"" }
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        target.write("\"\(self)\"")
+    }
 }
 
 struct EnumCase: SwiftValueRepresentable {
@@ -105,7 +139,7 @@ struct EnumCase: SwiftValueRepresentable {
         self.caseValue = caseValue
     }
 
-    func swiftValue() -> String {
-        "." + caseValue
+    func writeValue<Target>(target: inout Target) where Target : IndentTextOutputStream {
+        target.write("." + caseValue)
     }
 }

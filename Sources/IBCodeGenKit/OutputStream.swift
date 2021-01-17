@@ -1,5 +1,8 @@
 protocol IndentTextOutputStream {
     mutating func writeLine(_ line: String)
+    mutating func writeLine(_ line: (inout Self) -> Void)
+    mutating func write(_ string: String)
+    mutating func writeIndent()
     mutating func indented(_ body: (inout Self) -> Void)
 }
 
@@ -12,8 +15,21 @@ struct GenericIndentTextOutputStream<Downstream: TextOutputStream>: IndentTextOu
         self.indent = indent
     }
 
+    mutating func writeLine(_ line: (inout Self) -> Void) {
+        downstream.write(String(repeating: " ", count: indentLevel * indent))
+        line(&self)
+        downstream.write("\n")
+    }
     mutating func writeLine(_ line: String) {
-        downstream.write(String(repeating: " ", count: indentLevel * indent) + line + "\n")
+        writeLine {
+            $0.write(line)
+        }
+    }
+    mutating func write(_ string: String) {
+        downstream.write(string)
+    }
+    mutating func writeIndent() {
+        downstream.write(String(repeating: " ", count: indentLevel * indent))
     }
     mutating func indented(_ body: (inout GenericIndentTextOutputStream) -> Void) {
         indentLevel += 1
