@@ -7,6 +7,12 @@
 
 import IBDecodable
 
+protocol ViewCodeBuilder {
+    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value)
+    func addMethodCall(_ method: String, arguments: [Argument])
+    func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
+}
+
 class RootViewCodeBuilder {
     var namespace = SubviewsNamespace()
     let className: String
@@ -93,7 +99,7 @@ struct ArgumentList: SwiftValueRepresentable {
     }
 }
 
-class SubviewCodeBuilder {
+class SubviewCodeBuilder: ViewCodeBuilder {
     let id: String
     let className: String
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
