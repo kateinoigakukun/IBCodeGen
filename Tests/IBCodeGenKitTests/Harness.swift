@@ -16,7 +16,7 @@ final class IBCodeGenKitTests: XCTestCase {
         projectPath
         .appendingPathComponent("TestSuites/Sources/TestSuites")
 
-    static let destination = "platform=iOS Simulator,name=iPhone 12 Pro"
+    static let destination = ProcessInfo.processInfo.environment["IBCODEGEN_TEST_DESTINATION"] ?? "platform=iOS Simulator,name=iPhone 12 Pro"
     static let scheme = "TestSuites"
 
     override class func setUp() {
