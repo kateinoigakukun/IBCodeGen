@@ -3,18 +3,18 @@ import UIKit
 
 
 class PaymentMethodsFooterViewOwner: NSObject {
-    lazy var paymentMethodsFooterView2: PaymentMethodsFooterView = {
+    lazy var paymentMethodsFooterView0: PaymentMethodsFooterView = {
         let view = PaymentMethodsFooterView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.isUserInteractionEnabled = true
         view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.contentMode = .scaleToFill
-        view.addSubview(button0)
-        view.addSubview(view1)
+        view.addSubview(button1)
+        view.addSubview(view2)
         return view
     }()
-    lazy var button0: UIButton = {
+    lazy var button1: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
@@ -29,16 +29,17 @@ class PaymentMethodsFooterViewOwner: NSObject {
         view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
         return view
     }()
-    lazy var view1: UIView = {
+    lazy var view2: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 43.5, width: 375.0, height: 0.5)
         view.isUserInteractionEnabled = true
         view.backgroundColor = {
-            var components: [CGFloat] = [1.0, 1.0]
-            let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
-            let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
-            return UIColor(cgColor: cgColor)
+            if #available(iOS 13.0, *) {
+                return UIColor.systemRed
+            } else {
+                return UIColor(red: 1.0, green: 0.23137255, blue: 0.1882353, alpha: 1.0)
+            }
         }()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleToFill
@@ -47,52 +48,52 @@ class PaymentMethodsFooterViewOwner: NSObject {
     func activateConstraints() {
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: view1, attribute: .width, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .width, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: view2, attribute: .width, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .width, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: view1, attribute: .trailing, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .trailing, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: view2, attribute: .trailing, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .trailing, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .bottom, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .bottom, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .bottom, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .bottom, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: view1, attribute: .leading, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .leading, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: view2, attribute: .leading, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .leading, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .top, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .top, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .top, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .top, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: view1, attribute: .bottom, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .bottom, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: view2, attribute: .bottom, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .bottom, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .leading, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .leading, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .leading, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .leading, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .trailing, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .trailing, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .trailing, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .trailing, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .width, relatedBy: .equal, toItem: paymentMethodsFooterView2, attribute: .width, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .width, relatedBy: .equal, toItem: paymentMethodsFooterView0, attribute: .width, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
         ])
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: button0, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44)
+                let constraint = NSLayoutConstraint(item: button1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44.0)
                 constraint.priority = UILayoutPriority(750)
                 return constraint
             }(),
         ])
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: view1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: view2, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 0.5)
                 return constraint
             }(),
         ])
@@ -102,6 +103,6 @@ class PaymentMethodsFooterViewOwner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return paymentMethodsFooterView2
+        return paymentMethodsFooterView0
     }
 }
