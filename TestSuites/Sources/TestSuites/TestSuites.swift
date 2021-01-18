@@ -32,8 +32,18 @@ func XCTAssertEqualAppearance(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterva
             tookSnapshot.fulfill()
         }
     }
-    guard let (failure, _) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
+    guard let (failure, attachments) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
         return
+    }
+
+    if !attachments.isEmpty {
+        if ProcessInfo.processInfo.environment.keys.contains("__XCODE_BUILT_PRODUCTS_DIR_PATHS") {
+            XCTContext.runActivity(named: "Attached Failure Diff") { activity in
+                attachments.forEach {
+                    activity.add($0)
+                }
+            }
+        }
     }
     XCTFail(failure, file: file, line: line)
 }

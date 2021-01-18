@@ -119,11 +119,6 @@ class NSObjectMirror {
         }
         return attrs
     }
-
-    static func mirrorDescription<Object: NSObject>(of object: Object) -> String {
-        let mirror = NSObjectMirror(object)
-        return String(describing: mirror.properties.map { "\($0.name)=\($0.value)"}.joined(separator: "\n"))
-    }
 }
 
 extension NSObjectMirror: AnySnapshotStringConvertible {
