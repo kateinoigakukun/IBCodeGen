@@ -56,7 +56,7 @@ final class IBCodeGenKitTests: XCTestCase {
     func testSimpleView() {
         let nib = UINib(nibName: "SimpleView", bundle: Bundle(for: Self.self))
         let original = nib.instantiate(withOwner: nil, options: nil).first! as! UIView
-        let translated = SimpleView().contentView
+        let translated = SimpleViewOwner().contentView
         XCTAssertEqualProperties(original, translated)
         XCTAssertEqualAppearance(original, translated)
     }
@@ -75,8 +75,8 @@ final class IBCodeGenKitTests: XCTestCase {
     func testButton() {
         let nib = UINib(nibName: "Button", bundle: Bundle(for: Self.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIButton]
-        let translatedViews = [Button_0().contentView, Button_1().contentView,
-                               Button_2().contentView, Button_3().contentView] as! [UIButton]
+        let translatedViews = [Button_0Owner().contentView, Button_1Owner().contentView,
+                               Button_2Owner().contentView, Button_3Owner().contentView] as! [UIButton]
         for (index, (original, translated)) in zip(views, translatedViews).enumerated() {
             XCTAssertEqualProperties(original, translated, description: index.description)
             XCTAssertEqualAppearance(original, translated, description: index.description)
@@ -86,7 +86,7 @@ final class IBCodeGenKitTests: XCTestCase {
     func testSubview() {
         let nib = UINib(nibName: "Subview", bundle: Bundle(for: Self.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
-        let translatedViews = [Subview().contentView]
+        let translatedViews = [SubviewOwner().contentView]
         
         for (original, translated) in zip(views, translatedViews) {
             XCTAssertEqualProperties(original, translated)

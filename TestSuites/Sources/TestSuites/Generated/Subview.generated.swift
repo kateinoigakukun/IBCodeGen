@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class Subview: NSObject {
+class SubviewOwner: NSObject {
     lazy var view4: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -14,6 +14,7 @@ class Subview: NSObject {
                 return UIColor(red: 0.20392157, green: 0.78039217, blue: 0.34901962, alpha: 1.0)
             }
         }()
+        view.contentMode = .scaleToFill
         view.addSubview(view5)
         return view
     }()
@@ -28,6 +29,8 @@ class Subview: NSObject {
                 return UIColor(red: 1.0, green: 0.23137255, blue: 0.1882353, alpha: 1.0)
             }
         }()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleToFill
         view.addSubview(view1)
         return view
     }()
@@ -42,10 +45,12 @@ class Subview: NSObject {
                 return UIColor(red: 0.6862745, green: 0.32156864, blue: 0.87058824, alpha: 1.0)
             }
         }()
-        view.addSubview(view2)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleToFill
+        view.addSubview(view0)
         return view
     }()
-    lazy var view2: UIView = {
+    lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 8.0, y: 8.0, width: 342.0, height: 786.0)
@@ -56,11 +61,13 @@ class Subview: NSObject {
                 return UIColor(red: 1.0, green: 0.58431375, blue: 0.0, alpha: 1.0)
             }
         }()
-        view.addSubview(view0)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleToFill
         view.addSubview(view3)
+        view.addSubview(view2)
         return view
     }()
-    lazy var view0: UIView = {
+    lazy var view3: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 10.0, y: 8.0, width: 323.0, height: 362.0)
@@ -71,9 +78,11 @@ class Subview: NSObject {
                 return UIColor(red: 0.3529412, green: 0.78431374, blue: 0.98039216, alpha: 1.0)
             }
         }()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleToFill
         return view
     }()
-    lazy var view3: UIView = {
+    lazy var view2: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 8.0, y: 381.0, width: 323.0, height: 397.0)
@@ -84,8 +93,28 @@ class Subview: NSObject {
                 return UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0)
             }
         }()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleToFill
         return view
     }()
+    func activateConstraints() {
+        NSLayoutConstraint.activate([
+        ])
+        NSLayoutConstraint.activate([
+        ])
+        NSLayoutConstraint.activate([
+        ])
+        NSLayoutConstraint.activate([
+        ])
+        NSLayoutConstraint.activate([
+        ])
+        NSLayoutConstraint.activate([
+        ])
+    }
+    override init() {
+        super.init()
+        activateConstraints()
+    }
     var contentView: UIView {
         return view4
     }

@@ -27,6 +27,8 @@ extension AnyView: CodeGenTargetView {
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
         bindIfPresent(\.rect, name: "frame")
         bindIfPresent(\.userInteractionEnabled, name: "isUserInteractionEnabled")
+        bindIfPresent(\.isHidden, name: "isHidden")
+        bindIfPresent(\.opaque, name: "isOpaque")
         bindIfPresent(\.backgroundColor, name: "backgroundColor")
         bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, name: "translatesAutoresizingMaskIntoConstraints")
         bindIfPresent(\.contentMode, name: "contentMode") {
