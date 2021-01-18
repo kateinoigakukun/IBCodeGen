@@ -12,34 +12,48 @@ protocol ViewCodeBuilder {
     func addMethodCall(_ method: String, arguments: [Argument])
     func addSubview(_ subview: SubviewCodeBuilder)
     func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
+    func setConstraints(_ constraints: [Constraint])
 }
 
 class RootViewCodeBuilder {
-    var namespace = SubviewsNamespace()
     let className: String
     let id: String
-    let context: CodeGenContext
     var subviews: [SubviewCodeBuilder] = []
 
-    init(className: String, id: String, context: CodeGenContext) {
+    init(className: String, id: String) {
         self.className = className
         self.id = id
-        self.context = context
     }
 
     func makeSubview(id: String, className: String) -> SubviewCodeBuilder {
-        let subview = SubviewCodeBuilder(id: id, className: className, context: context)
+        let subview = SubviewCodeBuilder(id: id, className: className)
         subviews.append(subview)
         return subview
     }
 
-    func build<Target: IndentTextOutputStream>(target: inout Target) {
+    func build<Target: IndentTextOutputStream>(target: inout Target, context: inout CodeGenContext) {
         target.writeLine("class \(className): NSObject {")
         target.indented { target in
             for subview in subviews {
-                subview.build(target: &target, namespace: &namespace)
+                subview.build(target: &target, context: &context)
             }
-            let identifier = namespace.getIdentifier(id: id)
+
+            target.writeLine("func activateConstraints() {")
+            target.indented { target in
+                for subview in subviews {
+                    subview.buildConstraintsActivation(target: &target, context: &context)
+                }
+            }
+            target.writeLine("}")
+
+            target.writeLine("override init() {")
+            target.indented { target in
+                target.writeLine("super.init()")
+                target.writeLine("activateConstraints()")
+            }
+            target.writeLine("}")
+
+            let identifier = context.namespace.getIdentifier(id: id)
             target.writeLine("var contentView: UIView {")
             target.indented {
                 $0.writeLine("return \(identifier)")
@@ -116,16 +130,15 @@ struct ArgumentList: SwiftValueRepresentable {
 class SubviewCodeBuilder: ViewCodeBuilder {
     let id: String
     let className: String
-    let context: CodeGenContext
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
     private var subviews: [SubviewCodeBuilder] = []
+    private var constraints: [Constraint] = []
 
-    init(id: String, className: String, context: CodeGenContext) {
+    init(id: String, className: String) {
         self.id = id
         self.className = className
-        self.context = context
     }
 
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
@@ -141,13 +154,18 @@ class SubviewCodeBuilder: ViewCodeBuilder {
         self.initArguments = arguments
     }
 
+    func setConstraints(_ constraints: [Constraint]) {
+        precondition(self.constraints.isEmpty)
+        self.constraints = constraints
+    }
+
     func addSubview(_ subview: SubviewCodeBuilder) {
         subviews.append(subview)
     }
     func build<Target: IndentTextOutputStream>(
-        target: inout Target, namespace: inout SubviewsNamespace
+        target: inout Target, context: inout CodeGenContext
     ) {
-        let fieldIdentifier = namespace.getIdentifier(id: id)
+        let fieldIdentifier = context.namespace.getIdentifier(id: id)
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
         target.indented {
 
@@ -173,10 +191,26 @@ class SubviewCodeBuilder: ViewCodeBuilder {
                 }
             }
             for subview in subviews {
-                $0.writeLine("view.addSubview(\(namespace.getIdentifier(id: subview.id)))")
+                $0.writeLine("view.addSubview(\(context.namespace.getIdentifier(id: subview.id)))")
             }
             $0.writeLine("return view")
         }
         target.writeLine("}()")
+    }
+
+    func buildConstraintsActivation<Target: IndentTextOutputStream>(
+        target: inout Target, context: inout CodeGenContext
+    ) {
+        target.writeLine("NSLayoutConstraint.activate([")
+        target.indented { target in
+            for constraint in constraints {
+                target.writeLine { line in
+                    constraint.writeValue(target: &line, context: context, selfView: id)
+                    line.write(",")
+                }
+            }
+        }
+        target.writeIndent()
+        target.write("])\n")
     }
 }

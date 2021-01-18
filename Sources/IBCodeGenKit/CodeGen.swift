@@ -22,6 +22,7 @@ protocol CodeGenTargetView {
 struct CodeGenContext {
     var deploymentTarget: Version
     var document: InterfaceBuilderDocument
+    var namespace: SubviewsNamespace
 
     var isSupportingDarkMode: Bool {
         Version(major: 13, minor: 0, patch: 0) <= deploymentTarget
@@ -41,12 +42,13 @@ struct CodeGenContext {
     }
 }
 
-func codegen(from anyView: AnyView, rootView: RootViewCodeBuilder) throws -> SubviewCodeBuilder {
+func codegen(from anyView: AnyView, rootView: RootViewCodeBuilder,
+             context: inout CodeGenContext) throws -> SubviewCodeBuilder {
     let className = anyView.view.customClass ?? anyView.view.elementClass
     guard let view = anyView.view as? IBIdentifiable & ViewProtocol else {
         throw Error.unsupportedView(anyView.view)
     }
-    rootView.namespace.addHint(className: className, for: view.id)
+    context.namespace.addHint(className: className, for: view.id)
     let builder = rootView.makeSubview(id: view.id, className: className)
 
     try anyView.codegen(builder: builder, rootView: rootView)
@@ -56,7 +58,7 @@ func codegen(from anyView: AnyView, rootView: RootViewCodeBuilder) throws -> Sub
     }
 
     for subview in anyView.view.subviews ?? [] {
-        let subviewBuilder = try codegen(from: subview, rootView: rootView)
+        let subviewBuilder = try codegen(from: subview, rootView: rootView, context: &context)
         builder.addSubview(subviewBuilder)
     }
     return builder

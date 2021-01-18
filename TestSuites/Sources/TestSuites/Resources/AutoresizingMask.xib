@@ -25,6 +25,20 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <point key="canvasLocation" x="86" y="149"/>
         </view>
+        <view contentMode="scaleToFill" id="Sy1-3i-uGc">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="aoR-ox-Ktu">
+                    <rect key="frame" x="1" y="165" width="413" height="482"/>
+                    <viewLayoutGuide key="safeArea" id="jtx-Vg-qZh"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="xt5-br-bQV"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <point key="canvasLocation" x="85.507246376811594" y="148.66071428571428"/>
+        </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

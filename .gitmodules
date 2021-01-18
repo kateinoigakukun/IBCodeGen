@@ -1,0 +1,3 @@
+[submodule "TestSuites/third-party/kickstarter-ios"]
+	path = TestSuites/third-party/kickstarter-ios
+	url = https://github.com/kickstarter/ios-oss.git

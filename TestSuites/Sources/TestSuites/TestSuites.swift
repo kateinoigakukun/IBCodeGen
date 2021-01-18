@@ -4,21 +4,23 @@ import SnapshotTesting
 
 func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
                               file: StaticString = #file, line: UInt = #line) {
-    let snapshotting = Snapshotting<UIView, String>.deepRecursiveDescription
-    let tookSnapshot = XCTestExpectation(description: "Took snapshot")
-    var lhsDescription: String!
-    var rhsDescription: String!
-    snapshotting.snapshot(lhs).run { lhs in
-        snapshotting.snapshot(rhs).run { rhs in
-            lhsDescription = lhs
-            rhsDescription = rhs
-            tookSnapshot.fulfill()
+    let snapshottings: [Snapshotting<UIView, String>] = [.recursiveDescription, .deepRecursiveDescription]
+    for snapshotting in snapshottings {
+        let tookSnapshot = XCTestExpectation(description: "Took snapshot")
+        var lhsDescription: String!
+        var rhsDescription: String!
+        snapshotting.snapshot(lhs).run { lhs in
+            snapshotting.snapshot(rhs).run { rhs in
+                lhsDescription = lhs
+                rhsDescription = rhs
+                tookSnapshot.fulfill()
+            }
         }
+        guard let (failure, _) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
+            return
+        }
+        XCTFail("\(description) \(failure)", file: file, line: line)
     }
-    guard let (failure, _) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
-        return
-    }
-    XCTFail("\(description) \(failure)", file: file, line: line)
 }
 
 func XCTAssertEqualAppearance(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
@@ -62,7 +64,8 @@ final class IBCodeGenKitTests: XCTestCase {
     func testAutoresizingMask() {
         let nib = UINib(nibName: "AutoresizingMask", bundle: Bundle(for: Self.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
-        let translatedViews = [AutoresizingMask_0().contentView, AutoresizingMask_1().contentView]
+        let translatedViews = [AutoresizingMask_0Owner().contentView, AutoresizingMask_1Owner().contentView,
+                               AutoresizingMask_2Owner().contentView]
         for (original, translated) in zip(views, translatedViews) {
             XCTAssertEqualProperties(original, translated)
             XCTAssertEqualAppearance(original, translated)
@@ -85,6 +88,16 @@ final class IBCodeGenKitTests: XCTestCase {
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = [Subview().contentView]
         
+        for (original, translated) in zip(views, translatedViews) {
+            XCTAssertEqualProperties(original, translated)
+            XCTAssertEqualAppearance(original, translated)
+        }
+    }
+
+    func testLoadingBarButtonItemView() {
+        let nib = UINib(nibName: "LoadingBarButtonItemView", bundle: Bundle(for: Self.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = [LoadingBarButtonItemViewOwner().contentView]
         for (original, translated) in zip(views, translatedViews) {
             XCTAssertEqualProperties(original, translated)
             XCTAssertEqualAppearance(original, translated)
