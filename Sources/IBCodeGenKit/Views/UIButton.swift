@@ -28,6 +28,12 @@ extension Button: CodeGenTargetView {
                     (label: nil, value: attributedString), (label: "for", value: EnumCase(key))
                 ])
             }
+            if let image = state.image {
+                builder.addMethodCall("setImage", arguments: [
+                    (label: nil, value: RawValueString("UIImage(named: \"\(image)\", in: Bundle(for: Self.self), compatibleWith: nil)")),
+                    (label: "for", value: EnumCase(key))
+                ])
+            }
         }
 
         b.bindIfPresent(\.contentHorizontalAlignment, name: "contentHorizontalAlignment") {

@@ -14,7 +14,7 @@ final class IBCodeGenKitTests: XCTestCase {
 
     static let targetPath =
         projectPath
-        .appendingPathComponent("TestSuites/Sources/TestSuites")
+        .appendingPathComponent("TestSuites/Sources/Views")
 
     static let destination = ProcessInfo.processInfo.environment["IBCODEGEN_TEST_DESTINATION"] ?? "platform=iOS Simulator,name=iPhone 12 Pro"
     static let scheme = "TestSuites"
@@ -61,4 +61,5 @@ final class IBCodeGenKitTests: XCTestCase {
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
     func testDiscoveryProjectCategoryView() throws { try Self.runTest() }
+    func testPaymentMethodsFooterView() throws { try Self.runTest() }
 }

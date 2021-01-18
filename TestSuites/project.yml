@@ -2,6 +2,7 @@ name: TestSuites
 options:
   deploymentTarget:
     iOS: "12.0"
+  bundleIdPrefix: dev.katei
 schemes:
   TestSuites:
     build:
@@ -14,9 +15,17 @@ packages:
     url: https://github.com/pointfreeco/swift-snapshot-testing
     version: 1.8.0
 targets:
+  Views:
+    type: framework
+    platform: iOS
+    sources: [Sources/Views]
+    settings:
+      CODE_SIGN_IDENTITY: Apple Development
+
   TestSuites:
     type: bundle.unit-test
     platform: iOS
     sources: [Sources/TestSuites]
     dependencies:
       - package: SnapshotTesting
+      - target: Views
