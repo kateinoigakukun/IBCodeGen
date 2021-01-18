@@ -10,6 +10,7 @@ import IBDecodable
 
 extension Button: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
+        let b = ViewBinder(view: self, builder: builder)
         if let buttonType = buttonType {
             builder.setInit(arguments: [(label: "type", value: EnumCase(buttonType))])
             builder.addProperty("adjustsImageWhenDisabled", value: true)
@@ -28,5 +29,13 @@ extension Button: CodeGenTargetView {
                 ])
             }
         }
+
+        b.bindIfPresent(\.contentHorizontalAlignment, name: "contentHorizontalAlignment") {
+            EnumCase($0)
+        }
+        b.bindIfPresent(\.contentVerticalAlignment, name: "contentVerticalAlignment") {
+            EnumCase($0)
+        }
+        b.bindIfPresent(\.isEnabled, name: "isEnabled")
     }
 }

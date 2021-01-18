@@ -214,3 +214,23 @@ class SubviewCodeBuilder: ViewCodeBuilder {
         target.write("])\n")
     }
 }
+
+struct ViewBinder<V> {
+    let view: V
+    let builder: ViewCodeBuilder
+
+    func bind<Value: SwiftValueRepresentable>(_ keyPath: KeyPath<V, Value>, name: String) {
+        builder.addProperty(name, value: view[keyPath: keyPath])
+    }
+    func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, V1?>, name: String, transform: (V1) -> V2) {
+        if let value = view[keyPath: keyPath] {
+            builder.addProperty(name, value: transform(value))
+        }
+    }
+    func bindIfPresent<Value: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, Value?>, name: String
+    ) {
+        bindIfPresent(keyPath, name: name, transform: { $0 })
+    }
+}

@@ -9,31 +9,46 @@ import IBDecodable
 
 extension AnyView: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
-        func bind<V: SwiftValueRepresentable>(_ keyPath: KeyPath<ViewProtocol, V>, name: String) {
-            builder.addProperty(name, value: view[keyPath: keyPath])
-        }
-        func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
-            _ keyPath: KeyPath<ViewProtocol, V1?>, name: String, transform: (V1) -> V2) {
-            if let value = view[keyPath: keyPath] {
-                builder.addProperty(name, value: transform(value))
-            }
-        }
-        func bindIfPresent<V: SwiftValueRepresentable>(
-            _ keyPath: KeyPath<ViewProtocol, V?>, name: String
-        ) {
-            bindIfPresent(keyPath, name: name, transform: { $0 })
-        }
-
+        let b = ViewBinder(view: self.view, builder: builder)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
-        bindIfPresent(\.rect, name: "frame")
-        bindIfPresent(\.userInteractionEnabled, name: "isUserInteractionEnabled")
-        bindIfPresent(\.isHidden, name: "isHidden")
-        bindIfPresent(\.opaque, name: "isOpaque")
-        bindIfPresent(\.backgroundColor, name: "backgroundColor")
-        bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, name: "translatesAutoresizingMaskIntoConstraints")
-        bindIfPresent(\.contentMode, name: "contentMode") {
+        b.bindIfPresent(\.rect, name: "frame")
+        b.bindIfPresent(\.userInteractionEnabled, name: "isUserInteractionEnabled")
+        b.bindIfPresent(\.isHidden, name: "isHidden")
+        b.bindIfPresent(\.opaque, name: "isOpaque")
+        b.bindIfPresent(\.backgroundColor, name: "backgroundColor")
+        b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, name: "translatesAutoresizingMaskIntoConstraints")
+        b.bindIfPresent(\.contentMode, name: "contentMode") {
             EnumCase($0)
         }
+
+        if let priority = view.verticalHuggingPriority {
+            builder.addMethodCall("setContentHuggingPriority", arguments: [
+                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: "for", value: EnumCase("vertical")),
+            ])
+        }
+
+        if let priority = view.horizontalHuggingPriority {
+            builder.addMethodCall("setContentHuggingPriority", arguments: [
+                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: "for", value: EnumCase("horizontal")),
+            ])
+        }
+
+        if let priority = view.verticalCompressionResistancePriority {
+            builder.addMethodCall("setContentCompressionResistancePriority", arguments: [
+                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: "for", value: EnumCase("vertical")),
+            ])
+        }
+
+        if let priority = view.horizontalCompressionResistancePriority {
+            builder.addMethodCall("setContentCompressionResistancePriority", arguments: [
+                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: "for", value: EnumCase("horizontal")),
+            ])
+        }
+
         if let constraints = view.constraints {
             builder.setConstraints(constraints)
         }

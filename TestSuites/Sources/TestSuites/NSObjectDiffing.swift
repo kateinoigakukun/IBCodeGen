@@ -9,6 +9,16 @@ import Foundation
 import SnapshotTesting
 import UIKit
 
+protocol CustomNSObjectReflectable {
+    var extraReflectionProperties: [String] { get }
+    var ignoringReflectionProperties: [String] { get }
+}
+
+extension CustomNSObjectReflectable {
+    var extraReflectionProperties: [String] { [] }
+    var ignoringReflectionProperties: [String] { [] }
+}
+
 class NSObjectMirror {
     enum Value {
         case object(NSObjectMirror)
@@ -41,6 +51,16 @@ class NSObjectMirror {
     private func traverse(_ object: NSObject, context: inout Context) {
         var targetClass: AnyClass? = type(of: object)
 
+        func recordProperty(propertyName: String, getter: String) {
+            guard object.responds(to: Selector(getter)) else { return }
+            let rawValue = object.value(forKey: getter)
+            guard let value = decodeValue(rawValue, context: &context) else {
+                return
+            }
+            properties.append((name: propertyName, value: value))
+        }
+        let ignoreProperties = ["observationInfo", "superclass", "debugDescription", "description", "hash"]
+            + ((object as? CustomNSObjectReflectable)?.ignoringReflectionProperties ?? [])
         while let klass = targetClass {
             defer { targetClass = class_getSuperclass(klass) }
             var propertyCount: UInt32 = 0
@@ -49,7 +69,6 @@ class NSObjectMirror {
             }
             defer { propertyList.deallocate() }
 
-            let ignoreProperties = ["observationInfo", "superclass", "debugDescription", "hash"]
             for index in 0..<Int(propertyCount) {
                 let rawPropertyName = property_getName(propertyList[index])
                 let attributes = parseAttributes(property: propertyList[index])
@@ -57,29 +76,32 @@ class NSObjectMirror {
                 let getter = attributes?.getterName ?? propertyName
                 // Avoid getting private property because some private getter assumes
                 // that the instance is a specific class instance.
-                guard !getter.hasPrefix("_") && !ignoreProperties.contains(getter)
-                        && object.responds(to: Selector(getter)) else {
+                guard !getter.hasPrefix("_") && !ignoreProperties.contains(getter) else {
                     continue
                 }
-                let rawValue = object.value(forKey: getter)
-                guard let value = decodeValue(rawValue, context: &context) else {
-                    continue
-                }
-                properties.append((name: propertyName, value: value))
+                recordProperty(propertyName: propertyName, getter: getter)
             }
         }
     }
 
     private func decodeValue(_ value: Any?, context: inout Context) -> Value? {
+        guard let value = value else { return .null }
         switch value {
-        case .some(is UIView), .some(is CALayer):
-            guard let mirror = NSObjectMirror(object, context: &context) else {
+        case is UIView, is CALayer:
+            guard let mirror = NSObjectMirror(value as! NSObject, context: &context) else {
                 return nil
             }
             return .object(mirror)
-        case .none:
-            return .null
-        case let .some(value):
+        case let array as NSArray:
+            var elements: [Value] = []
+            for rawElement in array {
+                guard let element = decodeValue(rawElement, context: &context) else {
+                    continue
+                }
+                elements.append(element)
+            }
+            return .array(elements)
+        default:
             return .valueObject(value)
         }
     }
@@ -124,14 +146,28 @@ class NSObjectMirror {
 extension NSObjectMirror: AnySnapshotStringConvertible {
     static var renderChildren: Bool { false }
     var snapshotDescription: String {
-        properties.sorted(by: { $0.name < $1.name })
-            .map { "\($0.name)=\($0.value.snapshotDescription)"}.joined(separator: "\n")
+        snapshotDescription()
+    }
+
+    func snapshotDescription(depth: Int = 0) -> String {
+        let indent = String(repeating: " ", count: depth * 4)
+        return properties.sorted(by: { $0.name < $1.name })
+            .map { "\(indent)\($0.name)=\($0.value.snapshotDescription(depth: depth + 1))" }
+            .joined(separator: "\n")
     }
 }
 
-extension NSObjectMirror.Value: AnySnapshotStringConvertible {
-    var snapshotDescription: String {
+extension NSObjectMirror.Value {
+    func snapshotDescription(depth: Int) -> String {
+        let indent = String(repeating: " ", count: depth * 4)
+        let parentIndent = String(repeating: " ", count: (depth - 1) * 4)
         switch self {
+        case .object(let object) where object.object is UIView:
+            return """
+            {
+            \(object.snapshotDescription(depth: depth))
+            \(parentIndent)}
+            """
         case .object(let object):
             return purgePointers(String(describing: object))
         case .valueObject(let bool as Bool):
@@ -139,7 +175,11 @@ extension NSObjectMirror.Value: AnySnapshotStringConvertible {
         case .valueObject(let value):
             return purgePointers(String(describing: value))
         case .array(let array):
-            return purgePointers(String(describing: array))
+            return """
+            [
+            \(array.map { indent + $0.snapshotDescription(depth: depth + 1) }.joined(separator: "\n"))
+            \(parentIndent)]
+            """
         case .null:
             return "nil"
         }
