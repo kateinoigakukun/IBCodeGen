@@ -3,7 +3,7 @@ import UIKit
 import SnapshotTesting
 
 func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, file: StaticString = #file, line: UInt = #line) {
-    let snapshotting = Snapshotting<UIView, String>.recursiveDescription
+    let snapshotting = Snapshotting<UIView, String>.deepRecursiveDescription
     let tookSnapshot = XCTestExpectation(description: "Took snapshot")
     var lhsDescription: String!
     var rhsDescription: String!

@@ -17,12 +17,14 @@
 		E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */; };
 		F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */; };
 		F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */; };
+		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DF36B475C8C16E71D821D85 /* Button.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.generated.swift; sourceTree = "<group>"; };
 		10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoresizingMask.xib; sourceTree = "<group>"; };
 		1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleView.generated.swift; sourceTree = "<group>"; };
+		4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectDiffing.swift; sourceTree = "<group>"; };
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		717D4E48BD3E8E4B31F3DDFC /* Subview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Subview.xib; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		9770D87371502B982EACDB87 /* TestSuites */ = {
 			isa = PBXGroup;
 			children = (
+				4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */,
 				6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */,
 				712A3ED7C40992C3F5F95884 /* Generated */,
 				8D6D333471E7E3A96592308F /* Resources */,
@@ -166,6 +169,7 @@
 			files = (
 				3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */,
 				8577B8B541D540A04F4F8572 /* Button.generated.swift in Sources */,
+				F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */,
 				E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */,
 				F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */,
 				51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */,
