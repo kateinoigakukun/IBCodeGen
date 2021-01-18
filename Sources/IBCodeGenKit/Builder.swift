@@ -25,8 +25,8 @@ class RootViewCodeBuilder {
         self.id = id
     }
 
-    func makeSubview(id: String, className: String) -> SubviewCodeBuilder {
-        let subview = SubviewCodeBuilder(id: id, className: className)
+    func makeSubview(id: String, className: String, elementClass: String) -> SubviewCodeBuilder {
+        let subview = SubviewCodeBuilder(id: id, className: className, elementClass: elementClass)
         subviews.append(subview)
         return subview
     }
@@ -130,15 +130,17 @@ struct ArgumentList: SwiftValueRepresentable {
 class SubviewCodeBuilder: ViewCodeBuilder {
     let id: String
     let className: String
+    let elementClass: String
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
     private var subviews: [SubviewCodeBuilder] = []
     private var constraints: [Constraint] = []
 
-    init(id: String, className: String) {
+    init(id: String, className: String, elementClass: String) {
         self.id = id
         self.className = className
+        self.elementClass = elementClass
     }
 
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
@@ -190,8 +192,9 @@ class SubviewCodeBuilder: ViewCodeBuilder {
                     line.write(")")
                 }
             }
+            let addSubviewMethod = elementClass == "UIStackView" ? "addArrangedSubview" : "addSubview"
             for subview in subviews {
-                $0.writeLine("view.addSubview(\(context.namespace.getIdentifier(id: subview.id)))")
+                $0.writeLine("view.\(addSubviewMethod)(\(context.namespace.getIdentifier(id: subview.id)))")
             }
             $0.writeLine("return view")
         }
@@ -219,8 +222,10 @@ struct ViewBinder<V> {
     let view: V
     let builder: ViewCodeBuilder
 
-    func bind<Value: SwiftValueRepresentable>(_ keyPath: KeyPath<V, Value>, name: String) {
-        builder.addProperty(name, value: view[keyPath: keyPath])
+    func bind<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, V1>, name: String, transform: (V1) -> V2
+    ) {
+        builder.addProperty(name, value: transform(view[keyPath: keyPath]))
     }
     func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
         _ keyPath: KeyPath<V, V1?>, name: String, transform: (V1) -> V2) {

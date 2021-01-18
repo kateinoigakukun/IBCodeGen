@@ -37,5 +37,9 @@ extension Button: CodeGenTargetView {
             EnumCase($0)
         }
         b.bindIfPresent(\.isEnabled, name: "isEnabled")
+        if let state = state, !state.isEmpty, buttonType == nil {
+            builder.addProperty("titleLabel?.font", value: FontDescription.default)
+        }
+        b.bindIfPresent(\.fontDescription, name: "titleLabel?.font")
     }
 }

@@ -36,8 +36,9 @@ extension Process {
     }
 }
 
-extension FileHandle: TextOutputStream {
-    public func write(_ string: String) {
-        write(Data(string.utf8))
+class ContentWriter: TextOutputStream {
+    private(set) var content: String = ""
+    func write(_ string: String) {
+        content += string
     }
 }

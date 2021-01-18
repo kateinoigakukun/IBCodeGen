@@ -7,3 +7,13 @@ final class LoadingBarButtonItemView: UIView, CustomNSObjectReflectable {
         ["activityIndicator", "titleButton"]
     }
 }
+
+final class DiscoveryProjectCategoryView: UIView, CustomNSObjectReflectable {
+    @IBOutlet private var blurView: UIImageView!
+    @IBOutlet private var categoryStackView: UIStackView!
+    @IBOutlet private var categoryViewImageView: UIImageView!
+    @IBOutlet private var categoryViewLabel: UILabel!
+    var ignoringReflectionProperties: [String] {
+        ["blurView", "categoryStackView", "categoryViewImageView", "categoryViewLabel"]
+    }
+}

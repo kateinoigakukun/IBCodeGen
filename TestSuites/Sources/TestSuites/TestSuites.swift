@@ -52,4 +52,14 @@ final class IBCodeGenKitTests: XCTestCase {
             XCTAssertEqualAppearance(original, translated)
         }
     }
+
+    func testDiscoveryProjectCategoryView() {
+        let nib = UINib(nibName: "DiscoveryProjectCategoryView", bundle: Bundle(for: Self.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = [DiscoveryProjectCategoryViewOwner().contentView]
+        for (original, translated) in zip(views, translatedViews) {
+            XCTAssertEqualProperties(original, translated)
+            XCTAssertEqualAppearance(original, translated)
+        }
+    }
 }

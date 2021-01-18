@@ -49,7 +49,7 @@ func codegen(from anyView: AnyView, rootView: RootViewCodeBuilder,
         throw Error.unsupportedView(anyView.view)
     }
     context.namespace.addHint(className: className, for: view.id)
-    let builder = rootView.makeSubview(id: view.id, className: className)
+    let builder = rootView.makeSubview(id: view.id, className: className, elementClass: anyView.view.elementClass)
 
     try anyView.codegen(builder: builder, rootView: rootView)
 

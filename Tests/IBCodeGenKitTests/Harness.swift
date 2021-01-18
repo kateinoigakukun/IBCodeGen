@@ -34,14 +34,17 @@ final class IBCodeGenKitTests: XCTestCase {
         }
         let fileName = testSuite.dropFirst("test".count).dropLast("()".count)
         let generator = IBCodeGenerator()
+        let fileManager = FileManager.default
         do {
-            var handle = try FileHandle(
-                forWritingTo: targetPath.appendingPathComponent(
-                    "Generated/\(fileName).generated.swift"))
+            let path = targetPath.appendingPathComponent("Generated/\(fileName).generated.swift")
+            if !fileManager.fileExists(atPath: path.path) {
+                fileManager.createFile(atPath: path.path, contents: nil, attributes: nil)
+            }
+            var writer = ContentWriter()
             try generator.generate(
                 from: targetPath.appendingPathComponent("Resources/\(fileName).xib"),
-                target: &handle)
-            handle.closeFile()
+                target: &writer)
+            try writer.content.write(to: path, atomically: true, encoding: .utf8)
         }
         try Process.exec(
             bin: "/usr/bin/xcodebuild",
@@ -57,4 +60,5 @@ final class IBCodeGenKitTests: XCTestCase {
     func testButton() throws { try Self.runTest() }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
+    func testDiscoveryProjectCategoryView() throws { try Self.runTest() }
 }

@@ -7,10 +7,12 @@ class Button_0Owner: NSObject {
         let view = UIButton()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 46.0, height: 30.0)
+        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.contentMode = .scaleToFill
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.setAttributedTitle(NSAttributedString(string: "Button", attributes: [
             .foregroundColor: UIColor.init(white: 1.0, alpha: 1.0), 
             .font: UIFont.systemFont(ofSize: 15)
@@ -45,6 +47,7 @@ class Button_1Owner: NSObject {
         let view = UIButton(type: .detailDisclosure)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
+        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.contentMode = .scaleToFill
         view.adjustsImageWhenDisabled = true
@@ -73,10 +76,13 @@ class Button_2Owner: NSObject {
         let view = UIButton()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
+        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.contentMode = .scaleToFill
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        view.setTitle("Custom", for: .normal)
         return view
     }()
     func activateConstraints() {
@@ -99,6 +105,7 @@ class Button_3Owner: NSObject {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
+        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.contentMode = .scaleToFill
         view.adjustsImageWhenDisabled = true

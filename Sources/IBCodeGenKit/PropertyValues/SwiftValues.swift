@@ -20,6 +20,12 @@ extension Bool: SwiftValueRepresentable {
     }
 }
 
+extension Float: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        target.write(self.description)
+    }
+}
+
 struct EnumCase: SwiftValueRepresentable {
     let caseValue: String
     init(_ caseValue: String) {

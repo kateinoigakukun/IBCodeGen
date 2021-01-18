@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E03369C233646B77470BADC /* DiscoveryProjectCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D3AE532FBCE187D4937B73 /* DiscoveryProjectCategoryView.xib */; };
 		0EC9A242492C7D292A83F97C /* LoadingBarButtonItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E004831AD2929E04AAD8CA23 /* LoadingBarButtonItemView.xib */; };
 		3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */; };
 		3EA8CB59274BBACC5E235466 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11E39A4B8238876C70C66113 /* SnapshotTesting */; };
@@ -15,28 +16,31 @@
 		5C3BD2A89C3273BBE31E6956 /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC3BB06F9F82CA2E318EBF /* Button.xib */; };
 		71EB8A8A05E67BF8332FD611 /* Subview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717D4E48BD3E8E4B31F3DDFC /* Subview.xib */; };
 		8577B8B541D540A04F4F8572 /* Button.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF36B475C8C16E71D821D85 /* Button.generated.swift */; };
+		8F9D04C360ED99908D68990C /* DiscoveryProjectCategoryView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E853043FFD0B491C9219B1 /* DiscoveryProjectCategoryView.generated.swift */; };
+		A623D01A3D664E58A258D82D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01534750D6879E5EBA27927F /* Assertion.swift */; };
 		D51685AF611E421888A87CC0 /* LoadingBarButtonItemView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2234B722EBD856E9946B4CA /* LoadingBarButtonItemView.generated.swift */; };
 		E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */; };
 		E644D8A63E2FEF8CB22E36CC /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F738362F82778ECA8E74A /* SupportingClass.swift */; };
-		F29F7D9425B5D0D300431200 /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F7D9325B5D0D300431200 /* Assertion.swift */; };
 		F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */; };
 		F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01534750D6879E5EBA27927F /* Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
 		0DF36B475C8C16E71D821D85 /* Button.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.generated.swift; sourceTree = "<group>"; };
 		10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoresizingMask.xib; sourceTree = "<group>"; };
 		1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleView.generated.swift; sourceTree = "<group>"; };
 		271F738362F82778ECA8E74A /* SupportingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingClass.swift; sourceTree = "<group>"; };
 		4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectDiffing.swift; sourceTree = "<group>"; };
+		57D3AE532FBCE187D4937B73 /* DiscoveryProjectCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryProjectCategoryView.xib; sourceTree = "<group>"; };
+		68E853043FFD0B491C9219B1 /* DiscoveryProjectCategoryView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryProjectCategoryView.generated.swift; sourceTree = "<group>"; };
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		717D4E48BD3E8E4B31F3DDFC /* Subview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Subview.xib; sourceTree = "<group>"; };
 		AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.generated.swift; sourceTree = "<group>"; };
 		B2234B722EBD856E9946B4CA /* LoadingBarButtonItemView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBarButtonItemView.generated.swift; sourceTree = "<group>"; };
 		E004831AD2929E04AAD8CA23 /* LoadingBarButtonItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingBarButtonItemView.xib; sourceTree = "<group>"; };
-		F29F7D9325B5D0D300431200 /* Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
 		F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMask.generated.swift; sourceTree = "<group>"; };
 		FABC3BB06F9F82CA2E318EBF /* Button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Button.xib; sourceTree = "<group>"; };
 		FC23A257EB690959898C0FD0 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			children = (
 				F895C07B052E1C485F78857A /* AutoresizingMask.generated.swift */,
 				0DF36B475C8C16E71D821D85 /* Button.generated.swift */,
+				68E853043FFD0B491C9219B1 /* DiscoveryProjectCategoryView.generated.swift */,
 				B2234B722EBD856E9946B4CA /* LoadingBarButtonItemView.generated.swift */,
 				1E22B7962972AFAFDAFF1DCA /* SimpleView.generated.swift */,
 				AB13FC3D06609FAFFFA4992C /* Subview.generated.swift */,
@@ -87,6 +92,7 @@
 			children = (
 				10D4C787ED88EFFBC803BBB8 /* AutoresizingMask.xib */,
 				FABC3BB06F9F82CA2E318EBF /* Button.xib */,
+				57D3AE532FBCE187D4937B73 /* DiscoveryProjectCategoryView.xib */,
 				E004831AD2929E04AAD8CA23 /* LoadingBarButtonItemView.xib */,
 				FC23A257EB690959898C0FD0 /* SimpleView.xib */,
 				717D4E48BD3E8E4B31F3DDFC /* Subview.xib */,
@@ -97,10 +103,10 @@
 		9770D87371502B982EACDB87 /* TestSuites */ = {
 			isa = PBXGroup;
 			children = (
+				01534750D6879E5EBA27927F /* Assertion.swift */,
 				4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */,
 				271F738362F82778ECA8E74A /* SupportingClass.swift */,
 				6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */,
-				F29F7D9325B5D0D300431200 /* Assertion.swift */,
 				712A3ED7C40992C3F5F95884 /* Generated */,
 				8D6D333471E7E3A96592308F /* Resources */,
 			);
@@ -138,6 +144,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 8D6ECCA2B1CC5376E21A792A /* Build configuration list for PBXProject "TestSuites" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -165,6 +173,7 @@
 			files = (
 				F2A3F89B63701997A56BABFC /* AutoresizingMask.xib in Resources */,
 				5C3BD2A89C3273BBE31E6956 /* Button.xib in Resources */,
+				0E03369C233646B77470BADC /* DiscoveryProjectCategoryView.xib in Resources */,
 				0EC9A242492C7D292A83F97C /* LoadingBarButtonItemView.xib in Resources */,
 				47529D85F20FA544811354F4 /* SimpleView.xib in Resources */,
 				71EB8A8A05E67BF8332FD611 /* Subview.xib in Resources */,
@@ -178,13 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A623D01A3D664E58A258D82D /* Assertion.swift in Sources */,
 				3ACE72C19D84CD0C370A1B6A /* AutoresizingMask.generated.swift in Sources */,
 				8577B8B541D540A04F4F8572 /* Button.generated.swift in Sources */,
+				8F9D04C360ED99908D68990C /* DiscoveryProjectCategoryView.generated.swift in Sources */,
 				D51685AF611E421888A87CC0 /* LoadingBarButtonItemView.generated.swift in Sources */,
 				F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */,
 				E3C6D4E5A098525AFB5CB4B0 /* SimpleView.generated.swift in Sources */,
 				F319521B3E7FA73898B4E448 /* Subview.generated.swift in Sources */,
-				F29F7D9425B5D0D300431200 /* Assertion.swift in Sources */,
 				E644D8A63E2FEF8CB22E36CC /* SupportingClass.swift in Sources */,
 				51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */,
 			);
