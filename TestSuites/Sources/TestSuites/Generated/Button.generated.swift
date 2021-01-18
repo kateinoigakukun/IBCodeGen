@@ -8,6 +8,7 @@ class Button_0: NSObject {
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 46.0, height: 30.0)
         view.setAttributedTitle(NSAttributedString(string: "Button", attributes: [
+            .foregroundColor: UIColor.init(white: 1.0, alpha: 1.0), 
             .font: UIFont.systemFont(ofSize: 15)
         ]), for: .normal)
         view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
@@ -32,6 +33,8 @@ class Button_1: NSObject {
         let view = UIButton(type: .detailDisclosure)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
+        view.adjustsImageWhenDisabled = true
+        view.adjustsImageWhenHighlighted = true
         return view
     }()
     var contentView: UIView {
@@ -60,6 +63,8 @@ class Button_3: NSObject {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
+        view.adjustsImageWhenDisabled = true
+        view.adjustsImageWhenHighlighted = true
         view.setTitle("Button", for: .normal)
         return view
     }()

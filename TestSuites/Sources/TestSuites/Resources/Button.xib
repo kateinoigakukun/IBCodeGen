@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17504.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +16,7 @@
                 <attributedString key="attributedTitle">
                     <fragment content="Button">
                         <attributes>
+                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <font key="NSFont" metaFont="system" size="15"/>
                         </attributes>
                     </fragment>
@@ -41,7 +43,7 @@
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g1y-QS-igX">
             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="418" y="155"/>
+            <point key="canvasLocation" x="416.66666666666669" y="154.6875"/>
         </button>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IJP-ud-8m0">
             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>

@@ -11,7 +11,12 @@ class AutoresizingMask_0: NSObject {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
             } else {
-                return UIColor.white
+                return {
+                    var components: [CGFloat] = [1.0, 1.0]
+                    let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
+                    let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
+                    return UIColor(cgColor: cgColor)
+                }()
             }
         }()
         return view
@@ -32,7 +37,12 @@ class AutoresizingMask_1: NSObject {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
             } else {
-                return UIColor.white
+                return {
+                    var components: [CGFloat] = [1.0, 1.0]
+                    let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
+                    let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
+                    return UIColor(cgColor: cgColor)
+                }()
             }
         }()
         return view

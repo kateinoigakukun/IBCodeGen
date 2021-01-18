@@ -12,6 +12,8 @@ extension Button: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
         if let buttonType = buttonType {
             builder.setInit(arguments: [(label: "type", value: EnumCase(buttonType))])
+            builder.addProperty("adjustsImageWhenDisabled", value: true)
+            builder.addProperty("adjustsImageWhenHighlighted", value: true)
         }
         for state in (state ?? []) {
             guard let key = state.key else { continue }

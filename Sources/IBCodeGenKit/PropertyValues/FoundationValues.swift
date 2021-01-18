@@ -28,6 +28,8 @@ extension AttributedString: SwiftValueRepresentable {
                 return (key: EnumCase("font"), value: font)
             case let style as ParagraphStyle:
                 return (key: EnumCase("paragraphStyle"), value: style)
+            case let color as Color:
+                return (key: EnumCase("foregroundColor"), value: color)
             default:
                 fatalError()
             }

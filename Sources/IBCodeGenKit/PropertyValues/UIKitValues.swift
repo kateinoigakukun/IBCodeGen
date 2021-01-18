@@ -78,8 +78,9 @@ extension ParagraphStyle: SwiftValueRepresentable {
 extension Color: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
         switch self {
-        case .calibratedRGB,
-             .calibratedWhite:
+        case .calibratedWhite((_, let white, let alpha)):
+            target.write("UIColor.init(white: \(white), alpha: \(alpha))")
+        case .calibratedRGB:
             fatalError("not supported yet")
         case .sRGB((_, let red, let blue, let green, let alpha)):
             target.write("UIColor(red: \(red), green: \(green), blue: \(blue), alpha: \(alpha))")
@@ -87,6 +88,16 @@ extension Color: SwiftValueRepresentable {
             target.write("UIColor(named: ")
             name.writeValue(target: &target, context: context)
             target.write(")")
+        case .genericGamma22Gray((_, let white, let alpha)):
+            target.write("{\n")
+            target.indented { target in
+                target.writeLine("var components: [CGFloat] = [\(white), \(alpha)]")
+                target.writeLine("let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!")
+                target.writeLine("let cgColor = CGColor(colorSpace: colorSpace, components: &components)!")
+                target.writeLine("return UIColor(cgColor: cgColor)")
+            }
+            target.writeIndent()
+            target.write("}()")
         case .systemColor((_, let name)):
             if name.range(of: #"^system(\w+)Color$"#, options: .regularExpression) != nil {
                 let systemColorName = name.dropLast("Color".count)

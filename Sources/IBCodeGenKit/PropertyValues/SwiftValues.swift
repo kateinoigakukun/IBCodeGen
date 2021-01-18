@@ -14,6 +14,12 @@ extension String: SwiftValueRepresentable {
     }
 }
 
+extension Bool: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        target.write(self.description)
+    }
+}
+
 struct EnumCase: SwiftValueRepresentable {
     let caseValue: String
     init(_ caseValue: String) {
@@ -25,6 +31,15 @@ struct EnumCase: SwiftValueRepresentable {
     }
 }
 
+struct RawValueString: SwiftValueRepresentable {
+    let rawString: String
+    init(_ rawString: String) {
+        self.rawString = rawString
+    }
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        target.write(rawString)
+    }
+}
 
 struct DictionaryValue: SwiftValueRepresentable {
     typealias Entry = (key: SwiftValueRepresentable, value: SwiftValueRepresentable)
