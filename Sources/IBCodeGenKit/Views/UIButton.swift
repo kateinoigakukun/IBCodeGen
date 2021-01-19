@@ -45,7 +45,7 @@ extension Button: CodeGenTargetView {
         b.bindIfPresent(\.isEnabled, name: "isEnabled")
         if let state = state, !state.isEmpty, buttonType == nil {
             builder.addProperty("titleLabel?.font", value: FontDescription.default)
-            b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: EnumCase.init)
+            b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: LineBreakMode.init)
         }
         b.bindIfPresent(\.fontDescription, name: "titleLabel?.font")
     }

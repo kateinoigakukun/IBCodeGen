@@ -16,5 +16,6 @@ extension Label: CodeGenTargetView {
         b.bindIfPresent(\.baselineAdjustment, name: "baselineAdjustment", transform: EnumCase.init)
         b.bindIfPresent(\.adjustsFontSizeToFit, name: "adjustsFontSizeToFitWidth")
         b.bindIfPresent(\.fontDescription, name: "font")
+        b.bindIfPresent(\.lineBreakMode, name: "lineBreakMode", transform: LineBreakMode.init)
     }
 }

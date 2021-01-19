@@ -3,14 +3,14 @@ import UIKit
 
 
 class DiscoveryProjectCategoryViewOwner: NSObject {
-    lazy var discoveryProjectCategoryView4: DiscoveryProjectCategoryView = {
+    lazy var discoveryProjectCategoryView2: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.isUserInteractionEnabled = true
         view.contentMode = .scaleToFill
         view.addSubview(stackView1)
-        view.addSubview(imageView0)
+        view.addSubview(imageView4)
         return view
     }()
     lazy var stackView1: UIStackView = {
@@ -20,15 +20,16 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
         view.axis = .horizontal
         view.alignment = .center
         view.spacing = 5.0
-        view.addArrangedSubview(imageView2)
+        view.addArrangedSubview(imageView0)
         view.addArrangedSubview(label3)
         return view
     }()
-    lazy var imageView2: UIImageView = {
+    lazy var imageView0: UIImageView = {
         let view = UIImageView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 323.5, width: 20.0, height: 20.0)
@@ -48,6 +49,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.isUserInteractionEnabled = false
         view.isOpaque = false
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .left
         view.text = "Label"
         view.textAlignment = .natural
@@ -60,7 +62,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.setContentCompressionResistancePriority(UILayoutPriority(250), for: .horizontal)
         return view
     }()
-    lazy var imageView0: UIImageView = {
+    lazy var imageView4: UIImageView = {
         let view = UIImageView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 375.0, y: 0.0, width: 5.0, height: 667.0)
@@ -78,35 +80,35 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     func activateConstraints() {
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: imageView0, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .trailing, multiplier: 1.0, constant: 5)
+                let constraint = NSLayoutConstraint(item: imageView4, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .trailing, multiplier: 1.0, constant: 5.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: stackView1, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .top, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: stackView1, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .top, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: stackView1, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .trailing, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: stackView1, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .trailing, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: stackView1, attribute: .leading, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .leading, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: stackView1, attribute: .leading, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .leading, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: imageView0, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .top, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: imageView4, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .top, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: stackView1, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .bottom, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: stackView1, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .bottom, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: imageView0, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView4, attribute: .bottom, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: imageView4, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView2, attribute: .bottom, multiplier: 1.0, constant: 0.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: imageView0, attribute: .leading, relatedBy: .equal, toItem: stackView1, attribute: .trailing, multiplier: 1.0, constant: 0)
+                let constraint = NSLayoutConstraint(item: imageView4, attribute: .leading, relatedBy: .equal, toItem: stackView1, attribute: .trailing, multiplier: 1.0, constant: 0.0)
                 constraint.priority = UILayoutPriority(400)
                 return constraint
             }(),
@@ -115,11 +117,11 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         ])
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: imageView2, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20)
+                let constraint = NSLayoutConstraint(item: imageView0, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
                 return constraint
             }(),
             {
-                let constraint = NSLayoutConstraint(item: imageView2, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20)
+                let constraint = NSLayoutConstraint(item: imageView0, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
                 return constraint
             }(),
         ])
@@ -127,7 +129,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         ])
         NSLayoutConstraint.activate([
             {
-                let constraint = NSLayoutConstraint(item: imageView0, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 15)
+                let constraint = NSLayoutConstraint(item: imageView4, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 15.0)
                 return constraint
             }(),
         ])
@@ -137,6 +139,6 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return discoveryProjectCategoryView4
+        return discoveryProjectCategoryView2
     }
 }

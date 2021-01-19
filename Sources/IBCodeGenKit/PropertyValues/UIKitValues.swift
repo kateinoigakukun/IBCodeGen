@@ -218,3 +218,26 @@ extension FontDescription: SwiftValueRepresentable {
         }
     }
 }
+
+enum LineBreakMode: String {
+    case headTruncation
+    case tailTruncation
+    case middleTruncation
+
+    init(_ rawValue: String) {
+        self.init(rawValue: rawValue)!
+    }
+}
+
+extension LineBreakMode: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        switch self {
+        case .headTruncation:
+            target.write(".byTruncatingHead")
+        case .tailTruncation:
+            target.write(".byTruncatingTail")
+        case .middleTruncation:
+            target.write(".byTruncatingMiddle")
+        }
+    }
+}
