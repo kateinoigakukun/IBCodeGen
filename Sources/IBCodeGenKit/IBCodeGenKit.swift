@@ -5,7 +5,7 @@ public class IBCodeGenerator {
     public init() {
     }
 
-    func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws {
+    public func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws {
         var output = GenericIndentTextOutputStream(downstream: target)
         try generate(from: url, target: &output)
     }

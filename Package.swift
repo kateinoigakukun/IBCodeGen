@@ -13,11 +13,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/kateinoigakukun/IBDecodable.git", .branch("ibcodegen")),
+        .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMinor(from: "0.3.0")),
     ],
     targets: [
-        .target(
-            name: "ibcodegen",
-            dependencies: ["IBCodeGenKit"]),
+        .target(name: "ibcodegen", dependencies: [
+            .target(name: "IBCodeGenKit"),
+            .product(name: "ArgumentParser", package: "swift-argument-parser"),
+        ]),
         .target(
             name: "IBCodeGenKit",
             dependencies: [
