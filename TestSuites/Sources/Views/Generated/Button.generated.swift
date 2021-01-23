@@ -10,6 +10,7 @@ class Button_0Owner: NSObject {
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.isUserInteractionEnabled = true
         view.isOpaque = false
+        view.setTitleColor(UIColor.systemBlue, for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
         view.adjustsImageWhenDisabled = true
@@ -311,7 +312,7 @@ class Button_12Owner: NSObject {
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
         view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
-            .foregroundColor: UIColor(red: 1.0, green: 0.2527924, blue: 1.0, alpha: 1.0), 
+            .backgroundColor: UIColor(red: 1.0, green: 0.2527924, blue: 1.0, alpha: 1.0), 
             .foregroundColor: UIColor(red: 0.999996, green: 1.0, blue: 1.0, alpha: 1.0), 
             .font: UIFont.systemFont(ofSize: 15)
         ]), for: .normal)
@@ -527,7 +528,7 @@ class Button_19Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
-            .foregroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0), 
+            .backgroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0), 
             .foregroundColor: UIColor(red: 0.999996, green: 1.0, blue: 1.0, alpha: 1.0), 
             .font: UIFont.systemFont(ofSize: 15), 
             .paragraphStyle: {
