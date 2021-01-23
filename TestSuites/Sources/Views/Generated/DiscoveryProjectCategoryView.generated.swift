@@ -3,17 +3,17 @@ import UIKit
 
 
 class DiscoveryProjectCategoryViewOwner: NSObject {
-    lazy var discoveryProjectCategoryView1: DiscoveryProjectCategoryView = {
+    lazy var discoveryProjectCategoryView3: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.isUserInteractionEnabled = true
         view.contentMode = .scaleToFill
-        view.addSubview(stackView4)
-        view.addSubview(imageView3)
+        view.addSubview(stackView1)
+        view.addSubview(imageView4)
         return view
     }()
-    lazy var stackView4: UIStackView = {
+    lazy var stackView1: UIStackView = {
         let view = UIStackView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -63,7 +63,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.setContentCompressionResistancePriority(UILayoutPriority(250), for: .horizontal)
         return view
     }()
-    lazy var imageView3: UIImageView = {
+    lazy var imageView4: UIImageView = {
         let view = UIImageView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 375.0, y: 0.0, width: 5.0, height: 667.0)
@@ -80,36 +80,15 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     }()
     func activateConstraints() {
         NSLayoutConstraint.activate([
+            imageView4.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView3.trailingAnchor, constant: 5.0),
+            stackView1.topAnchor.constraint(equalTo: discoveryProjectCategoryView3.topAnchor),
+            stackView1.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView3.trailingAnchor),
+            stackView1.leadingAnchor.constraint(equalTo: discoveryProjectCategoryView3.leadingAnchor),
+            imageView4.topAnchor.constraint(equalTo: discoveryProjectCategoryView3.topAnchor),
+            stackView1.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView3.bottomAnchor),
+            imageView4.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView3.bottomAnchor),
             {
-                let constraint = NSLayoutConstraint(item: imageView3, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .trailing, multiplier: 1.0, constant: 5.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: stackView4, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .top, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: stackView4, attribute: .trailing, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: stackView4, attribute: .leading, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .leading, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: imageView3, attribute: .top, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .top, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: stackView4, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: imageView3, attribute: .bottom, relatedBy: .equal, toItem: discoveryProjectCategoryView1, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: imageView3, attribute: .leading, relatedBy: .equal, toItem: stackView4, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+                let constraint = imageView4.leadingAnchor.constraint(equalTo: stackView1.trailingAnchor)
                 constraint.priority = UILayoutPriority(400)
                 return constraint
             }(),
@@ -117,22 +96,13 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         NSLayoutConstraint.activate([
         ])
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: imageView2, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: imageView2, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
-                return constraint
-            }(),
+            imageView2.widthAnchor.constraint(equalToConstant: 20.0),
+            imageView2.heightAnchor.constraint(equalToConstant: 20.0),
         ])
         NSLayoutConstraint.activate([
         ])
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: imageView3, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 15.0)
-                return constraint
-            }(),
+            imageView4.widthAnchor.constraint(lessThanOrEqualToConstant: 15.0),
         ])
     }
     override init() {
@@ -140,6 +110,6 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return discoveryProjectCategoryView1
+        return discoveryProjectCategoryView3
     }
 }

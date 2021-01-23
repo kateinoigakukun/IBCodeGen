@@ -28,11 +28,11 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleToFill
         view.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
-        view.addSubview(activityIndicatorView0)
-        view.addSubview(button1)
+        view.addSubview(activityIndicatorView1)
+        view.addSubview(button0)
         return view
     }()
-    lazy var activityIndicatorView0: UIActivityIndicatorView = {
+    lazy var activityIndicatorView1: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 355.0, y: 323.5, width: 20.0, height: 20.0)
@@ -45,7 +45,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.setContentHuggingPriority(UILayoutPriority(750), for: .horizontal)
         return view
     }()
-    lazy var button1: UIButton = {
+    lazy var button0: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -65,68 +65,26 @@ class LoadingBarButtonItemViewOwner: NSObject {
     }()
     func activateConstraints() {
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: view2, attribute: .top, relatedBy: .equal, toItem: loadingBarButtonItemView3, attribute: .top, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: view2, attribute: .leading, relatedBy: .equal, toItem: loadingBarButtonItemView3, attribute: .leading, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: loadingBarButtonItemView3, attribute: .bottom, relatedBy: .equal, toItem: view2, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: loadingBarButtonItemView3, attribute: .trailing, relatedBy: .equal, toItem: view2, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
+            view2.topAnchor.constraint(equalTo: loadingBarButtonItemView3.topAnchor),
+            view2.leadingAnchor.constraint(equalTo: loadingBarButtonItemView3.leadingAnchor),
+            loadingBarButtonItemView3.bottomAnchor.constraint(equalTo: view2.bottomAnchor),
+            loadingBarButtonItemView3.trailingAnchor.constraint(equalTo: view2.trailingAnchor),
         ])
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: button1, attribute: .top, relatedBy: .equal, toItem: view2, attribute: .top, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: activityIndicatorView0, attribute: .centerY, relatedBy: .equal, toItem: button1, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: button1, attribute: .leading, relatedBy: .equal, toItem: view2, attribute: .leading, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: button1, attribute: .width, relatedBy: .equal, toItem: view2, attribute: .width, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: view2, attribute: .bottom, relatedBy: .equal, toItem: button1, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: view2, attribute: .trailing, relatedBy: .equal, toItem: button1, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: view2, attribute: .trailing, relatedBy: .equal, toItem: activityIndicatorView0, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-                return constraint
-            }(),
+            button0.topAnchor.constraint(equalTo: view2.topAnchor),
+            activityIndicatorView1.centerYAnchor.constraint(equalTo: button0.centerYAnchor),
+            button0.leadingAnchor.constraint(equalTo: view2.leadingAnchor),
+            button0.widthAnchor.constraint(equalTo: view2.widthAnchor),
+            view2.bottomAnchor.constraint(equalTo: button0.bottomAnchor),
+            view2.trailingAnchor.constraint(equalTo: button0.trailingAnchor),
+            view2.trailingAnchor.constraint(equalTo: activityIndicatorView1.trailingAnchor),
         ])
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: activityIndicatorView0, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
-                return constraint
-            }(),
-            {
-                let constraint = NSLayoutConstraint(item: activityIndicatorView0, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20.0)
-                return constraint
-            }(),
+            activityIndicatorView1.heightAnchor.constraint(equalToConstant: 20.0),
+            activityIndicatorView1.widthAnchor.constraint(equalToConstant: 20.0),
         ])
         NSLayoutConstraint.activate([
-            {
-                let constraint = NSLayoutConstraint(item: button1, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44.0)
-                return constraint
-            }(),
+            button0.widthAnchor.constraint(greaterThanOrEqualToConstant: 44.0),
         ])
     }
     override init() {

@@ -132,87 +132,27 @@ extension Color: SwiftValueRepresentable {
     }
 }
 
-extension Constraint {
-    static func writeTargetExpression<Target>(
-        target: inout Target, item: String, context: CodeGenContext
-    ) where Target : IndentTextOutputStream {
-        guard let element = context.hierarchy.element(byId: item) else {
-            fatalError("'\(item)' is unknown element in view")
-        }
-        if element is ViewProtocol {
-            target.write(context.namespace.getIdentifier(id: item))
-        } else if let guide = element as? LayoutGuide {
-            target.write("contentView.\(guide.key)LayoutGuide")
-        }
-    }
-
-    func writeValue<Target>(target: inout Target, context: CodeGenContext, selfView: String) where Target : IndentTextOutputStream {
-
-        target.write("{\n")
-        target.indented { target in
-            target.writeIndent()
-            target.write("let constraint = NSLayoutConstraint(item: ")
-            if let firstItem = firstItem {
-                Self.writeTargetExpression(target: &target, item: firstItem, context: context)
-            } else {
-                target.write(context.namespace.getIdentifier(id: selfView))
-            }
-            
-            target.write(", attribute: ")
-            if let firstAttribute = firstAttribute {
-                firstAttribute.writeValue(target: &target, context: context)
-            } else {
-                target.write(".notAnAttribute")
-            }
-            
-            target.write(", relatedBy: ")
-            relation.writeValue(target: &target, context: context)
-            
-            target.write(", toItem: ")
-            if let secondItem = secondItem {
-                Self.writeTargetExpression(target: &target, item: secondItem, context: context)
-            } else {
-                target.write("nil")
-            }
-            
-            target.write(", attribute: ")
-            if let secondAttribute = secondAttribute {
-                secondAttribute.writeValue(target: &target, context: context)
-            } else {
-                target.write(".notAnAttribute")
-            }
-            
-            target.write(", multiplier: \(multiplier ?? "1.0")")
-            target.write(", constant: \(constant ?? 0))\n")
-            if let priority = priority {
-                target.writeLine("constraint.priority = UILayoutPriority(\(priority))")
-            }
-            target.writeLine("return constraint")
-        }
-        target.writeIndent()
-        target.write("}()")
-    }
-}
-
 extension Constraint.LayoutAttribute: SwiftValueRepresentable {
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    var caseName: String {
         switch self {
-        case .other(let other):
-            EnumCase(other).writeValue(target: &target, context: context)
-        default:
-            EnumCase(String(describing: self)).writeValue(target: &target, context: context)
+        case .other(let other): return other
+        default: return String(describing: self)
         }
+    }
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        EnumCase(caseName).writeValue(target: &target, context: context)
     }
 }
 
 extension Constraint.Relation: SwiftValueRepresentable {
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    var caseName: String {
         switch self {
-        case .other(let other):
-            EnumCase(other).writeValue(target: &target, context: context)
-        default:
-            EnumCase(String(describing: self)).writeValue(target: &target, context: context)
+        case .other(let other): return other
+        default: return String(describing: self)
         }
+    }
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        EnumCase(caseName).writeValue(target: &target, context: context)
     }
 }
 
