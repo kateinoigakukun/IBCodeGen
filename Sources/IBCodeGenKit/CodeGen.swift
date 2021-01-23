@@ -14,7 +14,7 @@ enum Error: Swift.Error {
 protocol CodeGenTargetView {
     func codegen(
         builder: ViewCodeBuilder,
-        rootView: RootViewCodeBuilder
+        rootView: RootViewClass
     ) throws
 }
 
@@ -22,7 +22,8 @@ protocol CodeGenTargetView {
 struct CodeGenContext {
     var deploymentTarget: Version
     var document: InterfaceBuilderDocument
-    var namespace: SubviewsNamespace
+    var namespace: ViewNamespace
+    let hierarchy: ViewHierarchy
 
     var isSupportingDarkMode: Bool {
         Version(major: 13, minor: 0, patch: 0) <= deploymentTarget
@@ -42,8 +43,8 @@ struct CodeGenContext {
     }
 }
 
-func codegen(from anyView: AnyView, rootView: RootViewCodeBuilder,
-             context: inout CodeGenContext) throws -> SubviewCodeBuilder {
+func codegen(from anyView: AnyView, rootView: RootViewClass,
+             context: inout CodeGenContext) throws -> ViewElement {
     let className = anyView.view.customClass ?? anyView.view.elementClass
     guard let view = anyView.view as? IBIdentifiable & ViewProtocol else {
         throw Error.unsupportedView(anyView.view)

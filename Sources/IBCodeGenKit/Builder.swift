@@ -10,23 +10,23 @@ import IBDecodable
 protocol ViewCodeBuilder {
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value)
     func addMethodCall(_ method: String, arguments: [Argument])
-    func addSubview(_ subview: SubviewCodeBuilder)
+    func addSubview(_ subview: ViewElement)
     func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
     func setConstraints(_ constraints: [Constraint])
 }
 
-class RootViewCodeBuilder {
+class RootViewClass {
     let className: String
     let id: String
-    var subviews: [SubviewCodeBuilder] = []
+    var subviews: [ViewElement] = []
 
     init(className: String, id: String) {
         self.className = className
         self.id = id
     }
 
-    func makeSubview(id: String, className: String, elementClass: String) -> SubviewCodeBuilder {
-        let subview = SubviewCodeBuilder(id: id, className: className, elementClass: elementClass)
+    func makeSubview(id: String, className: String, elementClass: String) -> ViewElement {
+        let subview = ViewElement(id: id, className: className, elementClass: elementClass)
         subviews.append(subview)
         return subview
     }
@@ -64,7 +64,30 @@ class RootViewCodeBuilder {
     }
 }
 
-struct SubviewsNamespace {
+struct ViewHierarchy {
+    private var elementById: [String: IBElement] = [:]
+
+    init(rootView: ViewProtocol) {
+        func traverse(view: ViewProtocol) {
+            if let identifiable = view as? IBIdentifiable {
+                elementById[identifiable.id] = identifiable
+            }
+            if let viewLayoutGuide = view.viewLayoutGuide {
+                elementById[viewLayoutGuide.id] = viewLayoutGuide
+            }
+            for subview in view.subviews ?? [] {
+                traverse(view: subview.view)
+            }
+        }
+        traverse(view: rootView)
+    }
+
+    func element(byId id: String) -> IBElement? {
+        elementById[id]
+    }
+}
+
+struct ViewNamespace {
     struct Hint {
         var className: String
         var outlet: String?
@@ -127,14 +150,14 @@ struct ArgumentList: SwiftValueRepresentable {
     }
 }
 
-class SubviewCodeBuilder: ViewCodeBuilder {
+class ViewElement: ViewCodeBuilder {
     let id: String
     let className: String
     let elementClass: String
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
-    private var subviews: [SubviewCodeBuilder] = []
+    private var subviews: [ViewElement] = []
     private var constraints: [Constraint] = []
 
     init(id: String, className: String, elementClass: String) {
@@ -161,7 +184,7 @@ class SubviewCodeBuilder: ViewCodeBuilder {
         self.constraints = constraints
     }
 
-    func addSubview(_ subview: SubviewCodeBuilder) {
+    func addSubview(_ subview: ViewElement) {
         subviews.append(subview)
     }
     func build<Target: IndentTextOutputStream>(
@@ -237,5 +260,11 @@ struct ViewBinder<V> {
         _ keyPath: KeyPath<V, Value?>, name: String
     ) {
         bindIfPresent(keyPath, name: name, transform: { $0 })
+    }
+
+    func bind<Value: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, Value?>, default: Value, name: String
+    ) {
+        builder.addProperty(name, value: view[keyPath: keyPath] ?? `default`)
     }
 }

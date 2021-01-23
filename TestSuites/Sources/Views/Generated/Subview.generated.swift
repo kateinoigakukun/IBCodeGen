@@ -17,10 +17,10 @@ class SubviewOwner: NSObject {
         }()
         view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
-        view.addSubview(view3)
+        view.addSubview(view5)
         return view
     }()
-    lazy var view3: UIView = {
+    lazy var view5: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 20.0, y: 44.0, width: 374.0, height: 818.0)
@@ -35,10 +35,10 @@ class SubviewOwner: NSObject {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
-        view.addSubview(view2)
+        view.addSubview(view3)
         return view
     }()
-    lazy var view2: UIView = {
+    lazy var view3: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 8.0, y: 8.0, width: 358.0, height: 802.0)
@@ -71,11 +71,11 @@ class SubviewOwner: NSObject {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
+        view.addSubview(view2)
         view.addSubview(view4)
-        view.addSubview(view5)
         return view
     }()
-    lazy var view4: UIView = {
+    lazy var view2: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 10.0, y: 8.0, width: 323.0, height: 362.0)
@@ -92,7 +92,7 @@ class SubviewOwner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
-    lazy var view5: UIView = {
+    lazy var view4: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 8.0, y: 381.0, width: 323.0, height: 397.0)

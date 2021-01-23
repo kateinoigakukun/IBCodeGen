@@ -23,14 +23,15 @@ public class IBCodeGenerator {
         }
 
         for (index, view) in views.enumerated() {
-            guard let identifiable = view.view as? IBIdentifiable else { continue }
+            guard let element = view.view as? IBIdentifiable else { continue }
             var context = CodeGenContext(
                 deploymentTarget: Version(major: 12, minor: 0, patch: 0),
-                document: xibFile.document, namespace: SubviewsNamespace()
+                document: xibFile.document, namespace: ViewNamespace(),
+                hierarchy: ViewHierarchy(rootView: view.view)
             )
-            let builder = RootViewCodeBuilder(
+            let builder = RootViewClass(
                 className: namespace.makeIdentifier(forIndex: index) + "Owner",
-                id: identifiable.id
+                id: element.id
             )
             _ = try codegen(from: view, rootView: builder, context: &context)
             target.writeLine("\n\n")

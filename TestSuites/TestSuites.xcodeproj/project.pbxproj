@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -213,8 +213,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 8D6ECCA2B1CC5376E21A792A /* Build configuration list for PBXProject "TestSuites" */;
 			compatibilityVersion = "Xcode 10.0";

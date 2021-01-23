@@ -9,7 +9,7 @@ import IBDecodable
 
 
 extension Button: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
         let b = ViewBinder(view: self, builder: builder)
         if let buttonType = buttonType {
             builder.setInit(arguments: [(label: "type", value: EnumCase(buttonType))])
@@ -44,9 +44,8 @@ extension Button: CodeGenTargetView {
         }
         b.bindIfPresent(\.isEnabled, name: "isEnabled")
         if let state = state, !state.isEmpty, buttonType == nil {
-            builder.addProperty("titleLabel?.font", value: FontDescription.default)
+            b.bind(\.fontDescription, default: FontDescription.default, name: "titleLabel?.font")
             b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: LineBreakMode.init)
         }
-        b.bindIfPresent(\.fontDescription, name: "titleLabel?.font")
     }
 }

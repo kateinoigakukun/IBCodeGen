@@ -77,7 +77,7 @@ class AutoresizingMask_1Owner: NSObject {
 
 
 class AutoresizingMask_2Owner: NSObject {
-    lazy var view0: UIView = {
+    lazy var view1: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
@@ -96,10 +96,10 @@ class AutoresizingMask_2Owner: NSObject {
         }()
         view.translatesAutoresizingMaskIntoConstraints = true
         view.contentMode = .scaleToFill
-        view.addSubview(view1)
+        view.addSubview(view0)
         return view
     }()
-    lazy var view1: UIView = {
+    lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 1.0, y: 165.0, width: 413.0, height: 482.0)
@@ -131,6 +131,6 @@ class AutoresizingMask_2Owner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return view0
+        return view1
     }
 }

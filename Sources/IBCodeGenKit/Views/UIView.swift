@@ -8,7 +8,7 @@
 import IBDecodable
 
 extension AnyView: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
         let b = ViewBinder(view: self.view, builder: builder)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
         b.bindIfPresent(\.rect, name: "frame")
@@ -17,6 +17,7 @@ extension AnyView: CodeGenTargetView {
         b.bindIfPresent(\.isHidden, name: "isHidden")
         b.bindIfPresent(\.opaque, name: "isOpaque")
         b.bindIfPresent(\.backgroundColor, name: "backgroundColor")
+        b.bindIfPresent(\.tintColor, name: "tintColor")
         b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, name: "translatesAutoresizingMaskIntoConstraints")
 
         let shouldOverwriteTAMIC: Bool = {

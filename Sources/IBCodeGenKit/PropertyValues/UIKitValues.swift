@@ -133,6 +133,19 @@ extension Color: SwiftValueRepresentable {
 }
 
 extension Constraint {
+    static func writeTargetExpression<Target>(
+        target: inout Target, item: String, context: CodeGenContext
+    ) where Target : IndentTextOutputStream {
+        guard let element = context.hierarchy.element(byId: item) else {
+            fatalError("'\(item)' is unknown element in view")
+        }
+        if element is ViewProtocol {
+            target.write(context.namespace.getIdentifier(id: item))
+        } else if let guide = element as? LayoutGuide {
+            target.write("contentView.\(guide.key)LayoutGuide")
+        }
+    }
+
     func writeValue<Target>(target: inout Target, context: CodeGenContext, selfView: String) where Target : IndentTextOutputStream {
 
         target.write("{\n")
@@ -140,7 +153,7 @@ extension Constraint {
             target.writeIndent()
             target.write("let constraint = NSLayoutConstraint(item: ")
             if let firstItem = firstItem {
-                target.write(context.namespace.getIdentifier(id: firstItem))
+                Self.writeTargetExpression(target: &target, item: firstItem, context: context)
             } else {
                 target.write(context.namespace.getIdentifier(id: selfView))
             }
@@ -157,7 +170,7 @@ extension Constraint {
             
             target.write(", toItem: ")
             if let secondItem = secondItem {
-                target.write(context.namespace.getIdentifier(id: secondItem))
+                Self.writeTargetExpression(target: &target, item: secondItem, context: context)
             } else {
                 target.write("nil")
             }

@@ -9,7 +9,7 @@
 import IBDecodable
 
 extension Label: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewCodeBuilder) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
         let b = ViewBinder(view: self, builder: builder)
         b.bindIfPresent(\.text, name: "text")
         b.bindIfPresent(\.textAlignment, name: "textAlignment", transform: EnumCase.init)
