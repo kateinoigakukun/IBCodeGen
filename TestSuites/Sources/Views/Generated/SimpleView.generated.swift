@@ -13,14 +13,6 @@ class SimpleViewOwner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return view0
     }

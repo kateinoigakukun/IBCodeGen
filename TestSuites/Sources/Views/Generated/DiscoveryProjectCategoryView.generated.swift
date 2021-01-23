@@ -94,12 +94,8 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
             }(),
         ])
         NSLayoutConstraint.activate([
-        ])
-        NSLayoutConstraint.activate([
             imageView2.widthAnchor.constraint(equalToConstant: 20.0),
             imageView2.heightAnchor.constraint(equalToConstant: 20.0),
-        ])
-        NSLayoutConstraint.activate([
         ])
         NSLayoutConstraint.activate([
             imageView4.widthAnchor.constraint(lessThanOrEqualToConstant: 15.0),

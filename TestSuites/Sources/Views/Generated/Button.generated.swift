@@ -30,14 +30,6 @@ class Button_0Owner: NSObject {
         ]), for: .selected)
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return button0
     }
@@ -60,14 +52,6 @@ class Button_1Owner: NSObject {
         view.contentVerticalAlignment = .center
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return button0
     }
@@ -91,14 +75,6 @@ class Button_2Owner: NSObject {
         view.setTitle("Custom", for: .normal)
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return button0
     }
@@ -122,14 +98,6 @@ class Button_3Owner: NSObject {
         view.setTitle("Button", for: .normal)
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return button0
     }

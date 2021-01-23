@@ -24,14 +24,6 @@ class AutoresizingMask_0Owner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return view0
     }
@@ -61,14 +53,6 @@ class AutoresizingMask_1Owner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return view0
     }
@@ -120,16 +104,6 @@ class AutoresizingMask_2Owner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
-    func activateConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-        NSLayoutConstraint.activate([
-        ])
-    }
-    override init() {
-        super.init()
-        activateConstraints()
-    }
     var contentView: UIView {
         return view0
     }

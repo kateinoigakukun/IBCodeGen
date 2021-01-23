@@ -38,20 +38,22 @@ class RootViewClass {
                 subview.build(target: &target, context: &context)
             }
 
-            target.writeLine("func activateConstraints() {")
-            target.indented { target in
-                for subview in subviews {
-                    subview.buildConstraintsActivation(target: &target, context: &context)
+            if subviews.contains(where: \.shouldWriteConstraintsActivation) {
+                target.writeLine("func activateConstraints() {")
+                target.indented { target in
+                    for subview in subviews {
+                        subview.buildConstraintsActivation(target: &target, context: &context)
+                    }
                 }
-            }
-            target.writeLine("}")
+                target.writeLine("}")
 
-            target.writeLine("override init() {")
-            target.indented { target in
-                target.writeLine("super.init()")
-                target.writeLine("activateConstraints()")
+                target.writeLine("override init() {")
+                target.indented { target in
+                    target.writeLine("super.init()")
+                    target.writeLine("activateConstraints()")
+                }
+                target.writeLine("}")
             }
-            target.writeLine("}")
 
             let identifier = context.namespace.getIdentifier(id: id)
             target.writeLine("var contentView: UIView {")
@@ -155,6 +157,7 @@ class ViewElement: ViewCodeBuilder {
     let id: String
     let className: String
     let elementClass: String
+    var shouldWriteConstraintsActivation: Bool { !constraints.isEmpty }
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
@@ -228,6 +231,7 @@ class ViewElement: ViewCodeBuilder {
     func buildConstraintsActivation<Target: IndentTextOutputStream>(
         target: inout Target, context: inout CodeGenContext
     ) {
+        guard shouldWriteConstraintsActivation else { return }
         target.writeLine("NSLayoutConstraint.activate([")
         target.indented { target in
             for constraint in constraints {
