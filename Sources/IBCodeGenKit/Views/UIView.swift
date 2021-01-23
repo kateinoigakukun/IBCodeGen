@@ -37,28 +37,28 @@ extension AnyView: CodeGenTargetView {
 
         if let priority = view.verticalHuggingPriority {
             builder.addMethodCall("setContentHuggingPriority", arguments: [
-                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: nil, value: LayoutPriority(value: priority)),
                 (label: "for", value: EnumCase("vertical")),
             ])
         }
 
         if let priority = view.horizontalHuggingPriority {
             builder.addMethodCall("setContentHuggingPriority", arguments: [
-                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: nil, value: LayoutPriority(value: priority)),
                 (label: "for", value: EnumCase("horizontal")),
             ])
         }
 
         if let priority = view.verticalCompressionResistancePriority {
             builder.addMethodCall("setContentCompressionResistancePriority", arguments: [
-                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: nil, value: LayoutPriority(value: priority)),
                 (label: "for", value: EnumCase("vertical")),
             ])
         }
 
         if let priority = view.horizontalCompressionResistancePriority {
             builder.addMethodCall("setContentCompressionResistancePriority", arguments: [
-                (label: nil, value: RawValueString("UILayoutPriority(\(priority))")),
+                (label: nil, value: LayoutPriority(value: priority)),
                 (label: "for", value: EnumCase("horizontal")),
             ])
         }

@@ -37,8 +37,8 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.setContentHuggingPriority(UILayoutPriority(251), for: .vertical)
-        view.setContentHuggingPriority(UILayoutPriority(251), for: .horizontal)
+        view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
+        view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return view
     }()
     lazy var label3: UILabel = {
@@ -57,10 +57,10 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.adjustsFontSizeToFitWidth = false
         view.font = UIFont.systemFont(ofSize: 17.0)
         view.lineBreakMode = .byTruncatingTail
-        view.setContentHuggingPriority(UILayoutPriority(251), for: .vertical)
-        view.setContentHuggingPriority(UILayoutPriority(251), for: .horizontal)
-        view.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
-        view.setContentCompressionResistancePriority(UILayoutPriority(250), for: .horizontal)
+        view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
+        view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
+        view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return view
     }()
     lazy var imageView4: UIImageView = {
@@ -89,7 +89,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
             imageView4.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView0.bottomAnchor),
             {
                 let constraint = imageView4.leadingAnchor.constraint(equalTo: stackView1.trailingAnchor)
-                constraint.priority = UILayoutPriority(400)
+                constraint.priority = .dragThatCannotResizeScene - 90
                 return constraint
             }(),
         ])

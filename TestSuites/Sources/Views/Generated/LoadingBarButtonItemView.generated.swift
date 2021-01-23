@@ -27,7 +27,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         }()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleToFill
-        view.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
+        view.setContentHuggingPriority(.defaultLow - 1, for: .horizontal)
         view.addSubview(activityIndicatorView2)
         view.addSubview(button3)
         return view
@@ -41,8 +41,8 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleToFill
         view.isHidden = false
-        view.setContentHuggingPriority(UILayoutPriority(750), for: .vertical)
-        view.setContentHuggingPriority(UILayoutPriority(750), for: .horizontal)
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return view
     }()
     lazy var button3: UIButton = {
@@ -58,8 +58,8 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.contentHorizontalAlignment = .right
         view.contentVerticalAlignment = .fill
         view.isEnabled = false
-        view.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .vertical)
-        view.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .horizontal)
+        view.setContentCompressionResistancePriority(.required, for: .vertical)
+        view.setContentCompressionResistancePriority(.required, for: .horizontal)
         view.setTitle("Button", for: .normal)
         return view
     }()

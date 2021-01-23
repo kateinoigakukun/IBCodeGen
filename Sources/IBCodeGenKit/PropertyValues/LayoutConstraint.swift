@@ -8,7 +8,7 @@
 import Foundation
 import IBDecodable
 
-struct LayoutAnchor {
+fileprivate struct LayoutAnchor {
     let item: String
     let attribute: Constraint.LayoutAttribute
 }
@@ -19,6 +19,57 @@ extension LayoutAnchor: SwiftValueRepresentable {
             ? String(attribute.caseName.dropLast("Margin".count))
             : attribute.caseName
         target.write("\(item).\(attributeString)Anchor")
+    }
+}
+
+struct LayoutPriority {
+    let value: Int
+}
+
+fileprivate extension Array where Element: Comparable, Element: AdditiveArithmetic {
+    func closest(for value: Element) -> Element? {
+        sorted().closestInSorted(for: value)
+    }
+    private func closestInSorted(for value: Element) -> Element? {
+        guard let greaterIndex = firstIndex(where: { $0 > value }) else {
+            return last
+        }
+        guard greaterIndex > startIndex else { return first }
+        guard greaterIndex < endIndex else { return last }
+        let lesserIndex = greaterIndex.advanced(by: -1)
+        if (self[greaterIndex] - value) < (value - self[lesserIndex]) {
+            return self[greaterIndex]
+        } else {
+            return self[lesserIndex]
+        }
+    }
+}
+
+extension LayoutPriority: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        // Refer: <UIKit/NSLayoutConstraint.h>
+        let staticPriorities = [
+            1000: "required",
+            750: "defaultHigh",
+            510: "dragThatCanResizeScene",
+            500: "sceneSizeStayPut",
+            490: "dragThatCannotResizeScene",
+            250: "defaultLow",
+            50: "fittingSizeLevel"
+        ]
+        if let closestPriority = Array(staticPriorities.keys).closest(for: value),
+           let staticCase = staticPriorities[closestPriority] {
+            let diff = value - closestPriority
+            if diff > 0 {
+                target.write(".\(staticCase) + \(diff)")
+            } else if diff < 0 {
+                target.write(".\(staticCase) - \(-diff)")
+            } else { // diff == 0
+                target.write(".\(staticCase)")
+            }
+        } else {
+            target.write("UILayoutPriority(\(value))")
+        }
     }
 }
 
@@ -109,7 +160,10 @@ extension Constraint {
             target.write("let constraint = ")
             writeAnchorRelation(target: &target, context: context, selfView: selfView)
             target.write("\n")
-            target.writeLine("constraint.priority = UILayoutPriority(\(priority))")
+            target.writeLine { line in
+                line.write("constraint.priority = ")
+                LayoutPriority(value: priority).writeValue(target: &line, context: context)
+            }
             target.writeLine("return constraint")
         }
         target.writeIndent()

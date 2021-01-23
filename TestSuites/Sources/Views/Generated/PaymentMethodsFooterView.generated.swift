@@ -60,7 +60,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
         NSLayoutConstraint.activate([
             {
                 let constraint = button1.heightAnchor.constraint(equalToConstant: 44.0)
-                constraint.priority = UILayoutPriority(750)
+                constraint.priority = .defaultHigh
                 return constraint
             }(),
         ])
