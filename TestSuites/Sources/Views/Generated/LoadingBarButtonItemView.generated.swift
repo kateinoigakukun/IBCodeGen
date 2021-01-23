@@ -3,7 +3,7 @@ import UIKit
 
 
 class LoadingBarButtonItemViewOwner: NSObject {
-    lazy var loadingBarButtonItemView3: LoadingBarButtonItemView = {
+    lazy var loadingBarButtonItemView0: LoadingBarButtonItemView = {
         let view = LoadingBarButtonItemView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -11,10 +11,10 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.isUserInteractionEnabled = false
         view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.contentMode = .scaleToFill
-        view.addSubview(view2)
+        view.addSubview(view1)
         return view
     }()
-    lazy var view2: UIView = {
+    lazy var view1: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -28,11 +28,11 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleToFill
         view.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
-        view.addSubview(activityIndicatorView1)
-        view.addSubview(button0)
+        view.addSubview(activityIndicatorView2)
+        view.addSubview(button3)
         return view
     }()
-    lazy var activityIndicatorView1: UIActivityIndicatorView = {
+    lazy var activityIndicatorView2: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 355.0, y: 323.5, width: 20.0, height: 20.0)
@@ -45,7 +45,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.setContentHuggingPriority(UILayoutPriority(750), for: .horizontal)
         return view
     }()
-    lazy var button0: UIButton = {
+    lazy var button3: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -65,26 +65,26 @@ class LoadingBarButtonItemViewOwner: NSObject {
     }()
     func activateConstraints() {
         NSLayoutConstraint.activate([
-            view2.topAnchor.constraint(equalTo: loadingBarButtonItemView3.topAnchor),
-            view2.leadingAnchor.constraint(equalTo: loadingBarButtonItemView3.leadingAnchor),
-            loadingBarButtonItemView3.bottomAnchor.constraint(equalTo: view2.bottomAnchor),
-            loadingBarButtonItemView3.trailingAnchor.constraint(equalTo: view2.trailingAnchor),
+            view1.topAnchor.constraint(equalTo: loadingBarButtonItemView0.topAnchor),
+            view1.leadingAnchor.constraint(equalTo: loadingBarButtonItemView0.leadingAnchor),
+            loadingBarButtonItemView0.bottomAnchor.constraint(equalTo: view1.bottomAnchor),
+            loadingBarButtonItemView0.trailingAnchor.constraint(equalTo: view1.trailingAnchor),
         ])
         NSLayoutConstraint.activate([
-            button0.topAnchor.constraint(equalTo: view2.topAnchor),
-            activityIndicatorView1.centerYAnchor.constraint(equalTo: button0.centerYAnchor),
-            button0.leadingAnchor.constraint(equalTo: view2.leadingAnchor),
-            button0.widthAnchor.constraint(equalTo: view2.widthAnchor),
-            view2.bottomAnchor.constraint(equalTo: button0.bottomAnchor),
-            view2.trailingAnchor.constraint(equalTo: button0.trailingAnchor),
-            view2.trailingAnchor.constraint(equalTo: activityIndicatorView1.trailingAnchor),
+            button3.topAnchor.constraint(equalTo: view1.topAnchor),
+            activityIndicatorView2.centerYAnchor.constraint(equalTo: button3.centerYAnchor),
+            button3.leadingAnchor.constraint(equalTo: view1.leadingAnchor),
+            button3.widthAnchor.constraint(equalTo: view1.widthAnchor),
+            view1.bottomAnchor.constraint(equalTo: button3.bottomAnchor),
+            view1.trailingAnchor.constraint(equalTo: button3.trailingAnchor),
+            view1.trailingAnchor.constraint(equalTo: activityIndicatorView2.trailingAnchor),
         ])
         NSLayoutConstraint.activate([
-            activityIndicatorView1.heightAnchor.constraint(equalToConstant: 20.0),
-            activityIndicatorView1.widthAnchor.constraint(equalToConstant: 20.0),
+            activityIndicatorView2.heightAnchor.constraint(equalToConstant: 20.0),
+            activityIndicatorView2.widthAnchor.constraint(equalToConstant: 20.0),
         ])
         NSLayoutConstraint.activate([
-            button0.widthAnchor.constraint(greaterThanOrEqualToConstant: 44.0),
+            button3.widthAnchor.constraint(greaterThanOrEqualToConstant: 44.0),
         ])
     }
     override init() {
@@ -92,6 +92,6 @@ class LoadingBarButtonItemViewOwner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return loadingBarButtonItemView3
+        return loadingBarButtonItemView0
     }
 }

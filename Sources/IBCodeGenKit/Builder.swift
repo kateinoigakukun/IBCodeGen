@@ -89,6 +89,7 @@ struct ViewHierarchy {
 
 struct ViewNamespace {
     struct Hint {
+        let index: Int
         var className: String
         var outlet: String?
     }
@@ -113,14 +114,14 @@ struct ViewNamespace {
 
     mutating func addHint(className: String, for id: String) {
         precondition(hintById[id] == nil)
-        hintById[id] = Hint(className: className, outlet: nil)
+        hintById[id] = Hint(index: hintById.count, className: className, outlet: nil)
     }
     mutating func addHint(outlet: String, for id: String) {
         precondition(hintById[id] != nil)
         hintById[id]?.outlet = outlet
     }
     mutating func resolve() {
-        for (id, hint) in hintById {
+        for (id, hint) in hintById.sorted(by: { $0.value.index < $1.value.index }) {
             resolved[id] = _makeIdentifier(from: hint)
         }
     }

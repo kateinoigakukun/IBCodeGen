@@ -3,7 +3,7 @@ import UIKit
 
 
 class DiscoveryProjectCategoryViewOwner: NSObject {
-    lazy var discoveryProjectCategoryView3: DiscoveryProjectCategoryView = {
+    lazy var discoveryProjectCategoryView0: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
@@ -26,7 +26,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.alignment = .center
         view.spacing = 5.0
         view.addArrangedSubview(imageView2)
-        view.addArrangedSubview(label0)
+        view.addArrangedSubview(label3)
         return view
     }()
     lazy var imageView2: UIImageView = {
@@ -41,7 +41,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.setContentHuggingPriority(UILayoutPriority(251), for: .horizontal)
         return view
     }()
-    lazy var label0: UILabel = {
+    lazy var label3: UILabel = {
         let view = UILabel()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.frame = CGRect(x: 25.0, y: 323.5, width: 350.0, height: 20.5)
@@ -80,13 +80,13 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     }()
     func activateConstraints() {
         NSLayoutConstraint.activate([
-            imageView4.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView3.trailingAnchor, constant: 5.0),
-            stackView1.topAnchor.constraint(equalTo: discoveryProjectCategoryView3.topAnchor),
-            stackView1.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView3.trailingAnchor),
-            stackView1.leadingAnchor.constraint(equalTo: discoveryProjectCategoryView3.leadingAnchor),
-            imageView4.topAnchor.constraint(equalTo: discoveryProjectCategoryView3.topAnchor),
-            stackView1.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView3.bottomAnchor),
-            imageView4.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView3.bottomAnchor),
+            imageView4.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView0.trailingAnchor, constant: 5.0),
+            stackView1.topAnchor.constraint(equalTo: discoveryProjectCategoryView0.topAnchor),
+            stackView1.trailingAnchor.constraint(equalTo: discoveryProjectCategoryView0.trailingAnchor),
+            stackView1.leadingAnchor.constraint(equalTo: discoveryProjectCategoryView0.leadingAnchor),
+            imageView4.topAnchor.constraint(equalTo: discoveryProjectCategoryView0.topAnchor),
+            stackView1.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView0.bottomAnchor),
+            imageView4.bottomAnchor.constraint(equalTo: discoveryProjectCategoryView0.bottomAnchor),
             {
                 let constraint = imageView4.leadingAnchor.constraint(equalTo: stackView1.trailingAnchor)
                 constraint.priority = UILayoutPriority(400)
@@ -110,6 +110,6 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         activateConstraints()
     }
     var contentView: UIView {
-        return discoveryProjectCategoryView3
+        return discoveryProjectCategoryView0
     }
 }
