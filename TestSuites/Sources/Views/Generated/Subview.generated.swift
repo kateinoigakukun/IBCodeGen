@@ -113,3 +113,7 @@ class SubviewOwner: NSObject {
         return view0
     }
 }
+
+func makeSubviewViews() -> [UIView] {
+    [SubviewOwner().contentView]
+}

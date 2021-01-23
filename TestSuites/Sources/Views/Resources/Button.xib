@@ -3,21 +3,214 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17504.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="4XD-Kl-gBe">
-            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Chs-Ut-qV0" userLabel="System with Plain Text - Empty">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-34.782608695652179" y="152.67857142857142"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VhR-3d-QKB" userLabel="System with Plain Text">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-34.782608695652179" y="210.9375"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="r1Q-mw-XWz" userLabel="System with Plain Text - Color">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="System with Plain Text">
+                <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <point key="canvasLocation" x="-34.782608695652179" y="270.53571428571428"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="76X-yJ-fo1" userLabel="System with Plain Text - Italic Font">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-34.782608695652179" y="326.78571428571428"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yVf-un-cHf" userLabel="System with Plain Text - Bold Font">
+            <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-31.884057971014496" y="381.69642857142856"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6nx-GC-s3f" userLabel="System with Plain Text - wC wC Variation">
+            <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+            <state key="normal" title="System with Plain Text"/>
+            <variation key="heightClass=compact-widthClass=compact">
+                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+            </variation>
+            <point key="canvasLocation" x="-32" y="433"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hxo-wv-kpq" userLabel="System with Plain Text - gS Variation">
+            <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+            <state key="normal" title="System with Plain Text"/>
+            <variation key="displayGamut=sRGB">
+                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+            </variation>
+            <point key="canvasLocation" x="-32" y="484"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bhv-xe-538" userLabel="System with Plain Text - iM Variation">
+            <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+            <state key="normal" title="System with Plain Text"/>
+            <variation key="userInterfaceIdiom=mac">
+                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+            </variation>
+            <point key="canvasLocation" x="-35" y="534"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Zf1-Y2-jMb" userLabel="System with Attributed Text - Empty">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="329.71014492753625" y="152.67857142857142"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="GUR-Xd-0uG">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <state key="normal">
                 <attributedString key="attributedTitle">
-                    <fragment content="Button">
+                    <fragment content="System with Attributed Text">
+                        <attributes>
+                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="329.71014492753625" y="210.9375"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="2qy-eJ-ezG" userLabel="System with Attributed Text - Color">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="System with Attributed Text">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="330" y="271"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="OLL-qA-i6G" userLabel="System with Attributed Text - Partial Color">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="System">
+                        <attributes>
+                            <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content=" with ">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content="Attributed">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content=" ">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content="Text">
+                        <attributes>
+                            <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="330" y="327"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="pJM-vb-bOF" userLabel="System with Attributed Text - Background Color">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="System with Attributed Text">
+                        <attributes>
+                            <color key="NSBackgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="330" y="382"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="0bE-DR-Zja" userLabel="System with Attributed Text - Image">
+            <rect key="frame" x="0.0" y="0.0" width="215" height="26"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" image="cloud.sun.rain" catalog="system">
+                <attributedString key="attributedTitle">
+                    <fragment content="System with Attributed Text">
+                        <attributes>
+                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="330" y="482"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="F1U-lG-xOU" userLabel="Detail Disclosure">
+            <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="869" y="153"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="mgF-vh-gru" userLabel="Custom with Attributed Text - Empty">
+            <rect key="frame" x="0.0" y="0.0" width="195" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle"/>
+            </state>
+            <state key="disabled" image="zzz" catalog="system"/>
+            <state key="selected">
+                <attributedString key="attributedTitle">
+                    <fragment content="Selected Button">
+                        <attributes>
+                            <font key="NSFont" metaFont="toolTip"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="1479" y="153"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="4XD-Kl-gBe" userLabel="Custom with Attributed Text">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="Custom with Attributed Text">
                         <attributes>
                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                         </attributes>
                     </fragment>
                 </attributedString>
@@ -33,27 +226,159 @@
                     </fragment>
                 </attributedString>
             </state>
-            <point key="canvasLocation" x="128.98550724637681" y="152.67857142857142"/>
+            <point key="canvasLocation" x="1480" y="213"/>
         </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="F1U-lG-xOU">
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Kqa-E4-QHQ" userLabel="Custom with Attributed Text - Color">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="Custom with Attributed Text">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="1480" y="273"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="o7l-m3-ayu" userLabel="Custom with Attributed Text - Partial Color">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="Custom">
+                        <attributes>
+                            <color key="NSColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content=" ">
+                        <attributes>
+                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content="with">
+                        <attributes>
+                            <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content=" ">
+                        <attributes>
+                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content="Attributed">
+                        <attributes>
+                            <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content=" ">
+                        <attributes>
+                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                    <fragment content="Text">
+                        <attributes>
+                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="1480" y="327"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="CDo-Sn-qqh" userLabel="Custom with Attributed Text - Background Color">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="Custom with Attributed Text">
+                        <attributes>
+                            <color key="NSBackgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <font key="NSFont" metaFont="system" size="15"/>
+                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="1480" y="382"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="kMg-mL-fWa" userLabel="Custom with Attributed Text - Font">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal">
+                <attributedString key="attributedTitle">
+                    <fragment content="Custom with Attributed Text">
+                        <attributes>
+                            <font key="NSFont" metaFont="system"/>
+                        </attributes>
+                    </fragment>
+                </attributedString>
+            </state>
+            <point key="canvasLocation" x="1480" y="433"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g1y-QS-igX" userLabel="Custom with Plain Text">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Custom with Plain Text"/>
+            <point key="canvasLocation" x="1832" y="211"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L7I-s8-2Hi" userLabel="Custom with Plain Text - Color">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Custom with Plain Text">
+                <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <point key="canvasLocation" x="1832" y="273"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oJ6-hY-rPw" userLabel="Custom with Plain Text - Empty">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="1832" y="151"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IJP-ud-8m0" userLabel="Info Light">
             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="273" y="155"/>
+            <point key="canvasLocation" x="640" y="151"/>
         </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g1y-QS-igX">
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="flj-fQ-luh" userLabel="Info Dark">
             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Custom"/>
-            <point key="canvasLocation" x="416.66666666666669" y="154.6875"/>
+            <point key="canvasLocation" x="1001" y="153"/>
         </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IJP-ud-8m0">
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="eLT-FC-Ynq" userLabel="Add Contact">
             <rect key="frame" x="0.0" y="0.0" width="25" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Button"/>
-            <point key="canvasLocation" x="418" y="155"/>
+            <point key="canvasLocation" x="751" y="151"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="de3-Y1-rDA" userLabel="System with State Texts">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Default Text"/>
+            <state key="disabled" title="Disabled Text"/>
+            <state key="selected" title="Selected Text"/>
+            <state key="highlighted" title="Highlighted Text"/>
+            <point key="canvasLocation" x="-39" y="660"/>
         </button>
     </objects>
     <resources>
+        <image name="cloud.sun.rain" catalog="system" width="128" height="125"/>
         <image name="zzz" catalog="system" width="121" height="128"/>
     </resources>
 </document>

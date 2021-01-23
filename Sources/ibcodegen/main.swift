@@ -20,7 +20,7 @@ struct IBCodeGenTool: ParsableCommand {
     func run() throws {
         let generator = IBCodeGenerator()
         var writer = ContentWriter()
-        try generator.generate(
+        _ = try generator.generate(
             from: input,
             target: &writer)
         try writer.content.write(to: output, atomically: true, encoding: .utf8)

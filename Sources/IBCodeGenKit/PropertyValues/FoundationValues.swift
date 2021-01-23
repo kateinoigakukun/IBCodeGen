@@ -10,7 +10,7 @@ import IBDecodable
 
 extension AttributedString: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
-        precondition(fragments == nil || fragments?.count == 1)
+//        precondition(fragments == nil || fragments?.count == 1)
         guard let fragment = fragments?.first else {
             target.write("NSAttributedString()")
             return

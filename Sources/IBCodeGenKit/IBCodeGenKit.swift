@@ -5,14 +5,17 @@ public class IBCodeGenerator {
     public init() {
     }
 
-    public func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws {
+    public struct GeneratedResult {
+        public var classNames: [String]
+    }
+    public func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws -> GeneratedResult {
         var output = GenericIndentTextOutputStream(downstream: target)
-        try generate(from: url, target: &output)
+        return try generate(from: url, target: &output)
     }
 
-    func generate<Target: IndentTextOutputStream>(from url: URL, target: inout Target) throws {
+    func generate<Target: IndentTextOutputStream>(from url: URL, target: inout Target) throws -> GeneratedResult {
         let xibFile = try XibFile(url: url)
-        guard let views = xibFile.document.views else { return }
+        guard let views = xibFile.document.views else { return GeneratedResult(classNames: []) }
         target.writeLine("import UIKit")
         var namespace = ViewClassNamespace(
             fileName: url.deletingPathExtension().lastPathComponent, viewCount: views.count)
@@ -22,6 +25,7 @@ public class IBCodeGenerator {
             namespace.setCustomClassName(forIndex: index, name: customClass)
         }
 
+        var result = GeneratedResult(classNames: [])
         for (index, view) in views.enumerated() {
             guard let element = view.view as? IBIdentifiable else { continue }
             var context = CodeGenContext(
@@ -29,15 +33,18 @@ public class IBCodeGenerator {
                 document: xibFile.document, namespace: ViewNamespace(),
                 hierarchy: ViewHierarchy(rootView: view.view)
             )
+            let className = namespace.makeIdentifier(forIndex: index) + "Owner"
             let builder = RootViewClass(
-                className: namespace.makeIdentifier(forIndex: index) + "Owner",
+                className: className,
                 id: element.id
             )
             _ = try codegen(from: view, rootView: builder, context: &context)
             target.writeLine("\n\n")
             context.namespace.resolve()
             builder.build(target: &target, context: &context)
+            result.classNames.append(className)
         }
+        return result
     }
 }
 

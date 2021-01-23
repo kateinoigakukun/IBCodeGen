@@ -2,6 +2,7 @@ import Foundation
 import XCTest
 
 @testable import IBCodeGenKit
+import IBDecodable
 
 final class IBCodeGenKitTests: XCTestCase {
     static let projectPath = URL(fileURLWithPath: #filePath)
@@ -40,10 +41,17 @@ final class IBCodeGenKitTests: XCTestCase {
             if !fileManager.fileExists(atPath: path.path) {
                 fileManager.createFile(atPath: path.path, contents: nil, attributes: nil)
             }
+            let xibPath = targetPath.appendingPathComponent("Resources/\(fileName).xib")
             var writer = ContentWriter()
-            try generator.generate(
-                from: targetPath.appendingPathComponent("Resources/\(fileName).xib"),
-                target: &writer)
+            let result = try generator.generate(from: xibPath, target: &writer)
+            let views = "[" + result.classNames.map { "\($0)().contentView" }.joined(separator: ", ") + "]"
+            writer.write("""
+
+            func make\(fileName)Views() -> [UIView] {
+                \(views)
+            }
+
+            """)
             try writer.content.write(to: path, atomically: true, encoding: .utf8)
         }
         try Process.exec(

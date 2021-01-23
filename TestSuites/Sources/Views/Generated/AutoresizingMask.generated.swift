@@ -108,3 +108,7 @@ class AutoresizingMask_2Owner: NSObject {
         return view0
     }
 }
+
+func makeAutoresizingMaskViews() -> [UIView] {
+    [AutoresizingMask_0Owner().contentView, AutoresizingMask_1Owner().contentView, AutoresizingMask_2Owner().contentView]
+}

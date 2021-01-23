@@ -109,3 +109,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         return discoveryProjectCategoryView0
     }
 }
+
+func makeDiscoveryProjectCategoryViewViews() -> [UIView] {
+    [DiscoveryProjectCategoryViewOwner().contentView]
+}
