@@ -3,6 +3,7 @@ import UIKit
 
 
 class LoadingBarButtonItemViewOwner: NSObject {
+    /// Generated from 'iN0-l3-epB'
     lazy var loadingBarButtonItemView0: LoadingBarButtonItemView = {
         let view = LoadingBarButtonItemView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -14,6 +15,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.addSubview(view1)
         return view
     }()
+    /// Generated from 'tcZ-2l-zCg'
     lazy var view1: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -32,6 +34,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.addSubview(button3)
         return view
     }()
+    /// Generated from 'WeI-gS-cT0'
     lazy var activityIndicatorView2: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -45,6 +48,7 @@ class LoadingBarButtonItemViewOwner: NSObject {
         view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return view
     }()
+    /// Generated from 'z8e-UA-Yn2'
     lazy var button3: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

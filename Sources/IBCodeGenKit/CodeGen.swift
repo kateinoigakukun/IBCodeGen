@@ -50,7 +50,11 @@ func codegen(from anyView: AnyView, rootView: RootViewClass,
         throw Error.unsupportedView(anyView.view)
     }
     context.namespace.addHint(className: className, for: view.id)
-    let builder = rootView.makeSubview(id: view.id, className: className, elementClass: anyView.view.elementClass)
+    let builder = rootView.makeSubview(
+        id: view.id, className: className,
+        elementClass: anyView.view.elementClass,
+        userLabel: anyView.view.userLabel
+    )
 
     try anyView.codegen(builder: builder, rootView: rootView)
 

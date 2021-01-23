@@ -3,6 +3,7 @@ import UIKit
 
 
 class AutoresizingMask_0Owner: NSObject {
+    /// Generated from 'dsf-Di-YJM'
     lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -32,6 +33,7 @@ class AutoresizingMask_0Owner: NSObject {
 
 
 class AutoresizingMask_1Owner: NSObject {
+    /// Generated from 'FVP-Xe-00x'
     lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
@@ -61,6 +63,7 @@ class AutoresizingMask_1Owner: NSObject {
 
 
 class AutoresizingMask_2Owner: NSObject {
+    /// Generated from 'Sy1-3i-uGc'
     lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
@@ -83,6 +86,7 @@ class AutoresizingMask_2Owner: NSObject {
         view.addSubview(view1)
         return view
     }()
+    /// Generated from 'aoR-ox-Ktu'
     lazy var view1: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

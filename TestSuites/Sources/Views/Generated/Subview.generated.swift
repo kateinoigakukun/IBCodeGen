@@ -3,6 +3,7 @@ import UIKit
 
 
 class SubviewOwner: NSObject {
+    /// Generated from 'iN0-l3-epB'
     lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -20,6 +21,7 @@ class SubviewOwner: NSObject {
         view.addSubview(view1)
         return view
     }()
+    /// Generated from '0Nc-s8-VTj'
     lazy var view1: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -38,6 +40,7 @@ class SubviewOwner: NSObject {
         view.addSubview(view2)
         return view
     }()
+    /// Generated from 'CS1-Qk-Vmy'
     lazy var view2: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -56,6 +59,7 @@ class SubviewOwner: NSObject {
         view.addSubview(view3)
         return view
     }()
+    /// Generated from 'xTZ-SP-w9T'
     lazy var view3: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -75,6 +79,7 @@ class SubviewOwner: NSObject {
         view.addSubview(view5)
         return view
     }()
+    /// Generated from '0zC-WS-O2V'
     lazy var view4: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -92,6 +97,7 @@ class SubviewOwner: NSObject {
         view.contentMode = .scaleToFill
         return view
     }()
+    /// Generated from 'd7r-AA-zCd'
     lazy var view5: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

@@ -25,8 +25,8 @@ class RootViewClass {
         self.id = id
     }
 
-    func makeSubview(id: String, className: String, elementClass: String) -> ViewElement {
-        let subview = ViewElement(id: id, className: className, elementClass: elementClass)
+    func makeSubview(id: String, className: String, elementClass: String, userLabel: String?) -> ViewElement {
+        let subview = ViewElement(id: id, className: className, elementClass: elementClass, userLabel: userLabel)
         subviews.append(subview)
         return subview
     }
@@ -157,6 +157,7 @@ class ViewElement: ViewCodeBuilder {
     let id: String
     let className: String
     let elementClass: String
+    let userLabel: String?
     var shouldWriteConstraintsActivation: Bool { !constraints.isEmpty }
     private var properties: [(name: String, value: SwiftValueRepresentable)] = []
     private var methodCalls: [(method: String, arguments: [Argument])] = []
@@ -164,10 +165,11 @@ class ViewElement: ViewCodeBuilder {
     private var subviews: [ViewElement] = []
     private var constraints: [Constraint] = []
 
-    init(id: String, className: String, elementClass: String) {
+    init(id: String, className: String, elementClass: String, userLabel: String?) {
         self.id = id
         self.className = className
         self.elementClass = elementClass
+        self.userLabel = userLabel
     }
 
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
@@ -195,6 +197,12 @@ class ViewElement: ViewCodeBuilder {
         target: inout Target, context: inout CodeGenContext
     ) {
         let fieldIdentifier = context.namespace.getIdentifier(id: id)
+        target.writeLine { line in
+            line.write("/// Generated from '\(id)'")
+            if let userLabel = userLabel {
+                line.write(": \"\(userLabel)\"")
+            }
+        }
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
         target.indented {
 

@@ -3,6 +3,7 @@ import UIKit
 
 
 class PaymentMethodsFooterViewOwner: NSObject {
+    /// Generated from 'iN0-l3-epB'
     lazy var paymentMethodsFooterView0: PaymentMethodsFooterView = {
         let view = PaymentMethodsFooterView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -14,6 +15,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
         view.addSubview(view2)
         return view
     }()
+    /// Generated from 'ZVF-Hv-L8e'
     lazy var button1: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -29,6 +31,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
         view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
         return view
     }()
+    /// Generated from 'SB4-Lk-Ajb'
     lazy var view2: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

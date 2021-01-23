@@ -3,6 +3,7 @@ import UIKit
 
 
 class SimpleViewOwner: NSObject {
+    /// Generated from 'iN0-l3-epB'
     lazy var view0: UIView = {
         let view = UIView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

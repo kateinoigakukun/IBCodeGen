@@ -3,6 +3,7 @@ import UIKit
 
 
 class DiscoveryProjectCategoryViewOwner: NSObject {
+    /// Generated from 'iN0-l3-epB'
     lazy var discoveryProjectCategoryView0: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -13,6 +14,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.addSubview(imageView4)
         return view
     }()
+    /// Generated from 'NgN-c7-cxN': "Category Stack View"
     lazy var stackView1: UIStackView = {
         let view = UIStackView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -29,6 +31,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.addArrangedSubview(label3)
         return view
     }()
+    /// Generated from 'DCy-vT-LTC'
     lazy var imageView2: UIImageView = {
         let view = UIImageView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -41,6 +44,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return view
     }()
+    /// Generated from 'TRu-fJ-hBL'
     lazy var label3: UILabel = {
         let view = UILabel()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -63,6 +67,7 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return view
     }()
+    /// Generated from 'QQz-Fr-vLT'
     lazy var imageView4: UIImageView = {
         let view = UIImageView()
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
