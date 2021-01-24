@@ -68,6 +68,13 @@ extension Button: CodeGenTargetView {
             if let state = state, !state.isEmpty {
                 b.bind(\.fontDescription, default: FontDescription.default, name: "titleLabel?.font")
                 b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: LineBreakMode.init)
+            } else {
+                // when no state title
+                builder.addProperty("titleLabel?.font", value: FontDescription.default)
+                builder.addMethodCall("setTitleColor", arguments: [
+                    (label: nil, value: RawValueString("UIColor.white")),
+                    (label: "for", value: EnumCase("normal"))
+                ])
             }
         } else {
             // Default configuration for system buttons

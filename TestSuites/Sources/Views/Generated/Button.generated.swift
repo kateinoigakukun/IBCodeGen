@@ -737,6 +737,8 @@ class Button_26Owner: NSObject {
         view.contentMode = .scaleToFill
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
