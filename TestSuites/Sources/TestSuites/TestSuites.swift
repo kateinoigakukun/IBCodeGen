@@ -99,3 +99,15 @@ extension PaymentMethodsFooterView: CustomNSObjectReflectable {
         ["addCardButton", "separatorView"]
     }
 }
+
+extension NSAttributedString: CustomNSObjectReflectable {
+    var reflectionDescription: String {
+        // Workaround: NSAttributedString may have difference in NSParagraphStyle
+        // but they don't have effect on iOS, so ignore them.
+        return String(describing: self)
+            .replacingOccurrences(of: "Blocks (null), ", with: "")
+            .replacingOccurrences(of: "Lists (null), ", with: "")
+            .replacingOccurrences(of: "Blocks (\\n), ", with: "")
+            .replacingOccurrences(of: "Lists (\\n), ", with: "")
+    }
+}

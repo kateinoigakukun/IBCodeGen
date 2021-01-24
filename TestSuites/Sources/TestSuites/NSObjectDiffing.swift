@@ -12,11 +12,13 @@ import UIKit
 protocol CustomNSObjectReflectable {
     var extraReflectionProperties: [String] { get }
     var ignoringReflectionProperties: [String] { get }
+    var reflectionDescription: String { get }
 }
 
 extension CustomNSObjectReflectable {
     var extraReflectionProperties: [String] { [] }
     var ignoringReflectionProperties: [String] { [] }
+    var reflectionDescription: String { String(describing: self) }
 }
 
 class NSObjectMirror {
@@ -169,10 +171,16 @@ extension NSObjectMirror.Value {
             \(parentIndent)}
             """
         case .object(let object):
-            return purgePointers(String(describing: object))
+            if let object = object.object as? CustomNSObjectReflectable {
+                return purgePointers(object.reflectionDescription)
+            }
+            return purgePointers(String(describing: object.object))
         case .valueObject(let bool as Bool):
             return bool.description
         case .valueObject(let value):
+            if let value = value as? CustomNSObjectReflectable {
+                return purgePointers(value.reflectionDescription)
+            }
             return purgePointers(String(describing: value))
         case .array(let array):
             return """
