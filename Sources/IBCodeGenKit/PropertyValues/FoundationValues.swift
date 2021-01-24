@@ -52,7 +52,7 @@ extension AttributedString.Fragment: SwiftValueRepresentable {
             target.write(")")
             return
         }
-        let attributesEntries = attributes.map { attr -> DictionaryValue.Entry in
+        let attributesEntries = attributes.compactMap { attr -> DictionaryValue.Entry? in
             switch attr.attribute {
             case let font as Font:
                 return (key: EnumCase("font"), value: font)

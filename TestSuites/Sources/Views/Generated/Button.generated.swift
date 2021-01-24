@@ -454,13 +454,7 @@ class Button_19Owner: NSObject {
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .foregroundColor: UIColor.init(white: 1.0, alpha: 1.0),
             .font: UIFont.systemFont(ofSize: 15),
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                style.lineBreakMode = .byWordWrapping
-                style.baseWritingDirection = .natural
-                return style
-            }()
+            .paragraphStyle: NSParagraphStyle()
         ]), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         return view
@@ -489,13 +483,7 @@ class Button_20Owner: NSObject {
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .foregroundColor: UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0),
             .font: UIFont.systemFont(ofSize: 15),
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                style.lineBreakMode = .byWordWrapping
-                style.baseWritingDirection = .natural
-                return style
-            }()
+            .paragraphStyle: NSParagraphStyle()
         ]), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         return view
@@ -526,79 +514,37 @@ class Button_21Owner: NSObject {
             string.append(NSAttributedString(string: "Custom", attributes: [
                 .foregroundColor: UIColor(red: 0.57919407, green: 0.12801445, blue: 0.57268614, alpha: 1.0),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: " ", attributes: [
                 .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: "with", attributes: [
                 .foregroundColor: UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: " ", attributes: [
                 .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: "Attributed", attributes: [
                 .foregroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: " ", attributes: [
                 .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             string.append(NSAttributedString(string: "Text", attributes: [
                 .foregroundColor: UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0),
                 .font: UIFont.systemFont(ofSize: 15),
-                .paragraphStyle: {
-                    let style = NSMutableParagraphStyle()
-                    style.alignment = .natural
-                    style.lineBreakMode = .byWordWrapping
-                    style.baseWritingDirection = .natural
-                    return style
-                }()
+                .paragraphStyle: NSParagraphStyle()
             ]))
             return string
         }(), for: .normal)
@@ -630,13 +576,7 @@ class Button_22Owner: NSObject {
             .backgroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0),
             .foregroundColor: UIColor(red: 0.999996, green: 1.0, blue: 1.0, alpha: 1.0),
             .font: UIFont.systemFont(ofSize: 15),
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                style.lineBreakMode = .byWordWrapping
-                style.baseWritingDirection = .natural
-                return style
-            }()
+            .paragraphStyle: NSParagraphStyle()
         ]), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         return view

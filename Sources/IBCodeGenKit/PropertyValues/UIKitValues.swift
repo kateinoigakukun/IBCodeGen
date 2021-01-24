@@ -57,29 +57,57 @@ extension Font: SwiftValueRepresentable {
 }
 
 extension ParagraphStyle: SwiftValueRepresentable {
+    var isDefaultValue: Bool {
+        if let alignment = alignment, alignment != "natural" {
+            return false
+        }
+        if let lineBreakMode = lineBreakMode.map(LineBreakMode.init),
+           lineBreakMode != .wordWrapping
+        {
+            return false
+        }
+        if let baseWritingDirection = baseWritingDirection, baseWritingDirection != "natural" {
+            return false
+        }
+        if let allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation,
+           allowsDefaultTighteningForTruncation // default is false
+        {
+            return false
+        }
+        return true
+    }
+
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+        if isDefaultValue {
+            target.write("NSParagraphStyle()")
+            return
+        }
         target.write("{\n")
         target.indented { (target) in
             target.writeLine("let style = NSMutableParagraphStyle()")
-            if let alignment = alignment {
+            if let alignment = alignment, alignment != "natural" {
                 target.writeLine { line in
                     line.write("style.alignment = ")
                     EnumCase(alignment).writeValue(target: &line, context: context)
                 }
             }
-            if let lineBreakMode = lineBreakMode {
+            if let lineBreakMode = lineBreakMode.map(LineBreakMode.init),
+               lineBreakMode != .wordWrapping
+            {
                 target.writeLine { line in
                     line.write("style.lineBreakMode = ")
-                    LineBreakMode(lineBreakMode).writeValue(target: &line, context: context)
+                    lineBreakMode.writeValue(target: &line, context: context)
                 }
             }
-            if let baseWritingDirection = baseWritingDirection {
+            if let baseWritingDirection = baseWritingDirection, baseWritingDirection != "natural" {
                 target.writeLine { line in
                     line.write("style.baseWritingDirection = ")
                     EnumCase(baseWritingDirection).writeValue(target: &line, context: context)
                 }
             }
-            if let allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation {
+            if let allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation,
+               allowsDefaultTighteningForTruncation // default is false
+            {
                 target.writeLine { line in
                     line.write("style.allowsDefaultTighteningForTruncation = ")
                     allowsDefaultTighteningForTruncation.writeValue(target: &line, context: context)
