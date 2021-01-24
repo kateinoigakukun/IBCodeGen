@@ -6,7 +6,10 @@ class PaymentMethodsFooterViewOwner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var paymentMethodsFooterView0: PaymentMethodsFooterView = {
         let view = PaymentMethodsFooterView()
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.isOpaque = true
+        view.isHidden = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.contentMode = .scaleToFill
         view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -19,10 +22,8 @@ class PaymentMethodsFooterViewOwner: NSObject {
     lazy var button1: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
-        view.contentMode = .scaleToFill
         view.contentHorizontalAlignment = .left
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -34,9 +35,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
     lazy var view2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
         view.frame = CGRect(x: 0.0, y: 43.5, width: 375.0, height: 0.5)
-        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemRed

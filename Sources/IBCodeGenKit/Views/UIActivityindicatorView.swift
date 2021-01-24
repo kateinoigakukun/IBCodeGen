@@ -9,7 +9,8 @@ import IBDecodable
 
 extension ActivityindicatorView: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
-        builder.addProperty("isHidden", value: false)
+        let b = ViewBinder(view: self, builder: builder)
+        b.bind(\.isHidden, default: false, name: "isHidden")
         if let style = style {
             builder.setInit(arguments: [(label: "style", value: EnumCase(style))])
         }

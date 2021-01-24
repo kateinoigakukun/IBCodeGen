@@ -287,6 +287,8 @@ struct ViewBinder<V> {
     ) where V1: Equatable {
         if let value = view[keyPath: keyPath], !(assumeClassDefault && value == classDefault) {
             builder.addProperty(name, value: transform(value))
+        } else if view[keyPath: keyPath] == nil && !assumeClassDefault {
+            builder.addProperty(name, value: transform(classDefault))
         }
     }
     func bindIfPresent<Value: SwiftValueRepresentable>(

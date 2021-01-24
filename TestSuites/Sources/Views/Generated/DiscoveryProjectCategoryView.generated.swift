@@ -6,7 +6,10 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var discoveryProjectCategoryView0: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.isOpaque = true
+        view.isHidden = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.contentMode = .scaleToFill
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -19,10 +22,8 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = true
         view.spacing = 5.0
-        view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
-        view.contentMode = .scaleToFill
         view.axis = .horizontal
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.alignment = .center
@@ -68,6 +69,8 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.isOpaque = true
+        view.isHidden = false
         view.frame = CGRect(x: 375.0, y: 0.0, width: 5.0, height: 667.0)
         view.contentMode = .scaleAspectFill
         view.backgroundColor = {

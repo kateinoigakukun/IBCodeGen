@@ -16,16 +16,16 @@ extension AnyView: CodeGenTargetView {
 
     func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
         let b = ViewBinder(view: self.view, builder: builder,
-                           assumeClassDefault: view.customClass != nil)
+                           assumeClassDefault: view.customClass == nil)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
         b.bindIfPresent(\.rect, name: "frame")
-        builder.addProperty("isUserInteractionEnabled", value: true)
-        b.bindIfPresent(\.userInteractionEnabled, name: "isUserInteractionEnabled")
-        b.bindIfPresent(\.isHidden, name: "isHidden")
-        b.bindIfPresent(\.opaque, name: "isOpaque")
+        b.bindIfPresent(\.userInteractionEnabled, classDefault: true, name: "isUserInteractionEnabled")
+        b.bindIfPresent(\.isHidden, classDefault: false, name: "isHidden")
+        b.bindIfPresent(\.opaque, classDefault: true, name: "isOpaque")
         b.bindIfPresent(\.backgroundColor, name: "backgroundColor")
         b.bindIfPresent(\.tintColor, name: "tintColor")
-        b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, name: "translatesAutoresizingMaskIntoConstraints")
+        b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, classDefault: true,
+                        name: "translatesAutoresizingMaskIntoConstraints")
 
         let shouldOverwriteTAMIC: Bool = {
             if view.constraints == nil { return true }
@@ -34,13 +34,12 @@ extension AnyView: CodeGenTargetView {
             }
             return false
         }()
-        if shouldOverwriteTAMIC {
+        if shouldOverwriteTAMIC && view.translatesAutoresizingMaskIntoConstraints == false {
             builder.addProperty("translatesAutoresizingMaskIntoConstraints", value: true)
         }
 
-        b.bindIfPresent(\.contentMode, name: "contentMode") {
-            EnumCase($0)
-        }
+        b.bindIfPresent(\.contentMode, classDefault: "scaleToFill",
+                        name: "contentMode", transform: EnumCase.init)
 
         if let priority = view.verticalHuggingPriority {
             builder.addMethodCall("setContentHuggingPriority", arguments: [
