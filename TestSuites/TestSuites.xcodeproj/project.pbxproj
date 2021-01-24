@@ -29,6 +29,7 @@
 		BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */; };
 		CAF53EC7452989D08064D809 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FA7E4A3AC54E57BE50F83 /* dummy.m */; };
 		CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CCD7E34506B14D21A1349 /* SupportingClass.swift */; };
+		CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C8494713D3DE7166F819C8 /* ImageView.xib */; };
 		DC8EF0CE1CDA679C73F25B42 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
@@ -80,6 +81,7 @@
 		7C9013594B3A913121A3CE5C /* DiscoveryProjectCategoryView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryProjectCategoryView.generated.swift; sourceTree = "<group>"; };
 		820CA87A54A2849C632D0B8E /* PrivateUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivateUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsFooterView.xib; sourceTree = "<group>"; };
+		88C8494713D3DE7166F819C8 /* ImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageView.xib; sourceTree = "<group>"; };
 		8A7DB799E7BA5EABB66845CE /* AutoresizingMask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoresizingMask.xib; sourceTree = "<group>"; };
 		95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryProjectCategoryView.xib; sourceTree = "<group>"; };
 		9893294A8C63D3D69D8DD15D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				8A7DB799E7BA5EABB66845CE /* AutoresizingMask.xib */,
 				7BA7ED601BC3F82860153969 /* Button.xib */,
 				95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */,
+				88C8494713D3DE7166F819C8 /* ImageView.xib */,
 				351FBF19842129D41592F8A5 /* Label.xib */,
 				D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */,
 				85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */,
@@ -305,6 +308,7 @@
 				8C1D7A0AC04C23D898FD2F21 /* AutoresizingMask.xib in Resources */,
 				BBD5D56D4B9FC755D3C88B9B /* Button.xib in Resources */,
 				1BF39D75343AD0D1CEA3A0A8 /* DiscoveryProjectCategoryView.xib in Resources */,
+				CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */,
 				8A3C4913573BAEE5BA729E4B /* Label.xib in Resources */,
 				2344299BBA3CB5303087F5CB /* LoadingBarButtonItemView.xib in Resources */,
 				4DE6F3CD904C75FC4E439F73 /* Media.xcassets in Resources */,
