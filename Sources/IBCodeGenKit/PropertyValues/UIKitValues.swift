@@ -67,6 +67,24 @@ extension ParagraphStyle: SwiftValueRepresentable {
                     EnumCase(alignment).writeValue(target: &line, context: context)
                 }
             }
+            if let lineBreakMode = lineBreakMode {
+                target.writeLine { line in
+                    line.write("style.lineBreakMode = ")
+                    LineBreakMode(lineBreakMode).writeValue(target: &line, context: context)
+                }
+            }
+            if let baseWritingDirection = baseWritingDirection {
+                target.writeLine { line in
+                    line.write("style.baseWritingDirection = ")
+                    EnumCase(baseWritingDirection).writeValue(target: &line, context: context)
+                }
+            }
+            if let allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation {
+                target.writeLine { line in
+                    line.write("style.allowsDefaultTighteningForTruncation = ")
+                    allowsDefaultTighteningForTruncation.writeValue(target: &line, context: context)
+                }
+            }
             target.writeLine("return style")
         }
         target.writeIndent()
@@ -190,6 +208,7 @@ enum LineBreakMode: String {
     case headTruncation
     case tailTruncation
     case middleTruncation
+    case wordWrapping
 
     init(_ rawValue: String) {
         self.init(rawValue: rawValue)!
@@ -205,6 +224,8 @@ extension LineBreakMode: SwiftValueRepresentable {
             target.write(".byTruncatingTail")
         case .middleTruncation:
             target.write(".byTruncatingMiddle")
+        case .wordWrapping:
+            target.write(".byWordWrapping")
         }
     }
 }

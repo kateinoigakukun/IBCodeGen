@@ -428,23 +428,6 @@ class Button_18Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setTitleColor(UIColor.white, for: .normal)
-        view.setImage({
-            if #available(iOS 13.0, *) {
-                return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
-            } else {
-                return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
-            }
-        }(), for: .disabled)
-        view.setTitleColor(UIColor.white, for: .disabled)
-        view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
-            .font: UIFont.systemFont(ofSize: 11),
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                return style
-            }()
-        ]), for: .selected)
-        view.setTitleColor(UIColor.white, for: .selected)
         return view
     }()
     var contentView: UIView {
@@ -474,27 +457,12 @@ class Button_19Owner: NSObject {
             .paragraphStyle: {
                 let style = NSMutableParagraphStyle()
                 style.alignment = .natural
+                style.lineBreakMode = .byWordWrapping
+                style.baseWritingDirection = .natural
                 return style
             }()
         ]), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
-        view.setImage({
-            if #available(iOS 13.0, *) {
-                return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
-            } else {
-                return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
-            }
-        }(), for: .disabled)
-        view.setTitleColor(UIColor.white, for: .disabled)
-        view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
-            .font: UIFont.systemFont(ofSize: 11),
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                return style
-            }()
-        ]), for: .selected)
-        view.setTitleColor(UIColor.white, for: .selected)
         return view
     }()
     var contentView: UIView {
@@ -524,6 +492,8 @@ class Button_20Owner: NSObject {
             .paragraphStyle: {
                 let style = NSMutableParagraphStyle()
                 style.alignment = .natural
+                style.lineBreakMode = .byWordWrapping
+                style.baseWritingDirection = .natural
                 return style
             }()
         ]), for: .normal)
@@ -559,6 +529,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -568,6 +540,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -577,6 +551,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -586,6 +562,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -595,6 +573,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -604,6 +584,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -613,6 +595,8 @@ class Button_21Owner: NSObject {
                 .paragraphStyle: {
                     let style = NSMutableParagraphStyle()
                     style.alignment = .natural
+                    style.lineBreakMode = .byWordWrapping
+                    style.baseWritingDirection = .natural
                     return style
                 }()
             ]))
@@ -649,6 +633,8 @@ class Button_22Owner: NSObject {
             .paragraphStyle: {
                 let style = NSMutableParagraphStyle()
                 style.alignment = .natural
+                style.lineBreakMode = .byWordWrapping
+                style.baseWritingDirection = .natural
                 return style
             }()
         ]), for: .normal)

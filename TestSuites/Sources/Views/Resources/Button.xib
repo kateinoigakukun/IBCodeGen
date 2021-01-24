@@ -211,17 +211,6 @@
             <state key="normal">
                 <attributedString key="attributedTitle"/>
             </state>
-            <state key="disabled" image="zzz" catalog="system"/>
-            <state key="selected">
-                <attributedString key="attributedTitle">
-                    <fragment content="Selected Button">
-                        <attributes>
-                            <font key="NSFont" metaFont="toolTip"/>
-                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                        </attributes>
-                    </fragment>
-                </attributedString>
-            </state>
             <point key="canvasLocation" x="1479" y="153"/>
         </button>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="4XD-Kl-gBe" userLabel="Custom with Attributed Text">
@@ -233,17 +222,6 @@
                         <attributes>
                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <font key="NSFont" metaFont="system" size="15"/>
-                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                        </attributes>
-                    </fragment>
-                </attributedString>
-            </state>
-            <state key="disabled" image="zzz" catalog="system"/>
-            <state key="selected">
-                <attributedString key="attributedTitle">
-                    <fragment content="Selected Button">
-                        <attributes>
-                            <font key="NSFont" metaFont="toolTip"/>
                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                         </attributes>
                     </fragment>
