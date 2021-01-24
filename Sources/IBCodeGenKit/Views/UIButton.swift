@@ -65,7 +65,7 @@ extension Button: CodeGenTargetView {
             }
         } else {
             // Default configuration for system buttons
-
+            b.bindIfPresent(\.fontDescription, name: "titleLabel?.font")
             // Set default configuration for no title
             if state?.isEmpty ?? true {
                 builder.addMethodCall("setTitleColor", arguments: [

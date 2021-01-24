@@ -160,8 +160,7 @@ extension FontDescription: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
         switch self {
         case .system((_, let type, .none, let pointSize)):
-            assert(type == "system")
-            target.write("UIFont.systemFont(ofSize: \(pointSize))")
+            target.write("UIFont.\(type)Font(ofSize: \(pointSize))")
         case .system((_, _, .some(let weight), let pointSize)):
             target.write("UIFont.systemFont(ofSize: \(pointSize), weight: .\(weight))")
         case .custom((_, _, let family, let pointSize)):

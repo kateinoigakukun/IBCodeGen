@@ -127,6 +127,31 @@ class Button_4Owner: NSObject {
 
 
 class Button_5Owner: NSObject {
+    /// Generated from 'uT7-DE-AuV': "System with Plain Text - Font and Empty Text"
+    lazy var button0: UIButton = {
+        let view = UIButton(type: .system)
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
+        view.isUserInteractionEnabled = true
+        view.isOpaque = false
+        view.translatesAutoresizingMaskIntoConstraints = true
+        view.contentMode = .scaleToFill
+        view.adjustsImageWhenDisabled = true
+        view.adjustsImageWhenHighlighted = true
+        view.contentHorizontalAlignment = .center
+        view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.italicSystemFont(ofSize: 15.0)
+        view.setTitleColor(.systemBlue, for: .normal)
+        return view
+    }()
+    var contentView: UIView {
+        return button0
+    }
+}
+
+
+
+class Button_6Owner: NSObject {
     /// Generated from '76X-yJ-fo1': "System with Plain Text - Italic Font"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -140,6 +165,7 @@ class Button_5Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.italicSystemFont(ofSize: 15.0)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()
@@ -150,7 +176,7 @@ class Button_5Owner: NSObject {
 
 
 
-class Button_6Owner: NSObject {
+class Button_7Owner: NSObject {
     /// Generated from 'yVf-un-cHf': "System with Plain Text - Bold Font"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -164,6 +190,7 @@ class Button_6Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()
@@ -174,7 +201,7 @@ class Button_6Owner: NSObject {
 
 
 
-class Button_7Owner: NSObject {
+class Button_8Owner: NSObject {
     /// Generated from '6nx-GC-s3f': "System with Plain Text - wC wC Variation"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -188,6 +215,7 @@ class Button_7Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()
@@ -198,7 +226,7 @@ class Button_7Owner: NSObject {
 
 
 
-class Button_8Owner: NSObject {
+class Button_9Owner: NSObject {
     /// Generated from 'hxo-wv-kpq': "System with Plain Text - gS Variation"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -212,6 +240,7 @@ class Button_8Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()
@@ -222,7 +251,7 @@ class Button_8Owner: NSObject {
 
 
 
-class Button_9Owner: NSObject {
+class Button_10Owner: NSObject {
     /// Generated from 'bhv-xe-538': "System with Plain Text - iM Variation"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -236,6 +265,7 @@ class Button_9Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()
@@ -246,7 +276,7 @@ class Button_9Owner: NSObject {
 
 
 
-class Button_10Owner: NSObject {
+class Button_11Owner: NSObject {
     /// Generated from 'Zf1-Y2-jMb': "System with Attributed Text - Empty"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -270,7 +300,7 @@ class Button_10Owner: NSObject {
 
 
 
-class Button_11Owner: NSObject {
+class Button_12Owner: NSObject {
     /// Generated from 'GUR-Xd-0uG'
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -296,7 +326,7 @@ class Button_11Owner: NSObject {
 
 
 
-class Button_12Owner: NSObject {
+class Button_13Owner: NSObject {
     /// Generated from '2qy-eJ-ezG': "System with Attributed Text - Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -323,7 +353,7 @@ class Button_12Owner: NSObject {
 
 
 
-class Button_13Owner: NSObject {
+class Button_14Owner: NSObject {
     /// Generated from 'OLL-qA-i6G': "System with Attributed Text - Partial Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -350,7 +380,7 @@ class Button_13Owner: NSObject {
 
 
 
-class Button_14Owner: NSObject {
+class Button_15Owner: NSObject {
     /// Generated from 'pJM-vb-bOF': "System with Attributed Text - Background Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -378,7 +408,7 @@ class Button_14Owner: NSObject {
 
 
 
-class Button_15Owner: NSObject {
+class Button_16Owner: NSObject {
     /// Generated from '0bE-DR-Zja': "System with Attributed Text - Image"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -405,7 +435,7 @@ class Button_15Owner: NSObject {
 
 
 
-class Button_16Owner: NSObject {
+class Button_17Owner: NSObject {
     /// Generated from 'F1U-lG-xOU': "Detail Disclosure"
     lazy var button0: UIButton = {
         let view = UIButton(type: .detailDisclosure)
@@ -429,7 +459,7 @@ class Button_16Owner: NSObject {
 
 
 
-class Button_17Owner: NSObject {
+class Button_18Owner: NSObject {
     /// Generated from 'mgF-vh-gru': "Custom with Attributed Text - Empty"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -462,7 +492,7 @@ class Button_17Owner: NSObject {
 
 
 
-class Button_18Owner: NSObject {
+class Button_19Owner: NSObject {
     /// Generated from '4XD-Kl-gBe': "Custom with Attributed Text"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -503,7 +533,7 @@ class Button_18Owner: NSObject {
 
 
 
-class Button_19Owner: NSObject {
+class Button_20Owner: NSObject {
     /// Generated from 'Kqa-E4-QHQ': "Custom with Attributed Text - Color"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -535,7 +565,7 @@ class Button_19Owner: NSObject {
 
 
 
-class Button_20Owner: NSObject {
+class Button_21Owner: NSObject {
     /// Generated from 'o7l-m3-ayu': "Custom with Attributed Text - Partial Color"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -567,7 +597,7 @@ class Button_20Owner: NSObject {
 
 
 
-class Button_21Owner: NSObject {
+class Button_22Owner: NSObject {
     /// Generated from 'CDo-Sn-qqh': "Custom with Attributed Text - Background Color"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -600,7 +630,7 @@ class Button_21Owner: NSObject {
 
 
 
-class Button_22Owner: NSObject {
+class Button_23Owner: NSObject {
     /// Generated from 'kMg-mL-fWa': "Custom with Attributed Text - Font"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -626,7 +656,7 @@ class Button_22Owner: NSObject {
 
 
 
-class Button_23Owner: NSObject {
+class Button_24Owner: NSObject {
     /// Generated from 'g1y-QS-igX': "Custom with Plain Text"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -650,7 +680,7 @@ class Button_23Owner: NSObject {
 
 
 
-class Button_24Owner: NSObject {
+class Button_25Owner: NSObject {
     /// Generated from 'L7I-s8-2Hi': "Custom with Plain Text - Color"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -675,7 +705,7 @@ class Button_24Owner: NSObject {
 
 
 
-class Button_25Owner: NSObject {
+class Button_26Owner: NSObject {
     /// Generated from 'oJ6-hY-rPw': "Custom with Plain Text - Empty"
     lazy var button0: UIButton = {
         let view = UIButton()
@@ -696,7 +726,7 @@ class Button_25Owner: NSObject {
 
 
 
-class Button_26Owner: NSObject {
+class Button_27Owner: NSObject {
     /// Generated from 'IJP-ud-8m0': "Info Light"
     lazy var button0: UIButton = {
         let view = UIButton(type: .infoLight)
@@ -720,7 +750,7 @@ class Button_26Owner: NSObject {
 
 
 
-class Button_27Owner: NSObject {
+class Button_28Owner: NSObject {
     /// Generated from 'flj-fQ-luh': "Info Dark"
     lazy var button0: UIButton = {
         let view = UIButton(type: .infoDark)
@@ -744,7 +774,7 @@ class Button_27Owner: NSObject {
 
 
 
-class Button_28Owner: NSObject {
+class Button_29Owner: NSObject {
     /// Generated from 'eLT-FC-Ynq': "Add Contact"
     lazy var button0: UIButton = {
         let view = UIButton(type: .contactAdd)
@@ -768,7 +798,7 @@ class Button_28Owner: NSObject {
 
 
 
-class Button_29Owner: NSObject {
+class Button_30Owner: NSObject {
     /// Generated from 'de3-Y1-rDA': "System with State Texts"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
@@ -794,5 +824,5 @@ class Button_29Owner: NSObject {
 }
 
 func makeButtonViews() -> [UIView] {
-    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, Button_8Owner().contentView, Button_9Owner().contentView, Button_10Owner().contentView, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView]
+    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, Button_8Owner().contentView, Button_9Owner().contentView, Button_10Owner().contentView, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView, Button_30Owner().contentView]
 }

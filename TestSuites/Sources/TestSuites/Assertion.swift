@@ -25,10 +25,17 @@ func XCTAssertEqualSnapshot<Value, Format>(
             tookSnapshot.fulfill()
         }
     }
-    guard let (failure, attachments) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
+    guard let (failure, _attachments) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
         return
     }
-
+    var attachments = _attachments
+    if let lhsDescription = lhsDescription as? String,
+       let rhsDescription = rhsDescription as? String {
+        attachments.append(contentsOf: [
+            XCTAttachment(data: Data(lhsDescription.utf8), uniformTypeIdentifier: "reference"),
+            XCTAttachment(data: Data(rhsDescription.utf8), uniformTypeIdentifier: "failure"),
+        ])
+    }
     if !attachments.isEmpty {
         if ProcessInfo.processInfo.environment.keys.contains("__XCODE_BUILT_PRODUCTS_DIR_PATHS") {
             XCTContext.runActivity(named: "Attached Failure Diff") { activity in
@@ -42,7 +49,7 @@ func XCTAssertEqualSnapshot<Value, Format>(
 }
 func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
                               file: StaticString = #file, line: UInt = #line) {
-    let snapshottings: [Snapshotting<UIView, String>] = [.recursiveDescription, .deepRecursiveDescription]
+    let snapshottings: [Snapshotting<UIView, String>] = [.deepRecursiveDescription, .recursiveDescription]
     for snapshotting in snapshottings {
         XCTAssertEqualSnapshot(lhs, rhs, as: snapshotting, timeout: timeout, description: description, file: file, line: line)
     }
