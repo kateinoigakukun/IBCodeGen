@@ -18,9 +18,11 @@ final class IBCodeGenKitTests: XCTestCase {
         .appendingPathComponent("TestSuites/Sources/Views")
 
     static let destination = ProcessInfo.processInfo.environment["IBCODEGEN_TEST_DESTINATION"] ?? "platform=iOS Simulator,name=iPhone 12 Pro"
+    static let onlyCodeGen = ProcessInfo.processInfo.environment["IBCODEGEN_TEST_ONLY_CODEGEN"] != nil
     static let scheme = "TestSuites"
 
     override class func setUp() {
+        guard !onlyCodeGen else { return }
         try! Process.exec(
             bin: "/usr/bin/xcodebuild",
             arguments: [
@@ -54,6 +56,7 @@ final class IBCodeGenKitTests: XCTestCase {
             """)
             try writer.content.write(to: path, atomically: true, encoding: .utf8)
         }
+        guard !onlyCodeGen else { return }
         try Process.exec(
             bin: "/usr/bin/xcodebuild",
             arguments: [
