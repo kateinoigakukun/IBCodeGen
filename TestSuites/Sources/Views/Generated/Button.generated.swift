@@ -762,6 +762,7 @@ class Button_27Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.showsTouchWhenHighlighted = true
         view.setTitleColor(.systemBlue, for: .normal)
         return view
     }()
@@ -786,6 +787,7 @@ class Button_28Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
+        view.showsTouchWhenHighlighted = true
         view.setTitleColor(.systemBlue, for: .normal)
         return view
     }()

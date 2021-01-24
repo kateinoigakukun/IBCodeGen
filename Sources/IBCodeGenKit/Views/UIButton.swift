@@ -61,6 +61,7 @@ extension Button: CodeGenTargetView {
             EnumCase($0)
         }
         b.bindIfPresent(\.isEnabled, name: "isEnabled")
+        b.bindIfPresent(\.showsTouchWhenHighlighted, name: "showsTouchWhenHighlighted")
 
         // Default configuration for custom buttons
         if buttonType == nil {
