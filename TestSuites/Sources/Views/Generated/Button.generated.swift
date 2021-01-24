@@ -663,7 +663,7 @@ class Button_23Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
-            .font: UIFont.systemFont(ofSize: 10)
+            .font: UIFont.systemFont(ofSize: 13)
         ]), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
         return view

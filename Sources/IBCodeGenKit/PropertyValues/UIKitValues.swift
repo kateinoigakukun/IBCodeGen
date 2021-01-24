@@ -48,7 +48,7 @@ extension Font: SwiftValueRepresentable {
         case "toolTip":
             fontSize = 11
         case "system":
-            fontSize = size.flatMap { Int($0) } ?? 10 // FIXME
+            fontSize = size.flatMap { Int($0) } ?? 13
         default:
             fatalError()
         }
