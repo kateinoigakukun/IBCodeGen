@@ -23,7 +23,7 @@ extension Button: CodeGenTargetView {
                     (label: nil, value: title), (label: "for", value: EnumCase(key))
                 ])
             }
-            if let attributedString = state.attributedString {
+            if let attributedString = state.attributedString, !attributedString.isNilValue {
                 builder.addMethodCall("setAttributedTitle", arguments: [
                     (label: nil, value: attributedString), (label: "for", value: EnumCase(key))
                 ])
@@ -37,6 +37,12 @@ extension Button: CodeGenTargetView {
             if let titleColor = state.titleColor {
                 builder.addMethodCall("setTitleColor", arguments: [
                     (label: nil, value: titleColor),
+                    (label: "for", value: EnumCase(key))
+                ])
+            } else if buttonType == nil {
+                // Default title color for custom button
+                builder.addMethodCall("setTitleColor", arguments: [
+                    (label: nil, value: RawValueString("UIColor.white")),
                     (label: "for", value: EnumCase(key))
                 ])
             }

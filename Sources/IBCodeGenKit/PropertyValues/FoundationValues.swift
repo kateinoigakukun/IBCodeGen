@@ -9,9 +9,15 @@ import Foundation
 import IBDecodable
 
 extension AttributedString: SwiftValueRepresentable {
+    var isNilValue: Bool {
+        guard let fragments = fragments, !fragments.isEmpty else {
+            return true
+        }
+        return false
+    }
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         guard let fragments = fragments, !fragments.isEmpty else {
-            target.write("NSAttributedString()")
+            target.write("nil")
             return
         }
         if let fragment = fragments.first, fragments.count == 1 {

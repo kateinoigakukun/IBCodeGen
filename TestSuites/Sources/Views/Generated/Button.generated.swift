@@ -379,6 +379,7 @@ class Button_16Owner: NSObject {
                 return UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil)
             }
         }(), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -426,7 +427,7 @@ class Button_18Owner: NSObject {
         view.contentVerticalAlignment = .center
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
-        view.setAttributedTitle(NSAttributedString(), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         view.setImage({
             if #available(iOS 13.0, *) {
                 return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
@@ -434,6 +435,7 @@ class Button_18Owner: NSObject {
                 return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
             }
         }(), for: .disabled)
+        view.setTitleColor(UIColor.white, for: .disabled)
         view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
             .font: UIFont.systemFont(ofSize: 11),
             .paragraphStyle: {
@@ -442,6 +444,7 @@ class Button_18Owner: NSObject {
                 return style
             }()
         ]), for: .selected)
+        view.setTitleColor(UIColor.white, for: .selected)
         return view
     }()
     var contentView: UIView {
@@ -474,6 +477,7 @@ class Button_19Owner: NSObject {
                 return style
             }()
         ]), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         view.setImage({
             if #available(iOS 13.0, *) {
                 return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
@@ -481,6 +485,7 @@ class Button_19Owner: NSObject {
                 return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
             }
         }(), for: .disabled)
+        view.setTitleColor(UIColor.white, for: .disabled)
         view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
             .font: UIFont.systemFont(ofSize: 11),
             .paragraphStyle: {
@@ -489,6 +494,7 @@ class Button_19Owner: NSObject {
                 return style
             }()
         ]), for: .selected)
+        view.setTitleColor(UIColor.white, for: .selected)
         return view
     }()
     var contentView: UIView {
@@ -521,6 +527,7 @@ class Button_20Owner: NSObject {
                 return style
             }()
         ]), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -611,6 +618,7 @@ class Button_21Owner: NSObject {
             ]))
             return string
         }(), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -644,6 +652,7 @@ class Button_22Owner: NSObject {
                 return style
             }()
         ]), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -670,6 +679,7 @@ class Button_23Owner: NSObject {
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .font: UIFont.systemFont(ofSize: 10)
         ]), for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -694,6 +704,7 @@ class Button_24Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setTitle("Custom with Plain Text", for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
         return view
     }()
     var contentView: UIView {
