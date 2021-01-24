@@ -12,7 +12,7 @@ import XCTest
 func XCTAssertEqualSnapshot<Value, Format>(
     _ lhs: Value, _ rhs: Value,
     as snapshotting: Snapshotting<Value, Format>,
-    timeout: TimeInterval = 5, description: String = "",
+    timeout: TimeInterval = 5, description: String = "", ignore: Bool = false,
     file: StaticString = #file, line: UInt = #line
 ) {
     let tookSnapshot = XCTestExpectation(description: "Took snapshot")
@@ -28,6 +28,7 @@ func XCTAssertEqualSnapshot<Value, Format>(
     guard let (failure, _attachments) = snapshotting.diffing.diff(lhsDescription, rhsDescription) else {
         return
     }
+    guard !ignore else { return }
     var attachments = _attachments
     if let lhsDescription = lhsDescription as? String,
        let rhsDescription = rhsDescription as? String {
@@ -49,7 +50,10 @@ func XCTAssertEqualSnapshot<Value, Format>(
 }
 func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
                               file: StaticString = #file, line: UInt = #line) {
-    let snapshottings: [Snapshotting<UIView, String>] = [.deepRecursiveDescription, .recursiveDescription]
+    let snapshottings: [Snapshotting<UIView, String>] = [.recursiveDescription, .deepRecursiveDescription]
+    for snapshotting in snapshottings {
+        XCTAssertEqualSnapshot(lhs, rhs, as: snapshotting, timeout: timeout, description: description, ignore: true, file: file, line: line)
+    }
     for snapshotting in snapshottings {
         XCTAssertEqualSnapshot(lhs, rhs, as: snapshotting, timeout: timeout, description: description, file: file, line: line)
     }

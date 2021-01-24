@@ -27,7 +27,7 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "Button", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIButton]
         let translatedViews = makeButtonViews()
-        for (index, (original, translated)) in zip(views, translatedViews).enumerated() where index == 5 {
+        for (index, (original, translated)) in zip(views, translatedViews).enumerated() where index < 7 {
             XCTAssertEqualProperties(original, translated, description: index.description)
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
