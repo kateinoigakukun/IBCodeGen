@@ -293,10 +293,30 @@ class Button_14Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
-        view.setAttributedTitle(NSAttributedString(string: "System", attributes: [
-            .foregroundColor: UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0), 
-            .font: UIFont.systemFont(ofSize: 15)
-        ]), for: .normal)
+        view.setAttributedTitle({
+            let string = NSMutableAttributedString()
+            string.append(NSAttributedString(string: "System", attributes: [
+                .foregroundColor: UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15)
+            ]))
+            string.append(NSAttributedString(string: " with ", attributes: [
+                .foregroundColor: UIColor(red: 1.0, green: 0.5763723, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15)
+            ]))
+            string.append(NSAttributedString(string: "Attributed", attributes: [
+                .foregroundColor: UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15)
+            ]))
+            string.append(NSAttributedString(string: " ", attributes: [
+                .foregroundColor: UIColor(red: 1.0, green: 0.5763723, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15)
+            ]))
+            string.append(NSAttributedString(string: "Text", attributes: [
+                .foregroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15)
+            ]))
+            return string
+        }(), for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -506,15 +526,73 @@ class Button_21Owner: NSObject {
         view.contentVerticalAlignment = .center
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
-        view.setAttributedTitle(NSAttributedString(string: "Custom", attributes: [
-            .foregroundColor: UIColor(red: 0.57919407, green: 0.12801445, blue: 0.57268614, alpha: 1.0), 
-            .font: UIFont.systemFont(ofSize: 15), 
-            .paragraphStyle: {
-                let style = NSMutableParagraphStyle()
-                style.alignment = .natural
-                return style
-            }()
-        ]), for: .normal)
+        view.setAttributedTitle({
+            let string = NSMutableAttributedString()
+            string.append(NSAttributedString(string: "Custom", attributes: [
+                .foregroundColor: UIColor(red: 0.57919407, green: 0.12801445, blue: 0.57268614, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: " ", attributes: [
+                .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: "with", attributes: [
+                .foregroundColor: UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: " ", attributes: [
+                .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: "Attributed", attributes: [
+                .foregroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: " ", attributes: [
+                .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            string.append(NSAttributedString(string: "Text", attributes: [
+                .foregroundColor: UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0), 
+                .font: UIFont.systemFont(ofSize: 15), 
+                .paragraphStyle: {
+                    let style = NSMutableParagraphStyle()
+                    style.alignment = .natural
+                    return style
+                }()
+            ]))
+            return string
+        }(), for: .normal)
         return view
     }()
     var contentView: UIView {

@@ -10,13 +10,37 @@ import IBDecodable
 
 extension AttributedString: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
-//        precondition(fragments == nil || fragments?.count == 1)
-        guard let fragment = fragments?.first else {
+        guard let fragments = fragments, !fragments.isEmpty else {
             target.write("NSAttributedString()")
             return
         }
-        let string = fragment.content
-        guard let attributes = fragment.attributes else {
+        if let fragment = fragments.first, fragments.count == 1 {
+            try fragment.writeValue(target: &target, context: context)
+            return
+        }
+
+        target.write("{\n")
+        try target.indented { target in
+            target.writeLine("let string = NSMutableAttributedString()")
+            for fragment in fragments {
+                try target.writeLine { line in
+                    line.write("string.append(")
+                    try fragment.writeValue(target: &line, context: context)
+                    line.write(")")
+                }
+            }
+            target.writeLine("return string")
+        }
+        target.writeIndent()
+        target.write("}()")
+    }
+}
+
+
+extension AttributedString.Fragment: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        let string = content
+        guard let attributes = attributes else {
             target.write("NSAttributedString(string: ")
             string.writeValue(target: &target, context: context)
             target.write(")")
