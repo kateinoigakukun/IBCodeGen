@@ -190,7 +190,7 @@ class Button_7Owner: NSObject {
         view.adjustsImageWhenHighlighted = true
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
-        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
         view.setTitle("System with Plain Text", for: .normal)
         return view
     }()

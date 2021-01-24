@@ -160,7 +160,13 @@ extension FontDescription: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
         switch self {
         case .system((_, let type, .none, let pointSize)):
-            target.write("UIFont.\(type)Font(ofSize: \(pointSize))")
+            // Workaround: `UIFont.boldSystemFont` returns "SFUI-Semibold" instead of "SFUI-Bold"
+            // https://jihyunsblog.wordpress.com/2020/11/20/boldsystemfont-returns-semibold
+            if type == "boldSystem" {
+                target.write("UIFont.systemFont(ofSize: \(pointSize), weight: .bold)")
+            } else {
+                target.write("UIFont.\(type)Font(ofSize: \(pointSize))")
+            }
         case .system((_, _, .some(let weight), let pointSize)):
             target.write("UIFont.systemFont(ofSize: \(pointSize), weight: .\(weight))")
         case .custom((_, _, let family, let pointSize)):
