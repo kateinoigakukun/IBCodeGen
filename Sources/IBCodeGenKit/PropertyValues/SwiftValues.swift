@@ -59,7 +59,7 @@ struct DictionaryValue: SwiftValueRepresentable {
                     target.write(": ")
                     try entry.value.writeValue(target: &target, context: context)
                     if index + 1 != entries.endIndex {
-                        target.write(", ")
+                        target.write(",")
                     }
                 }
             }
