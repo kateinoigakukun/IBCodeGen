@@ -1,9 +1,9 @@
 protocol IndentTextOutputStream {
     mutating func writeLine(_ line: String)
-    mutating func writeLine(_ line: (inout Self) -> Void)
+    mutating func writeLine(_ line: (inout Self) throws -> Void) rethrows
     mutating func write(_ string: String)
     mutating func writeIndent()
-    mutating func indented(_ body: (inout Self) -> Void)
+    mutating func indented(_ body: (inout Self) throws -> Void) rethrows
 }
 
 struct GenericIndentTextOutputStream<Downstream: TextOutputStream>: IndentTextOutputStream {
@@ -15,9 +15,9 @@ struct GenericIndentTextOutputStream<Downstream: TextOutputStream>: IndentTextOu
         self.indent = indent
     }
 
-    mutating func writeLine(_ line: (inout Self) -> Void) {
+    mutating func writeLine(_ line: (inout Self) throws -> Void) rethrows {
         downstream.write(String(repeating: " ", count: indentLevel * indent))
-        line(&self)
+        try line(&self)
         downstream.write("\n")
     }
     mutating func writeLine(_ line: String) {
@@ -31,9 +31,9 @@ struct GenericIndentTextOutputStream<Downstream: TextOutputStream>: IndentTextOu
     mutating func writeIndent() {
         downstream.write(String(repeating: " ", count: indentLevel * indent))
     }
-    mutating func indented(_ body: (inout GenericIndentTextOutputStream) -> Void) {
+    mutating func indented(_ body: (inout GenericIndentTextOutputStream) throws -> Void) rethrows {
         indentLevel += 1
-        body(&self)
+        try body(&self)
         indentLevel -= 1
     }
 }

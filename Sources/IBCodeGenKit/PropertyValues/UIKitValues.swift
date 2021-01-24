@@ -76,7 +76,7 @@ extension ParagraphStyle: SwiftValueRepresentable {
 
 
 extension Color: SwiftValueRepresentable {
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         switch self {
         case .calibratedWhite((_, let white, let alpha)):
             target.write("UIColor.init(white: \(white), alpha: \(alpha))")
@@ -105,16 +105,16 @@ extension Color: SwiftValueRepresentable {
                     target.write("UIColor.\(systemColorName)")
                 } else if let backportingColor = context.systemColor(name: name) {
                     target.write("{\n")
-                    target.indented { target in
+                    try target.indented { target in
                         target.writeLine("if #available(iOS 13.0, *) {")
                         target.indented { target in
                             target.writeLine("return UIColor.\(systemColorName)")
                         }
                         target.writeLine("} else {")
-                        target.indented { target in
+                        try target.indented { target in
                             target.writeIndent()
                             target.write("return ")
-                            backportingColor.writeValue(target: &target, context: context)
+                            try backportingColor.writeValue(target: &target, context: context)
                             target.write("\n")
                         }
                         target.writeLine("}")
@@ -127,11 +127,20 @@ extension Color: SwiftValueRepresentable {
             } else {
                 target.write("UIColor.\(name)")
             }
+        case .catalog((_, let name, let catalog)):
+            // FIXME: Adhoc transformation from `NSColor(catalogName:colorName:)`
+            switch (name, catalog) {
+            case ("textColor", "System"):
+                target.write("UIColor(red: 0, green: 0, blue: 0, alpha: 1)")
+            default:
+                throw Error.catalogColorIsNotSupported(self)
+            }
         }
-
     }
 }
 
+import AppKit
+import CoreGraphics
 extension Constraint.LayoutAttribute: SwiftValueRepresentable {
     var caseName: String {
         switch self {

@@ -31,18 +31,18 @@ class RootViewClass {
         return subview
     }
 
-    func build<Target: IndentTextOutputStream>(target: inout Target, context: inout CodeGenContext) {
+    func build<Target: IndentTextOutputStream>(target: inout Target, context: inout CodeGenContext) throws {
         target.writeLine("class \(className): NSObject {")
-        target.indented { target in
+        try target.indented { target in
             for subview in subviews {
-                subview.build(target: &target, context: &context)
+                try subview.build(target: &target, context: &context)
             }
 
             if subviews.contains(where: \.shouldWriteConstraintsActivation) {
                 target.writeLine("func activateConstraints() {")
-                target.indented { target in
+                try target.indented { target in
                     for subview in subviews {
-                        subview.buildConstraintsActivation(target: &target, context: &context)
+                        try subview.buildConstraintsActivation(target: &target, context: &context)
                     }
                 }
                 target.writeLine("}")
@@ -140,12 +140,12 @@ typealias Argument = (label: String?, value: SwiftValueRepresentable)
 
 struct ArgumentList: SwiftValueRepresentable {
     let arguments: [Argument]
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         for (index, argument) in arguments.enumerated() {
             if let label = argument.label {
                 target.write("\(label): ")
             }
-            argument.value.writeValue(target: &target, context: context)
+            try argument.value.writeValue(target: &target, context: context)
             if index + 1 != arguments.endIndex {
                 target.write(", ")
             }
@@ -195,7 +195,7 @@ class ViewElement: ViewCodeBuilder {
     }
     func build<Target: IndentTextOutputStream>(
         target: inout Target, context: inout CodeGenContext
-    ) {
+    ) throws {
         let fieldIdentifier = context.namespace.getIdentifier(id: id)
         target.writeLine { line in
             line.write("/// Generated from '\(id)'")
@@ -204,26 +204,26 @@ class ViewElement: ViewCodeBuilder {
             }
         }
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
-        target.indented {
+        try target.indented {
 
-            $0.writeLine { line in
+            try $0.writeLine { line in
                 line.write("let view = \(className)(")
                 let argList = ArgumentList(arguments: initArguments)
-                argList.writeValue(target: &line, context: context)
+                try argList.writeValue(target: &line, context: context)
                 line.write(")")
             }
             for (name, value) in properties {
-                $0.writeLine { line in
+                try $0.writeLine { line in
                     line.write("view.\(name) = ")
-                    value.writeValue(target: &line, context: context)
+                    try value.writeValue(target: &line, context: context)
                 }
             }
 
             for (method, arguments) in methodCalls {
-                $0.writeLine { line in
+                try $0.writeLine { line in
                     line.write("view.\(method)(")
                     let argList = ArgumentList(arguments: arguments)
-                    argList.writeValue(target: &line, context: context)
+                    try argList.writeValue(target: &line, context: context)
                     line.write(")")
                 }
             }
@@ -238,13 +238,13 @@ class ViewElement: ViewCodeBuilder {
 
     func buildConstraintsActivation<Target: IndentTextOutputStream>(
         target: inout Target, context: inout CodeGenContext
-    ) {
+    ) throws {
         guard shouldWriteConstraintsActivation else { return }
         target.writeLine("NSLayoutConstraint.activate([")
-        target.indented { target in
+        try target.indented { target in
             for constraint in constraints {
-                target.writeLine { line in
-                    constraint.writeValue(target: &line, context: context, selfView: id)
+                try target.writeLine { line in
+                    try constraint.writeValue(target: &line, context: context, selfView: id)
                     line.write(",")
                 }
             }

@@ -58,7 +58,7 @@ public class IBCodeGenerator {
             _ = try codegen(from: view, rootView: builder, context: &context)
             target.writeLine("\n\n")
             context.namespace.resolve()
-            builder.build(target: &target, context: &context)
+            try builder.build(target: &target, context: &context)
             result.classNames.append(className)
         }
         return result

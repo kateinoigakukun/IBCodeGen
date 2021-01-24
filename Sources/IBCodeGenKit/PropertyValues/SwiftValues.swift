@@ -50,14 +50,14 @@ struct RawValueString: SwiftValueRepresentable {
 struct DictionaryValue: SwiftValueRepresentable {
     typealias Entry = (key: SwiftValueRepresentable, value: SwiftValueRepresentable)
     let entries: [Entry]
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         target.write("[\n")
-        target.indented { target in
+        try target.indented { target in
             for (index, entry) in entries.enumerated() {
-                target.writeLine { target in
-                    entry.key.writeValue(target: &target, context: context)
+                try target.writeLine { target in
+                    try entry.key.writeValue(target: &target, context: context)
                     target.write(": ")
-                    entry.value.writeValue(target: &target, context: context)
+                    try entry.value.writeValue(target: &target, context: context)
                     if index + 1 != entries.endIndex {
                         target.write(", ")
                     }

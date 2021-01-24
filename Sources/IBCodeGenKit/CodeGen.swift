@@ -10,6 +10,7 @@ import IBDecodable
 enum Error: Swift.Error {
     case unsupportedView(ViewProtocol)
     case sizeClassIsNotSupported(ViewProtocol)
+    case catalogColorIsNotSupported(Color)
 }
 
 protocol CodeGenTargetView {

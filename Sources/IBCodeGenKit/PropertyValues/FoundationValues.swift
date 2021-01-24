@@ -9,7 +9,7 @@ import Foundation
 import IBDecodable
 
 extension AttributedString: SwiftValueRepresentable {
-    func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
 //        precondition(fragments == nil || fragments?.count == 1)
         guard let fragment = fragments?.first else {
             target.write("NSAttributedString()")
@@ -40,7 +40,7 @@ extension AttributedString: SwiftValueRepresentable {
         target.write("NSAttributedString(string: ")
         string.writeValue(target: &target, context: context)
         target.write(", attributes: ")
-        DictionaryValue(entries: attributesEntries).writeValue(target: &target, context: context)
+        try DictionaryValue(entries: attributesEntries).writeValue(target: &target, context: context)
         target.write(")")
     }
 }

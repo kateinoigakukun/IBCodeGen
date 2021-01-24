@@ -100,7 +100,7 @@ extension Constraint {
 
     private func writeAnchorRelation<Target>(
         target: inout Target, context: CodeGenContext, selfView: String
-    ) where Target : IndentTextOutputStream {
+    ) throws where Target : IndentTextOutputStream {
 
         guard let firstAttribute = firstAttribute else { fatalError("unexpected firstAttribute nil") }
 
@@ -145,20 +145,20 @@ extension Constraint {
         }
         firstAnchor.writeValue(target: &target, context: context)
         target.write(".constraint(")
-        ArgumentList(arguments: arguments).writeValue(target: &target, context: context)
+        try ArgumentList(arguments: arguments).writeValue(target: &target, context: context)
         target.write(")")
     }
 
-    func writeValue<Target>(target: inout Target, context: CodeGenContext, selfView: String) where Target : IndentTextOutputStream {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext, selfView: String) throws where Target : IndentTextOutputStream {
         guard let priority = priority else {
-            writeAnchorRelation(target: &target, context: context, selfView: selfView)
+            try writeAnchorRelation(target: &target, context: context, selfView: selfView)
             return
         }
         target.write("{\n")
-        target.indented { target in
+        try target.indented { target in
             target.writeIndent()
             target.write("let constraint = ")
-            writeAnchorRelation(target: &target, context: context, selfView: selfView)
+            try writeAnchorRelation(target: &target, context: context, selfView: selfView)
             target.write("\n")
             target.writeLine { line in
                 line.write("constraint.priority = ")

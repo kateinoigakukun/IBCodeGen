@@ -226,7 +226,7 @@ class Button_11Owner: NSObject {
 
 
 class Button_12Owner: NSObject {
-    /// Generated from 'GUR-Xd-0uG'
+    /// Generated from 'GUR-Xd-0uG': "System with Attributed Text"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
@@ -240,6 +240,7 @@ class Button_12Owner: NSObject {
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
         view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
+            .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), 
             .font: UIFont.systemFont(ofSize: 15)
         ]), for: .normal)
         return view
@@ -348,6 +349,7 @@ class Button_16Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
+            .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), 
             .font: UIFont.systemFont(ofSize: 15)
         ]), for: .normal)
         view.setImage(UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
