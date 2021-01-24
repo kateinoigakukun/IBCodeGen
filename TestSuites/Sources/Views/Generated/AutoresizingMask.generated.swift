@@ -6,9 +6,10 @@ class AutoresizingMask_0Owner: NSObject {
     /// Generated from 'dsf-Di-YJM'
     lazy var view0: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
@@ -21,8 +22,7 @@ class AutoresizingMask_0Owner: NSObject {
                 }()
             }
         }()
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         return view
     }()
     var contentView: UIView {
@@ -36,9 +36,10 @@ class AutoresizingMask_1Owner: NSObject {
     /// Generated from 'FVP-Xe-00x'
     lazy var view0: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
@@ -51,8 +52,7 @@ class AutoresizingMask_1Owner: NSObject {
                 }()
             }
         }()
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
         return view
     }()
     var contentView: UIView {
@@ -66,9 +66,10 @@ class AutoresizingMask_2Owner: NSObject {
     /// Generated from 'Sy1-3i-uGc'
     lazy var view0: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 896.0)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
@@ -81,17 +82,17 @@ class AutoresizingMask_2Owner: NSObject {
                 }()
             }
         }()
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
         view.addSubview(view1)
         return view
     }()
     /// Generated from 'aoR-ox-Ktu'
     lazy var view1: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 1.0, y: 165.0, width: 413.0, height: 482.0)
+        view.translatesAutoresizingMaskIntoConstraints = true
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 1.0, y: 165.0, width: 413.0, height: 482.0)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
@@ -104,8 +105,7 @@ class AutoresizingMask_2Owner: NSObject {
                 }()
             }
         }()
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         return view
     }()
     var contentView: UIView {

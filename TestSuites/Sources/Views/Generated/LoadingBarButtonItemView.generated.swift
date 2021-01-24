@@ -6,29 +6,28 @@ class LoadingBarButtonItemViewOwner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var loadingBarButtonItemView0: LoadingBarButtonItemView = {
         let view = LoadingBarButtonItemView()
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
-        view.isUserInteractionEnabled = true
         view.isUserInteractionEnabled = false
-        view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.contentMode = .scaleToFill
+        view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(view1)
         return view
     }()
     /// Generated from 'tcZ-2l-zCg'
     lazy var view1: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             var components: [CGFloat] = [1.0, 1.0]
             let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
             let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
             return UIColor(cgColor: cgColor)
         }()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setContentHuggingPriority(.defaultLow - 1, for: .horizontal)
         view.addSubview(activityIndicatorView2)
         view.addSubview(button3)
@@ -37,13 +36,13 @@ class LoadingBarButtonItemViewOwner: NSObject {
     /// Generated from 'WeI-gS-cT0'
     lazy var activityIndicatorView2: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 355.0, y: 323.5, width: 20.0, height: 20.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
         view.isHidden = false
+        view.frame = CGRect(x: 355.0, y: 323.5, width: 20.0, height: 20.0)
+        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return view
@@ -51,17 +50,17 @@ class LoadingBarButtonItemViewOwner: NSObject {
     /// Generated from 'z8e-UA-Yn2'
     lazy var button3: UIButton = {
         let view = UIButton(type: .system)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
-        view.adjustsImageWhenDisabled = true
-        view.adjustsImageWhenHighlighted = true
-        view.contentHorizontalAlignment = .right
-        view.contentVerticalAlignment = .fill
         view.isEnabled = false
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+        view.contentVerticalAlignment = .fill
+        view.contentMode = .scaleToFill
+        view.contentHorizontalAlignment = .right
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsImageWhenHighlighted = true
+        view.adjustsImageWhenDisabled = true
         view.setContentCompressionResistancePriority(.required, for: .vertical)
         view.setContentCompressionResistancePriority(.required, for: .horizontal)
         view.setTitle("Button", for: .normal)

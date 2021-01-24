@@ -6,10 +6,10 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var discoveryProjectCategoryView0: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(stackView1)
         view.addSubview(imageView4)
         return view
@@ -17,16 +17,15 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'NgN-c7-cxN': "Category Stack View"
     lazy var stackView1: UIStackView = {
         let view = UIStackView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
+        view.translatesAutoresizingMaskIntoConstraints = true
+        view.spacing = 5.0
         view.isUserInteractionEnabled = true
         view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.translatesAutoresizingMaskIntoConstraints = true
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.contentMode = .scaleToFill
         view.axis = .horizontal
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.alignment = .center
-        view.spacing = 5.0
         view.addArrangedSubview(imageView2)
         view.addArrangedSubview(label3)
         return view
@@ -34,12 +33,11 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'DCy-vT-LTC'
     lazy var imageView2: UIImageView = {
         let view = UIImageView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 323.5, width: 20.0, height: 20.0)
-        view.isUserInteractionEnabled = true
-        view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = false
+        view.frame = CGRect(x: 0.0, y: 323.5, width: 20.0, height: 20.0)
         view.contentMode = .scaleAspectFit
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return view
@@ -47,20 +45,18 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'TRu-fJ-hBL'
     lazy var label3: UILabel = {
         let view = UILabel()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 25.0, y: 323.5, width: 350.0, height: 20.5)
-        view.isUserInteractionEnabled = true
+        view.translatesAutoresizingMaskIntoConstraints = true
+        view.textAlignment = .natural
+        view.text = "Label"
+        view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .left
-        view.text = "Label"
-        view.textAlignment = .natural
-        view.baselineAdjustment = .alignBaselines
-        view.adjustsFontSizeToFitWidth = false
+        view.frame = CGRect(x: 25.0, y: 323.5, width: 350.0, height: 20.5)
         view.font = UIFont.systemFont(ofSize: 17.0)
-        view.lineBreakMode = .byTruncatingTail
+        view.contentMode = .left
+        view.baselineAdjustment = .alignBaselines
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsFontSizeToFitWidth = false
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -70,17 +66,17 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     /// Generated from 'QQz-Fr-vLT'
     lazy var imageView4: UIImageView = {
         let view = UIImageView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 375.0, y: 0.0, width: 5.0, height: 667.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 375.0, y: 0.0, width: 5.0, height: 667.0)
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = {
             var components: [CGFloat] = [0.0, 0.0]
             let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
             let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
             return UIColor(cgColor: cgColor)
         }()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleAspectFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         return view
     }()
     func activateConstraints() {

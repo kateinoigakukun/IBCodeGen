@@ -159,7 +159,7 @@ class ViewElement: ViewCodeBuilder {
     let elementClass: String
     let userLabel: String?
     var shouldWriteConstraintsActivation: Bool { !constraints.isEmpty }
-    private var properties: [(name: String, value: SwiftValueRepresentable)] = []
+    private var properties: [String: SwiftValueRepresentable] = [:]
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
     private var subviews: [ViewElement] = []
@@ -173,7 +173,7 @@ class ViewElement: ViewCodeBuilder {
     }
 
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
-        properties.append((name: name, value: value))
+        properties[name] = value
     }
 
     func addMethodCall(_ method: String, arguments: [Argument]) {
@@ -212,7 +212,7 @@ class ViewElement: ViewCodeBuilder {
                 try argList.writeValue(target: &line, context: context)
                 line.write(")")
             }
-            for (name, value) in properties {
+            for (name, value) in properties.sorted(by: { $0.key > $1.key }) {
                 try $0.writeLine { line in
                     line.write("view.\(name) = ")
                     try value.writeValue(target: &line, context: context)

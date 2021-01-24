@@ -6,11 +6,11 @@ class PaymentMethodsFooterViewOwner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var paymentMethodsFooterView0: PaymentMethodsFooterView = {
         let view = PaymentMethodsFooterView()
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.isUserInteractionEnabled = true
-        view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.contentMode = .scaleToFill
+        view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(button1)
         view.addSubview(view2)
         return view
@@ -18,25 +18,26 @@ class PaymentMethodsFooterViewOwner: NSObject {
     /// Generated from 'ZVF-Hv-L8e'
     lazy var button1: UIButton = {
         let view = UIButton(type: .system)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
-        view.adjustsImageWhenDisabled = true
-        view.adjustsImageWhenHighlighted = true
-        view.contentHorizontalAlignment = .left
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.contentVerticalAlignment = .center
+        view.contentMode = .scaleToFill
+        view.contentHorizontalAlignment = .left
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsImageWhenHighlighted = true
+        view.adjustsImageWhenDisabled = true
         view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
         return view
     }()
     /// Generated from 'SB4-Lk-Ajb'
     lazy var view2: UIView = {
         let view = UIView()
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 43.5, width: 375.0, height: 0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.frame = CGRect(x: 0.0, y: 43.5, width: 375.0, height: 0.5)
+        view.contentMode = .scaleToFill
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemRed
@@ -44,8 +45,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
                 return UIColor(red: 1.0, green: 0.23137255, blue: 0.1882353, alpha: 1.0)
             }
         }()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         return view
     }()
     func activateConstraints() {
