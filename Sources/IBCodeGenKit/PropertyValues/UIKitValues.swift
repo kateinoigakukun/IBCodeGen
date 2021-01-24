@@ -208,3 +208,42 @@ extension LineBreakMode: SwiftValueRepresentable {
         }
     }
 }
+
+struct Image {
+    let name: String
+    let catalog: String?
+}
+
+extension Image: SwiftValueRepresentable {
+    private func writeAssetCatalog<Target: IndentTextOutputStream>(target: inout Target, context: CodeGenContext) throws {
+        target.write("UIImage(named: \"\(name)\", in: Bundle(for: Self.self), compatibleWith: nil)")
+    }
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        if let catalog = catalog, catalog == "system" {
+            target.write("{\n")
+            try target.indented { (target) in
+                target.writeLine("if #available(iOS 13.0, *) {")
+                try target.indented { target in
+                    try target.writeLine { line in
+                        line.write("return UIImage(systemName: \"\(name)\", withConfiguration: ")
+                        try context.defaultDefinition(for: .UIImageSymbolConfiguration)
+                            .writeValue(target: &line, context: context)
+                        line.write(")")
+                    }
+                }
+                target.writeLine("} else {")
+                try target.indented { target in
+                    try target.writeLine { line in
+                        line.write("return ")
+                        try writeAssetCatalog(target: &line, context: context)
+                    }
+                }
+                target.writeLine("}")
+            }
+            target.writeIndent()
+            target.write("}()")
+        } else {
+            try writeAssetCatalog(target: &target, context: context)
+        }
+    }
+}

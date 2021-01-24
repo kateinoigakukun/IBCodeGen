@@ -30,7 +30,7 @@ extension Button: CodeGenTargetView {
             }
             if let image = state.image {
                 builder.addMethodCall("setImage", arguments: [
-                    (label: nil, value: RawValueString("UIImage(named: \"\(image)\", in: Bundle(for: Self.self), compatibleWith: nil)")),
+                    (label: nil, value: Image(name: image, catalog: state.catalog)),
                     (label: "for", value: EnumCase(key))
                 ])
             }

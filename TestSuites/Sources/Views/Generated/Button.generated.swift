@@ -372,7 +372,13 @@ class Button_16Owner: NSObject {
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
             .font: UIFont.systemFont(ofSize: 15)
         ]), for: .normal)
-        view.setImage(UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
+        view.setImage({
+            if #available(iOS 13.0, *) {
+                return UIImage(systemName: "cloud.sun.rain", withConfiguration: .interfaceBuilderDefault)
+            } else {
+                return UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil)
+            }
+        }(), for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -421,7 +427,13 @@ class Button_18Owner: NSObject {
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.setAttributedTitle(NSAttributedString(), for: .normal)
-        view.setImage(UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil), for: .disabled)
+        view.setImage({
+            if #available(iOS 13.0, *) {
+                return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
+            } else {
+                return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
+            }
+        }(), for: .disabled)
         view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
             .font: UIFont.systemFont(ofSize: 11),
             .paragraphStyle: {
@@ -462,7 +474,13 @@ class Button_19Owner: NSObject {
                 return style
             }()
         ]), for: .normal)
-        view.setImage(UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil), for: .disabled)
+        view.setImage({
+            if #available(iOS 13.0, *) {
+                return UIImage(systemName: "zzz", withConfiguration: .interfaceBuilderDefault)
+            } else {
+                return UIImage(named: "zzz", in: Bundle(for: Self.self), compatibleWith: nil)
+            }
+        }(), for: .disabled)
         view.setAttributedTitle(NSAttributedString(string: "Selected Button", attributes: [
             .font: UIFont.systemFont(ofSize: 11),
             .paragraphStyle: {
@@ -825,6 +843,20 @@ class Button_30Owner: NSObject {
     }()
     var contentView: UIView {
         return button0
+    }
+}
+
+@available(iOS 13.0, *)
+fileprivate extension UIImage.Configuration {
+    static var interfaceBuilderDefault: UIImage.SymbolConfiguration {
+        let traits = UITraitCollection(traitsFrom: [
+            UITraitCollection(userInterfaceIdiom: .pad),
+            UITraitCollection(displayScale: 1),
+            UITraitCollection(displayGamut: .SRGB),
+        ])
+
+        return  UIImage.SymbolConfiguration.unspecified
+            .withTraitCollection(traits)
     }
 }
 
