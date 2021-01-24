@@ -54,6 +54,7 @@ extension Button: CodeGenTargetView {
             }
         }
 
+        b.bindIfPresent(\.opaque, classDefault: false, name: "isOpaque")
         b.bindIfPresent(\.contentHorizontalAlignment, classDefault: "center",
                         name: "contentHorizontalAlignment", transform: EnumCase.init)
         b.bindIfPresent(\.contentVerticalAlignment, classDefault: "center",

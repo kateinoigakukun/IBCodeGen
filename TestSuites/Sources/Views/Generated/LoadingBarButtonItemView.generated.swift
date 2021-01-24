@@ -50,7 +50,6 @@ class LoadingBarButtonItemViewOwner: NSObject {
     lazy var button3: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isOpaque = false
         view.isEnabled = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0)
         view.contentVerticalAlignment = .fill

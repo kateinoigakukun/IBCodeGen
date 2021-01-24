@@ -6,7 +6,6 @@ class Button_0Owner: NSObject {
     /// Generated from 'Chs-Ut-qV0': "System with Plain Text - Empty"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -25,7 +24,6 @@ class Button_1Owner: NSObject {
     /// Generated from 'VhR-3d-QKB': "System with Plain Text"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -44,7 +42,6 @@ class Button_2Owner: NSObject {
     /// Generated from 'r1Q-mw-XWz': "System with Plain Text - Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -64,7 +61,6 @@ class Button_3Owner: NSObject {
     /// Generated from 's6D-yc-bKm': "System with Plain Text - Shadow Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -84,7 +80,6 @@ class Button_4Owner: NSObject {
     /// Generated from 'NEi-SU-biT': "System with Plain Text - Shadow and Text Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -106,7 +101,6 @@ class Button_5Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
         view.titleLabel?.font = UIFont.italicSystemFont(ofSize: 15.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -126,7 +120,6 @@ class Button_6Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
         view.titleLabel?.font = UIFont.italicSystemFont(ofSize: 15.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -146,7 +139,6 @@ class Button_7Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
         view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 174.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -165,7 +157,6 @@ class Button_11Owner: NSObject {
     /// Generated from 'Zf1-Y2-jMb': "System with Attributed Text - Empty"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -184,7 +175,6 @@ class Button_12Owner: NSObject {
     /// Generated from 'GUR-Xd-0uG': "System with Attributed Text"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -206,7 +196,6 @@ class Button_13Owner: NSObject {
     /// Generated from '2qy-eJ-ezG': "System with Attributed Text - Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -228,7 +217,6 @@ class Button_14Owner: NSObject {
     /// Generated from 'OLL-qA-i6G': "System with Attributed Text - Partial Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -270,7 +258,6 @@ class Button_15Owner: NSObject {
     /// Generated from 'pJM-vb-bOF': "System with Attributed Text - Background Color"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -295,7 +282,6 @@ class Button_16Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 215.0, height: 26.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
@@ -323,7 +309,6 @@ class Button_17Owner: NSObject {
     /// Generated from 'F1U-lG-xOU': "Detail Disclosure"
     lazy var button0: UIButton = {
         let view = UIButton(type: .detailDisclosure)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -344,7 +329,6 @@ class Button_18Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 195.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitleColor(UIColor.white, for: .normal)
@@ -363,7 +347,6 @@ class Button_19Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
@@ -387,7 +370,6 @@ class Button_20Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
@@ -411,7 +393,6 @@ class Button_21Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle({
@@ -469,7 +450,6 @@ class Button_22Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
@@ -494,7 +474,6 @@ class Button_23Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
@@ -516,7 +495,6 @@ class Button_24Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitle("Custom with Plain Text", for: .normal)
@@ -536,7 +514,6 @@ class Button_25Owner: NSObject {
         let view = UIButton()
         view.titleLabel?.lineBreakMode = .byTruncatingMiddle
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitle("Custom with Plain Text", for: .normal)
@@ -555,7 +532,6 @@ class Button_26Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton()
         view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitleColor(UIColor.white, for: .normal)
@@ -573,7 +549,6 @@ class Button_27Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton(type: .infoLight)
         view.showsTouchWhenHighlighted = true
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -593,7 +568,6 @@ class Button_28Owner: NSObject {
     lazy var button0: UIButton = {
         let view = UIButton(type: .infoDark)
         view.showsTouchWhenHighlighted = true
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -612,7 +586,6 @@ class Button_29Owner: NSObject {
     /// Generated from 'eLT-FC-Ynq': "Add Contact"
     lazy var button0: UIButton = {
         let view = UIButton(type: .contactAdd)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
@@ -631,7 +604,6 @@ class Button_30Owner: NSObject {
     /// Generated from 'de3-Y1-rDA': "System with State Texts"
     lazy var button0: UIButton = {
         let view = UIButton(type: .system)
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true

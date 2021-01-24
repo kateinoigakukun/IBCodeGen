@@ -22,7 +22,6 @@ class PaymentMethodsFooterViewOwner: NSObject {
     lazy var button1: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
         view.contentHorizontalAlignment = .left
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

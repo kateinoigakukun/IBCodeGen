@@ -9,6 +9,8 @@ import IBDecodable
 
 protocol ViewCodeBuilder {
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value)
+    func removeProperty(_ name: String)
+    func hasExplicitProperty(_ name: String) -> Bool
     func addMethodCall(_ method: String, arguments: [Argument])
     func addSubview(_ subview: ViewElement)
     func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
@@ -175,7 +177,8 @@ class ViewElement: ViewCodeBuilder {
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
         properties[name] = value
     }
-
+    func hasExplicitProperty(_ name: String) -> Bool { properties[name] != nil }
+    func removeProperty(_ name: String) { properties[name] = nil }
     func addMethodCall(_ method: String, arguments: [Argument]) {
         methodCalls.append((method: method, arguments: arguments))
     }
@@ -289,6 +292,8 @@ struct ViewBinder<V> {
             builder.addProperty(name, value: transform(value))
         } else if view[keyPath: keyPath] == nil && !assumeClassDefault {
             builder.addProperty(name, value: transform(classDefault))
+        } else if let value = view[keyPath: keyPath], assumeClassDefault && value == classDefault {
+            builder.removeProperty(name)
         }
     }
     func bindIfPresent<Value: SwiftValueRepresentable>(
