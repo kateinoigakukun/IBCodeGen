@@ -45,6 +45,12 @@
             </state>
             <point key="canvasLocation" x="-349" y="327"/>
         </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="uT7-DE-AuV" userLabel="System with Plain Text - Font and Empty Text">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+            <point key="canvasLocation" x="-349" y="382"/>
+        </button>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="76X-yJ-fo1" userLabel="System with Plain Text - Italic Font">
             <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
