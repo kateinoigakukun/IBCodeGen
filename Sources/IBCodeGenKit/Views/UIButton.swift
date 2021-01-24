@@ -34,6 +34,12 @@ extension Button: CodeGenTargetView {
                     (label: "for", value: EnumCase(key))
                 ])
             }
+            if let titleColor = state.color, titleColor.key == "titleColor" {
+                builder.addMethodCall("setTitleColor", arguments: [
+                    (label: nil, value: titleColor),
+                    (label: "for", value: EnumCase(key))
+                ])
+            }
         }
 
         b.bindIfPresent(\.contentHorizontalAlignment, name: "contentHorizontalAlignment") {
@@ -44,19 +50,22 @@ extension Button: CodeGenTargetView {
         }
         b.bindIfPresent(\.isEnabled, name: "isEnabled")
 
-        // Default configuration for system buttons
+        // Default configuration for custom buttons
         if buttonType == nil {
+            // Set default configuration for inner UILabel only when there are state titles
+            if let state = state, !state.isEmpty {
+                b.bind(\.fontDescription, default: FontDescription.default, name: "titleLabel?.font")
+                b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: LineBreakMode.init)
+            }
+        } else {
+            // Default configuration for system buttons
+
             // Set default configuration for no title
             if state?.isEmpty ?? true {
                 builder.addMethodCall("setTitleColor", arguments: [
                     (label: nil, value: EnumCase("systemBlue")),
                     (label: "for", value: EnumCase("normal")),
                 ])
-            }
-            // Set default configuration for inner UILabel only when there are state titles
-            if let state = state, !state.isEmpty {
-                b.bind(\.fontDescription, default: FontDescription.default, name: "titleLabel?.font")
-                b.bindIfPresent(\.lineBreakMode, name: "titleLabel?.lineBreakMode", transform: LineBreakMode.init)
             }
         }
     }
