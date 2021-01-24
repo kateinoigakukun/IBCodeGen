@@ -233,10 +233,11 @@ extension FontDescription: SwiftValueRepresentable {
 }
 
 enum LineBreakMode: String {
+    case characterWrap
     case headTruncation
     case tailTruncation
     case middleTruncation
-    case wordWrapping
+    case wordWrapping, wordWrap
 
     init(_ rawValue: String) {
         self.init(rawValue: rawValue)!
@@ -246,13 +247,15 @@ enum LineBreakMode: String {
 extension LineBreakMode: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
         switch self {
+        case .characterWrap:
+            target.write(".byCharWrapping")
         case .headTruncation:
             target.write(".byTruncatingHead")
         case .tailTruncation:
             target.write(".byTruncatingTail")
         case .middleTruncation:
             target.write(".byTruncatingMiddle")
-        case .wordWrapping:
+        case .wordWrapping, .wordWrap:
             target.write(".byWordWrapping")
         }
     }

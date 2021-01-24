@@ -33,6 +33,7 @@
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
 		F7AE30670013A8C0CF2E6F4C /* Button.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A4F5014867ACE58EFF34F /* Button.generated.swift */; };
+		FE7F38946B0F77073B315C51 /* Label.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4B4909AFC5A7CEF40001971D /* AutoresizingMask.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMask.generated.swift; sourceTree = "<group>"; };
 		5387779A467B13B5CE483A70 /* Subview.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.generated.swift; sourceTree = "<group>"; };
 		59EBFD7EC04A8D1A1E123E3B /* Views.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Views.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.generated.swift; sourceTree = "<group>"; };
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788CCD7E34506B14D21A1349 /* SupportingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingClass.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				4B4909AFC5A7CEF40001971D /* AutoresizingMask.generated.swift */,
 				412A4F5014867ACE58EFF34F /* Button.generated.swift */,
 				7C9013594B3A913121A3CE5C /* DiscoveryProjectCategoryView.generated.swift */,
+				6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */,
 				DA4E7D1F391B16FA192BFAD3 /* LoadingBarButtonItemView.generated.swift */,
 				3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */,
 				194F3A07BF2748CDDA89B487 /* SimpleView.generated.swift */,
@@ -321,6 +324,7 @@
 				8B3847132BDA6F26EDDC1E94 /* AutoresizingMask.generated.swift in Sources */,
 				F7AE30670013A8C0CF2E6F4C /* Button.generated.swift in Sources */,
 				188F5AD276ABFD73AB49F6CD /* DiscoveryProjectCategoryView.generated.swift in Sources */,
+				FE7F38946B0F77073B315C51 /* Label.generated.swift in Sources */,
 				47F853108CBA72593E7A923C /* LoadingBarButtonItemView.generated.swift in Sources */,
 				BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */,
 				7E277F6030AC08CFC9E494F1 /* SimpleView.generated.swift in Sources */,
