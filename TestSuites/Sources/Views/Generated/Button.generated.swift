@@ -90,6 +90,7 @@ class Button_3Owner: NSObject {
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
         view.setTitle("System with Plain Text", for: .normal)
+        view.setTitleShadowColor(UIColor(red: 0.99942404, green: 0.9855537, blue: 0.0, alpha: 1.0), for: .normal)
         return view
     }()
     var contentView: UIView {
@@ -114,6 +115,8 @@ class Button_4Owner: NSObject {
         view.contentHorizontalAlignment = .center
         view.contentVerticalAlignment = .center
         view.setTitle("System with Plain Text", for: .normal)
+        view.setTitleColor(UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0), for: .normal)
+        view.setTitleShadowColor(UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0), for: .normal)
         return view
     }()
     var contentView: UIView {

@@ -34,9 +34,15 @@ extension Button: CodeGenTargetView {
                     (label: "for", value: EnumCase(key))
                 ])
             }
-            if let titleColor = state.color, titleColor.key == "titleColor" {
+            if let titleColor = state.titleColor {
                 builder.addMethodCall("setTitleColor", arguments: [
                     (label: nil, value: titleColor),
+                    (label: "for", value: EnumCase(key))
+                ])
+            }
+            if let titleShadowColor = state.titleShadowColor {
+                builder.addMethodCall("setTitleShadowColor", arguments: [
+                    (label: nil, value: titleShadowColor),
                     (label: "for", value: EnumCase(key))
                 ])
             }
