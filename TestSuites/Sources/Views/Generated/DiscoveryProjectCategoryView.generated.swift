@@ -115,6 +115,6 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
     }
 }
 
-func makeDiscoveryProjectCategoryViewViews() -> [UIView] {
+func makeDiscoveryProjectCategoryViewViews() -> [UIView?] {
     [DiscoveryProjectCategoryViewOwner().contentView]
 }

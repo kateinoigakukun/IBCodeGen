@@ -201,81 +201,6 @@ class Button_7Owner: NSObject {
 
 
 
-class Button_8Owner: NSObject {
-    /// Generated from '6nx-GC-s3f': "System with Plain Text - wC wC Variation"
-    lazy var button0: UIButton = {
-        let view = UIButton(type: .system)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 174.0, height: 30.0)
-        view.isUserInteractionEnabled = true
-        view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
-        view.adjustsImageWhenDisabled = true
-        view.adjustsImageWhenHighlighted = true
-        view.contentHorizontalAlignment = .center
-        view.contentVerticalAlignment = .center
-        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
-        view.setTitle("System with Plain Text", for: .normal)
-        return view
-    }()
-    var contentView: UIView {
-        return button0
-    }
-}
-
-
-
-class Button_9Owner: NSObject {
-    /// Generated from 'hxo-wv-kpq': "System with Plain Text - gS Variation"
-    lazy var button0: UIButton = {
-        let view = UIButton(type: .system)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 174.0, height: 30.0)
-        view.isUserInteractionEnabled = true
-        view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
-        view.adjustsImageWhenDisabled = true
-        view.adjustsImageWhenHighlighted = true
-        view.contentHorizontalAlignment = .center
-        view.contentVerticalAlignment = .center
-        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
-        view.setTitle("System with Plain Text", for: .normal)
-        return view
-    }()
-    var contentView: UIView {
-        return button0
-    }
-}
-
-
-
-class Button_10Owner: NSObject {
-    /// Generated from 'bhv-xe-538': "System with Plain Text - iM Variation"
-    lazy var button0: UIButton = {
-        let view = UIButton(type: .system)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 174.0, height: 30.0)
-        view.isUserInteractionEnabled = true
-        view.isOpaque = false
-        view.translatesAutoresizingMaskIntoConstraints = true
-        view.contentMode = .scaleToFill
-        view.adjustsImageWhenDisabled = true
-        view.adjustsImageWhenHighlighted = true
-        view.contentHorizontalAlignment = .center
-        view.contentVerticalAlignment = .center
-        view.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
-        view.setTitle("System with Plain Text", for: .normal)
-        return view
-    }()
-    var contentView: UIView {
-        return button0
-    }
-}
-
-
-
 class Button_11Owner: NSObject {
     /// Generated from 'Zf1-Y2-jMb': "System with Attributed Text - Empty"
     lazy var button0: UIButton = {
@@ -823,6 +748,6 @@ class Button_30Owner: NSObject {
     }
 }
 
-func makeButtonViews() -> [UIView] {
-    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, Button_8Owner().contentView, Button_9Owner().contentView, Button_10Owner().contentView, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView, Button_30Owner().contentView]
+func makeButtonViews() -> [UIView?] {
+    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, nil, nil, nil, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView, Button_30Owner().contentView]
 }

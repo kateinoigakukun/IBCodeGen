@@ -30,7 +30,7 @@ final class IBCodeGenKitTests: XCTestCase {
             ])
     }
 
-    private class func runTest(for testSuite: String = #function) throws {
+    private class func runTest(options: IBCodeGenerator.Options = .init(), testSuite: String = #function) throws {
         guard testSuite.hasPrefix("test") && testSuite.hasSuffix("()") else {
             XCTFail("Invalid testSuite name: \(testSuite)")
             return
@@ -45,11 +45,15 @@ final class IBCodeGenKitTests: XCTestCase {
             }
             let xibPath = targetPath.appendingPathComponent("Resources/\(fileName).xib")
             var writer = ContentWriter()
-            let result = try generator.generate(from: xibPath, target: &writer)
-            let views = "[" + result.classNames.map { "\($0)().contentView" }.joined(separator: ", ") + "]"
+            let result = try generator.generate(from: xibPath, options: options, target: &writer)
+            let views = "[" + result.classNames.map { name in
+                guard let name = name else { return "nil" }
+                return "\(name)().contentView"
+            }.joined(separator: ", ") + "]"
+
             writer.write("""
 
-            func make\(fileName)Views() -> [UIView] {
+            func make\(fileName)Views() -> [UIView?] {
                 \(views)
             }
 
@@ -68,7 +72,10 @@ final class IBCodeGenKitTests: XCTestCase {
     }
     func testSimpleView() throws { try Self.runTest() }
     func testAutoresizingMask() throws { try Self.runTest() }
-    func testButton() throws { try Self.runTest() }
+    func testButton() throws {
+        // Exclude size class related views
+        try Self.runTest(options: .init(excludedRootViews: ["6nx-GC-s3f", "hxo-wv-kpq", "bhv-xe-538"]))
+    }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
     func testDiscoveryProjectCategoryView() throws { try Self.runTest() }

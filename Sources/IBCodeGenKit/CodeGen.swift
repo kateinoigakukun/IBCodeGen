@@ -9,13 +9,19 @@ import IBDecodable
 
 enum Error: Swift.Error {
     case unsupportedView(ViewProtocol)
+    case sizeClassIsNotSupported(ViewProtocol)
 }
 
 protocol CodeGenTargetView {
+    func validate() throws
     func codegen(
         builder: ViewCodeBuilder,
         rootView: RootViewClass
     ) throws
+}
+
+extension CodeGenTargetView {
+    func validate() throws {}
 }
 
 
@@ -56,9 +62,11 @@ func codegen(from anyView: AnyView, rootView: RootViewClass,
         userLabel: anyView.view.userLabel
     )
 
+    try anyView.validate()
     try anyView.codegen(builder: builder, rootView: rootView)
 
     if let targetView = view as? CodeGenTargetView {
+        try targetView.validate()
         try targetView.codegen(builder: builder, rootView: rootView)
     }
 

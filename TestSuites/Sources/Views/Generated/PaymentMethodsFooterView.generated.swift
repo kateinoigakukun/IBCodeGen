@@ -80,6 +80,6 @@ class PaymentMethodsFooterViewOwner: NSObject {
     }
 }
 
-func makePaymentMethodsFooterViewViews() -> [UIView] {
+func makePaymentMethodsFooterViewViews() -> [UIView?] {
     [PaymentMethodsFooterViewOwner().contentView]
 }

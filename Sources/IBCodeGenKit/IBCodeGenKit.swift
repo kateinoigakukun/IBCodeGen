@@ -6,14 +6,27 @@ public class IBCodeGenerator {
     }
 
     public struct GeneratedResult {
-        public var classNames: [String]
+        public var classNames: [String?]
     }
-    public func generate<Target: TextOutputStream>(from url: URL, target: inout Target) throws -> GeneratedResult {
-        var output = GenericIndentTextOutputStream(downstream: target)
-        return try generate(from: url, target: &output)
+    public struct Options {
+        public var excludedRootViews: [String] = []
+
+        public init(excludedRootViews: [String] = []) {
+            self.excludedRootViews = excludedRootViews
+        }
     }
 
-    func generate<Target: IndentTextOutputStream>(from url: URL, target: inout Target) throws -> GeneratedResult {
+    public func generate<Target: TextOutputStream>(
+        from url: URL, options: Options = Options(),
+        target: inout Target
+    ) throws -> GeneratedResult {
+        var output = GenericIndentTextOutputStream(downstream: target)
+        return try generate(from: url, options: options, target: &output)
+    }
+
+    func generate<Target: IndentTextOutputStream>(
+        from url: URL, options: Options, target: inout Target
+    ) throws -> GeneratedResult {
         let xibFile = try XibFile(url: url)
         guard let views = xibFile.document.views else { return GeneratedResult(classNames: []) }
         target.writeLine("import UIKit")
@@ -27,7 +40,11 @@ public class IBCodeGenerator {
 
         var result = GeneratedResult(classNames: [])
         for (index, view) in views.enumerated() {
-            guard let element = view.view as? IBIdentifiable else { continue }
+            guard let element = view.view as? IBIdentifiable,
+                  !options.excludedRootViews.contains(element.id) else {
+                result.classNames.append(nil)
+                continue
+            }
             var context = CodeGenContext(
                 deploymentTarget: Version(major: 12, minor: 0, patch: 0),
                 document: xibFile.document, namespace: ViewNamespace(),

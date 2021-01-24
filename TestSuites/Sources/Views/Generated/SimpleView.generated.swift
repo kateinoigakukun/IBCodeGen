@@ -19,6 +19,6 @@ class SimpleViewOwner: NSObject {
     }
 }
 
-func makeSimpleViewViews() -> [UIView] {
+func makeSimpleViewViews() -> [UIView?] {
     [SimpleViewOwner().contentView]
 }

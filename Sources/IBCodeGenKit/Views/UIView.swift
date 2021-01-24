@@ -8,6 +8,12 @@
 import IBDecodable
 
 extension AnyView: CodeGenTargetView {
+    func validate() throws {
+        if let variations = view.variations, !variations.isEmpty {
+            throw Error.sizeClassIsNotSupported(view)
+        }
+    }
+
     func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
         let b = ViewBinder(view: self.view, builder: builder)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)

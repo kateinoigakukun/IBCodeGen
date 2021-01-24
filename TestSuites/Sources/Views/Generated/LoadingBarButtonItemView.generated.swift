@@ -100,6 +100,6 @@ class LoadingBarButtonItemViewOwner: NSObject {
     }
 }
 
-func makeLoadingBarButtonItemViewViews() -> [UIView] {
+func makeLoadingBarButtonItemViewViews() -> [UIView?] {
     [LoadingBarButtonItemViewOwner().contentView]
 }

@@ -7,9 +7,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "SimpleView", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makeSimpleViewViews()
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
@@ -17,9 +18,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "AutoresizingMask", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makeAutoresizingMaskViews()
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
@@ -27,7 +29,8 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "Button", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIButton]
         let translatedViews = makeButtonViews()
-        for (index, (original, translated)) in zip(views, translatedViews).enumerated() where index < 8 {
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
             XCTAssertEqualProperties(original, translated, description: index.description)
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
@@ -38,9 +41,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makeSubviewViews()
         
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
@@ -48,9 +52,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "LoadingBarButtonItemView", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makeLoadingBarButtonItemViewViews()
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
@@ -58,9 +63,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "DiscoveryProjectCategoryView", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makeDiscoveryProjectCategoryViewViews()
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
@@ -68,9 +74,10 @@ final class IBCodeGenKitTests: XCTestCase {
         let nib = UINib(nibName: "PaymentMethodsFooterView", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
         let translatedViews = makePaymentMethodsFooterViewViews()
-        for (original, translated) in zip(views, translatedViews) {
-            XCTAssertEqualProperties(original, translated)
-            XCTAssertEqualAppearance(original, translated)
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 }
