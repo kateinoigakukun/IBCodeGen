@@ -10,9 +10,7 @@ class Button_0Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -34,9 +32,7 @@ class Button_1Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -58,9 +54,7 @@ class Button_2Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -83,9 +77,7 @@ class Button_3Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -108,9 +100,7 @@ class Button_4Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -135,9 +125,7 @@ class Button_5Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -160,9 +148,7 @@ class Button_6Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -185,9 +171,7 @@ class Button_7Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 174.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -209,9 +193,7 @@ class Button_11Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -233,9 +215,7 @@ class Button_12Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -260,9 +240,7 @@ class Button_13Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -287,9 +265,7 @@ class Button_14Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -334,9 +310,7 @@ class Button_15Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 199.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -364,9 +338,7 @@ class Button_16Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 215.0, height: 26.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
             .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
@@ -397,9 +369,7 @@ class Button_17Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -423,9 +393,7 @@ class Button_18Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 195.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitleColor(UIColor.white, for: .normal)
         return view
@@ -447,9 +415,7 @@ class Button_19Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .foregroundColor: UIColor.init(white: 1.0, alpha: 1.0),
@@ -476,9 +442,7 @@ class Button_20Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .foregroundColor: UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0),
@@ -505,9 +469,7 @@ class Button_21Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle({
             let string = NSMutableAttributedString()
@@ -568,9 +530,7 @@ class Button_22Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .backgroundColor: UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0),
@@ -598,9 +558,7 @@ class Button_23Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setAttributedTitle(NSAttributedString(string: "Custom with Attributed Text", attributes: [
             .font: UIFont.systemFont(ofSize: 13)
@@ -625,9 +583,7 @@ class Button_24Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitle("Custom with Plain Text", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
@@ -650,9 +606,7 @@ class Button_25Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitle("Custom with Plain Text", for: .normal)
         view.setTitleColor(UIColor(red: 0.016804177, green: 0.198351, blue: 1.0, alpha: 1.0), for: .normal)
@@ -674,9 +628,7 @@ class Button_26Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 194.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.setTitleColor(UIColor.white, for: .normal)
         return view
@@ -697,9 +649,7 @@ class Button_27Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -722,9 +672,7 @@ class Button_28Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -746,9 +694,7 @@ class Button_29Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 25.0, height: 24.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
@@ -770,9 +716,7 @@ class Button_30Owner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
-        view.contentHorizontalAlignment = .center
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true

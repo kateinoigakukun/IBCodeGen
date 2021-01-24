@@ -22,7 +22,6 @@ class PaymentMethodsFooterViewOwner: NSObject {
         view.isUserInteractionEnabled = true
         view.isOpaque = false
         view.frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 44.0)
-        view.contentVerticalAlignment = .center
         view.contentMode = .scaleToFill
         view.contentHorizontalAlignment = .left
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]

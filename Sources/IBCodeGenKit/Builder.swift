@@ -257,6 +257,19 @@ class ViewElement: ViewCodeBuilder {
 struct ViewBinder<V> {
     let view: V
     let builder: ViewCodeBuilder
+    let assumeClassDefault: Bool
+
+    init(view: V, builder: ViewCodeBuilder, assumeClassDefault: Bool) {
+        self.view = view
+        self.builder = builder
+        self.assumeClassDefault = assumeClassDefault
+    }
+
+    init(view: V, builder: ViewCodeBuilder) where V: ViewProtocol {
+        self.view = view
+        self.builder = builder
+        self.assumeClassDefault = view.customClass == nil
+    }
 
     func bind<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
         _ keyPath: KeyPath<V, V1>, name: String, transform: (V1) -> V2
@@ -269,12 +282,24 @@ struct ViewBinder<V> {
             builder.addProperty(name, value: transform(value))
         }
     }
+    func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, V1?>, classDefault: V1, name: String, transform: (V1) -> V2
+    ) where V1: Equatable {
+        if let value = view[keyPath: keyPath], !(assumeClassDefault && value == classDefault) {
+            builder.addProperty(name, value: transform(value))
+        }
+    }
     func bindIfPresent<Value: SwiftValueRepresentable>(
         _ keyPath: KeyPath<V, Value?>, name: String
     ) {
         bindIfPresent(keyPath, name: name, transform: { $0 })
     }
 
+    func bindIfPresent<Value: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, Value?>, classDefault: Value, name: String
+    ) where Value: Equatable {
+        bindIfPresent(keyPath, classDefault: classDefault, name: name, transform: { $0 })
+    }
     func bind<Value: SwiftValueRepresentable>(
         _ keyPath: KeyPath<V, Value?>, default: Value, name: String
     ) {

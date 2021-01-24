@@ -15,7 +15,8 @@ extension AnyView: CodeGenTargetView {
     }
 
     func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
-        let b = ViewBinder(view: self.view, builder: builder)
+        let b = ViewBinder(view: self.view, builder: builder,
+                           assumeClassDefault: view.customClass != nil)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
         b.bindIfPresent(\.rect, name: "frame")
         builder.addProperty("isUserInteractionEnabled", value: true)

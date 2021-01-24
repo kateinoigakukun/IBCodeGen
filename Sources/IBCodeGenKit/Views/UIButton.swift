@@ -54,14 +54,12 @@ extension Button: CodeGenTargetView {
             }
         }
 
-        b.bindIfPresent(\.contentHorizontalAlignment, name: "contentHorizontalAlignment") {
-            EnumCase($0)
-        }
-        b.bindIfPresent(\.contentVerticalAlignment, name: "contentVerticalAlignment") {
-            EnumCase($0)
-        }
-        b.bindIfPresent(\.isEnabled, name: "isEnabled")
-        b.bindIfPresent(\.showsTouchWhenHighlighted, name: "showsTouchWhenHighlighted")
+        b.bindIfPresent(\.contentHorizontalAlignment, classDefault: "center",
+                        name: "contentHorizontalAlignment", transform: EnumCase.init)
+        b.bindIfPresent(\.contentVerticalAlignment, classDefault: "center",
+                        name: "contentVerticalAlignment", transform: EnumCase.init)
+        b.bindIfPresent(\.isEnabled, classDefault: true, name: "isEnabled")
+        b.bindIfPresent(\.showsTouchWhenHighlighted, classDefault: false, name: "showsTouchWhenHighlighted")
 
         // Default configuration for custom buttons
         if buttonType == nil {
