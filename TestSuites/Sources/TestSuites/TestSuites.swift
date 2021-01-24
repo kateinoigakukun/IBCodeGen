@@ -39,7 +39,7 @@ final class IBCodeGenKitTests: XCTestCase {
     func testLabel() {
         let nib = UINib(nibName: "Label", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UILabel]
-        let translatedViews = makeButtonViews()
+        let translatedViews = makeLabelViews()
         for (index, original) in views.enumerated() {
             guard let translated = translatedViews[index] else { continue }
             XCTAssertEqualProperties(original, translated, description: index.description)
@@ -120,5 +120,11 @@ extension NSAttributedString: CustomNSObjectReflectable {
             .replacingOccurrences(of: "Lists (null), ", with: "")
             .replacingOccurrences(of: "Blocks (\\n), ", with: "")
             .replacingOccurrences(of: "Lists (\\n), ", with: "")
+    }
+}
+
+extension UILabel: CustomNSObjectReflectable {
+    var ignoringReflectionProperties: [String] {
+        ["minimumFontSize"]
     }
 }

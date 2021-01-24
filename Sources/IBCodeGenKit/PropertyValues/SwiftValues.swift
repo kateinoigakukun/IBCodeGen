@@ -26,6 +26,12 @@ extension Float: SwiftValueRepresentable {
     }
 }
 
+extension Int: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write(self.description)
+    }
+}
+
 struct EnumCase: SwiftValueRepresentable {
     let caseValue: String
     init(_ caseValue: String) {

@@ -11,6 +11,8 @@ enum Error: Swift.Error {
     case unsupportedView(ViewProtocol)
     case sizeClassIsNotSupported(ViewProtocol)
     case catalogColorIsNotSupported(Color)
+    case minimumFontSizeIsNotSupported(ViewProtocol)
+    case adjustsLetterSpacingToFitWidthIsNotSupported(ViewProtocol)
 }
 
 protocol CodeGenTargetView {

@@ -40,6 +40,7 @@ class Label_1Owner: NSObject {
         view.frame = CGRect(x: 0.0, y: 0.0, width: 92.0, height: 10.0)
         view.font = UIFont.systemFont(ofSize: 17.0)
         view.contentMode = .left
+        view.baselineAdjustment = .alignCenters
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsFontSizeToFitWidth = false
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
@@ -189,6 +190,7 @@ class Label_7Owner: NSObject {
         let view = UILabel()
         view.textAlignment = .natural
         view.text = "Plain Text"
+        view.minimumScaleFactor = 0.5
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
@@ -197,57 +199,7 @@ class Label_7Owner: NSObject {
         view.contentMode = .left
         view.baselineAdjustment = .alignBaselines
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
-        view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
-        return view
-    }()
-    var contentView: UIView {
-        return label0
-    }
-}
-
-
-
-class Label_8Owner: NSObject {
-    /// Generated from 'R5g-7B-50Y': "Plain Text - Autoshrink (Minimum Font Size)"
-    lazy var label0: UILabel = {
-        let view = UILabel()
-        view.textAlignment = .natural
-        view.text = "Plain Text"
-        view.lineBreakMode = .byTruncatingTail
-        view.isUserInteractionEnabled = false
-        view.isOpaque = false
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 91.0, height: 21.0)
-        view.font = UIFont.systemFont(ofSize: 17.0)
-        view.contentMode = .left
-        view.baselineAdjustment = .alignBaselines
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
-        view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
-        return view
-    }()
-    var contentView: UIView {
-        return label0
-    }
-}
-
-
-
-class Label_9Owner: NSObject {
-    /// Generated from 'QJM-ND-fWW': "Plain Text - Autoshrink (Tighten Letter Spacing)"
-    lazy var label0: UILabel = {
-        let view = UILabel()
-        view.textAlignment = .natural
-        view.text = "Plain Text"
-        view.lineBreakMode = .byTruncatingTail
-        view.isUserInteractionEnabled = false
-        view.isOpaque = false
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 91.0, height: 21.0)
-        view.font = UIFont.systemFont(ofSize: 17.0)
-        view.contentMode = .left
-        view.baselineAdjustment = .alignBaselines
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.adjustsFontSizeToFitWidth = false
+        view.adjustsFontSizeToFitWidth = true
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return view
@@ -274,6 +226,7 @@ class Label_10Owner: NSObject {
         view.baselineAdjustment = .alignBaselines
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsFontSizeToFitWidth = false
+        view.adjustsFontForContentSizeCategory = true
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return view
@@ -343,6 +296,7 @@ class Label_13Owner: NSObject {
         let view = UILabel()
         view.textAlignment = .natural
         view.text = "Multiline Plain Text"
+        view.numberOfLines = 2
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
@@ -369,6 +323,7 @@ class Label_14Owner: NSObject {
         let view = UILabel()
         view.textAlignment = .natural
         view.text = "Multiline Plain Text with UILabel.lines = 0"
+        view.numberOfLines = 0
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
@@ -393,6 +348,7 @@ class Label_15Owner: NSObject {
     /// Generated from 'YvC-oC-vJd': "Plain Text - Color"
     lazy var label0: UILabel = {
         let view = UILabel()
+        view.textColor = UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0)
         view.textAlignment = .natural
         view.text = "Plain Text"
         view.lineBreakMode = .byTruncatingTail
@@ -424,6 +380,7 @@ class Label_16Owner: NSObject {
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
+        view.highlightedTextColor = UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0)
         view.frame = CGRect(x: 0.0, y: 0.0, width: 91.0, height: 21.0)
         view.font = UIFont.systemFont(ofSize: 17.0)
         view.contentMode = .left
@@ -450,6 +407,7 @@ class Label_17Owner: NSObject {
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
+        view.highlightedTextColor = UIColor(red: 0.0, green: 0.97680455, blue: 0.0, alpha: 1.0)
         view.frame = CGRect(x: 0.0, y: 0.0, width: 91.0, height: 21.0)
         view.font = UIFont.systemFont(ofSize: 17.0)
         view.contentMode = .left
@@ -473,6 +431,7 @@ class Label_18Owner: NSObject {
         let view = UILabel()
         view.textAlignment = .natural
         view.text = "Plain Text"
+        view.shadowColor = UIColor(red: 0.99942404, green: 0.9855537, blue: 0.0, alpha: 1.0)
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
@@ -499,6 +458,8 @@ class Label_19Owner: NSObject {
         let view = UILabel()
         view.textAlignment = .natural
         view.text = "Plain Text"
+        view.shadowOffset = CGSize(width: 8.0, height: 2.0)
+        view.shadowColor = UIColor(red: 0.99942404, green: 0.9855537, blue: 0.0, alpha: 1.0)
         view.lineBreakMode = .byTruncatingTail
         view.isUserInteractionEnabled = false
         view.isOpaque = false
@@ -530,6 +491,9 @@ class Label_20Owner: NSObject {
         view.contentMode = .left
         view.baselineAdjustment = .alignBaselines
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.attributedText = NSAttributedString(string: "Attributed Text", attributes: [
+            .font: UIFont.systemFont(ofSize: 17)
+        ])
         view.adjustsFontSizeToFitWidth = false
         view.setContentHuggingPriority(.defaultLow + 1, for: .vertical)
         view.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
@@ -541,5 +505,5 @@ class Label_20Owner: NSObject {
 }
 
 func makeLabelViews() -> [UIView?] {
-    [Label_0Owner().contentView, Label_1Owner().contentView, Label_2Owner().contentView, Label_3Owner().contentView, Label_4Owner().contentView, Label_5Owner().contentView, Label_6Owner().contentView, Label_7Owner().contentView, Label_8Owner().contentView, Label_9Owner().contentView, Label_10Owner().contentView, Label_11Owner().contentView, Label_12Owner().contentView, Label_13Owner().contentView, Label_14Owner().contentView, Label_15Owner().contentView, Label_16Owner().contentView, Label_17Owner().contentView, Label_18Owner().contentView, Label_19Owner().contentView, Label_20Owner().contentView]
+    [Label_0Owner().contentView, Label_1Owner().contentView, Label_2Owner().contentView, Label_3Owner().contentView, Label_4Owner().contentView, Label_5Owner().contentView, Label_6Owner().contentView, Label_7Owner().contentView, nil, nil, Label_10Owner().contentView, Label_11Owner().contentView, Label_12Owner().contentView, Label_13Owner().contentView, Label_14Owner().contentView, Label_15Owner().contentView, Label_16Owner().contentView, Label_17Owner().contentView, Label_18Owner().contentView, Label_19Owner().contentView, Label_20Owner().contentView]
 }

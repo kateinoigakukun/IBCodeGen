@@ -312,4 +312,10 @@ struct ViewBinder<V> {
     ) {
         builder.addProperty(name, value: view[keyPath: keyPath] ?? `default`)
     }
+
+    func bind<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
+        _ keyPath: KeyPath<V, V1?>, default: V1, name: String, transform: (V1) -> V2
+    ) {
+        builder.addProperty(name, value: transform(view[keyPath: keyPath] ?? `default`))
+    }
 }

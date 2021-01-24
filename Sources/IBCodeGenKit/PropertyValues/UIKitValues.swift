@@ -38,6 +38,13 @@ extension Rect: SwiftValueRepresentable {
     }
 }
 
+
+extension Size: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write("CGSize(width: \(width), height: \(height))")
+    }
+}
+
 extension Font: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
         guard let metaFont = metaFont else {
