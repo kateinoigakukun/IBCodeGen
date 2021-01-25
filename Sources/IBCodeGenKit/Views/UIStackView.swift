@@ -14,5 +14,6 @@ extension StackView: CodeGenTargetView {
         b.bindIfPresent(\.distribution, name: "distribution", transform: EnumCase.init)
         b.bindIfPresent(\.alignment, name: "alignment", transform: EnumCase.init)
         b.bindIfPresent(\.spacing, name: "spacing")
+        b.bindIfPresent(\.baselineRelativeArrangement, name: "isBaselineRelativeArrangement")
     }
 }

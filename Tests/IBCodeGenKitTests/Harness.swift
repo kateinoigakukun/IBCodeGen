@@ -101,6 +101,7 @@ final class IBCodeGenKitTests: XCTestCase {
         // Exclude contentStretch related views
         try Self.runTest(excludes: ["6aX-RF-FLC"])
     }
+    func testStackView() throws { try Self.runTest() }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
     func testDiscoveryProjectCategoryView() throws { try Self.runTest() }
