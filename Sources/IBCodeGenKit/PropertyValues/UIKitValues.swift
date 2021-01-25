@@ -409,3 +409,15 @@ extension PreferredSymbolConfiguration: SwiftValueRepresentable {
         target.write(")")
     }
 }
+
+extension Inset: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write("UIEdgeInsets(")
+        let arguments: [Argument] = [
+            ("top", minY ?? 0), ("left", minX ?? 0),
+            ("bottom", maxY ?? 0), ("right", maxX ?? 0),
+        ]
+        try ArgumentList(arguments: arguments).writeValue(target: &target, context: context)
+        target.write(")")
+    }
+}

@@ -61,6 +61,9 @@ extension Button: CodeGenTargetView {
                         name: "contentVerticalAlignment", transform: EnumCase.init)
         b.bindIfPresent(\.isEnabled, classDefault: true, name: "isEnabled")
         b.bindIfPresent(\.showsTouchWhenHighlighted, classDefault: false, name: "showsTouchWhenHighlighted")
+        b.bindIfPresent(\.contentEdgeInsets, name: "contentEdgeInsets")
+        b.bindIfPresent(\.titleEdgeInsets, name: "titleEdgeInsets")
+        b.bindIfPresent(\.imageEdgeInsets, name: "imageEdgeInsets")
 
         // Default configuration for custom buttons
         if buttonType == nil {

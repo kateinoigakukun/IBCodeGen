@@ -625,6 +625,83 @@ class Button_30Owner: NSObject {
     }
 }
 
+
+
+class Button_31Owner: NSObject {
+    /// Generated from 'wpe-a4-SCd': "Content Insets"
+    lazy var button0: UIButton = {
+        let view = UIButton(type: .system)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
+        view.contentEdgeInsets = UIEdgeInsets(top: 15.0, left: 14.0, bottom: 16.0, right: 17.0)
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsImageWhenHighlighted = true
+        view.adjustsImageWhenDisabled = true
+        view.setTitle("System with Plain Text", for: .normal)
+        return view
+    }()
+    var contentView: UIView {
+        return button0
+    }
+}
+
+
+
+class Button_32Owner: NSObject {
+    /// Generated from 'KW1-O2-1Ho': "Partial Content Insets"
+    lazy var button0: UIButton = {
+        let view = UIButton(type: .system)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
+        view.contentEdgeInsets = UIEdgeInsets(top: 15.0, left: 14.0, bottom: 0.0, right: 0.0)
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsImageWhenHighlighted = true
+        view.adjustsImageWhenDisabled = true
+        view.setTitle("System with Plain Text", for: .normal)
+        return view
+    }()
+    var contentView: UIView {
+        return button0
+    }
+}
+
+
+
+class Button_33Owner: NSObject {
+    /// Generated from 'igf-mq-MLH': "Title Insets"
+    lazy var button0: UIButton = {
+        let view = UIButton(type: .system)
+        view.titleEdgeInsets = UIEdgeInsets(top: 11.0, left: 10.0, bottom: 12.0, right: 13.0)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 30.0)
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.adjustsImageWhenHighlighted = true
+        view.adjustsImageWhenDisabled = true
+        view.setTitle("System with Plain Text", for: .normal)
+        return view
+    }()
+    var contentView: UIView {
+        return button0
+    }
+}
+
+
+
+class Button_34Owner: NSObject {
+    /// Generated from 'DcX-ql-S2Y': "Image Insets"
+    lazy var button0: UIButton = {
+        let view = UIButton()
+        view.titleLabel?.lineBreakMode = .byTruncatingMiddle
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        view.imageEdgeInsets = UIEdgeInsets(top: 12.0, left: 10.0, bottom: 14.0, right: 16.0)
+        view.frame = CGRect(x: 0.0, y: 0.0, width: 170.0, height: 49.0)
+        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
+        view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil)!, for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
+        return view
+    }()
+    var contentView: UIView {
+        return button0
+    }
+}
+
 func makeButtonViews() -> [UIView?] {
-    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, nil, nil, nil, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView, Button_30Owner().contentView]
+    [Button_0Owner().contentView, Button_1Owner().contentView, Button_2Owner().contentView, Button_3Owner().contentView, Button_4Owner().contentView, Button_5Owner().contentView, Button_6Owner().contentView, Button_7Owner().contentView, nil, nil, nil, Button_11Owner().contentView, Button_12Owner().contentView, Button_13Owner().contentView, Button_14Owner().contentView, Button_15Owner().contentView, Button_16Owner().contentView, Button_17Owner().contentView, Button_18Owner().contentView, Button_19Owner().contentView, Button_20Owner().contentView, Button_21Owner().contentView, Button_22Owner().contentView, Button_23Owner().contentView, Button_24Owner().contentView, Button_25Owner().contentView, Button_26Owner().contentView, Button_27Owner().contentView, Button_28Owner().contentView, Button_29Owner().contentView, Button_30Owner().contentView, Button_31Owner().contentView, Button_32Owner().contentView, Button_33Owner().contentView, Button_34Owner().contentView]
 }

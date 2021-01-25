@@ -377,9 +377,37 @@
             <state key="highlighted" title="Highlighted Text"/>
             <point key="canvasLocation" x="-39" y="660"/>
         </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="wpe-a4-SCd" userLabel="Content Insets">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <inset key="contentEdgeInsets" minX="14" minY="15" maxX="17" maxY="16"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-39" y="744"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KW1-O2-1Ho" userLabel="Partial Content Insets">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <inset key="contentEdgeInsets" minX="14" minY="15" maxX="0.0" maxY="0.0"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-39" y="796"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="igf-mq-MLH" userLabel="Title Insets">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <inset key="titleEdgeInsets" minX="10" minY="11" maxX="13" maxY="12"/>
+            <state key="normal" title="System with Plain Text"/>
+            <point key="canvasLocation" x="-39" y="848"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DcX-ql-S2Y" userLabel="Image Insets">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <inset key="imageEdgeInsets" minX="10" minY="12" maxX="16" maxY="14"/>
+            <state key="normal" image="icon--plus"/>
+            <point key="canvasLocation" x="-39" y="908"/>
+        </button>
     </objects>
     <resources>
         <image name="cloud.sun.rain" catalog="system" width="128" height="125"/>
-        <image name="zzz" catalog="system" width="121" height="128"/>
+        <image name="icon--plus" width="18" height="18"/>
     </resources>
 </document>
