@@ -47,19 +47,25 @@ extension Size: SwiftValueRepresentable {
 
 extension Font: SwiftValueRepresentable {
     func writeValue<Target>(target: inout Target, context: CodeGenContext) where Target : IndentTextOutputStream {
-        guard let metaFont = metaFont else {
+        if let metaFont = metaFont {
+            let fontSize: Int
+            switch metaFont {
+            case "toolTip":
+                fontSize = 11
+            case "system":
+                fontSize = size.flatMap { Int($0) } ?? 13
+            default:
+                fatalError()
+            }
+            target.write("UIFont.systemFont(ofSize: \(fontSize))")
+        } else if let style = style, style.hasPrefix("UICTFontTextStyle") {
+            var styleCase = String(style.dropFirst("UICTFontTextStyle".count))
+            let headChar = styleCase.first!.lowercased()
+            styleCase = headChar + styleCase.dropFirst(1)
+            target.write("UIFont.preferredFont(forTextStyle: .\(styleCase))")
+        } else {
             preconditionFailure()
         }
-        let fontSize: Int
-        switch metaFont {
-        case "toolTip":
-            fontSize = 11
-        case "system":
-            fontSize = size.flatMap { Int($0) } ?? 13
-        default:
-            fatalError()
-        }
-        target.write("UIFont.systemFont(ofSize: \(fontSize))")
     }
 }
 
@@ -271,11 +277,41 @@ extension LineBreakMode: SwiftValueRepresentable {
 struct Image {
     let name: String
     let catalog: String?
+    let renderingMode: RenderingMode?
+    let symbolScale: String?
+    let symbolTrait: TraitCollection?
+
+    enum RenderingMode: String {
+        case automatic = "automatic"
+        case alwaysOriginal = "original"
+        case alwaysTemplate = "template"
+    }
+
+    init(name: String, catalog: String?,
+         renderingMode: String? = nil,
+         symbolScale: String? = nil,
+         symbolConfiguration: TraitCollection? = nil) {
+        self.name = name
+        self.catalog = catalog
+        self.renderingMode = renderingMode.flatMap(RenderingMode.init(rawValue: ))
+        self.symbolScale = symbolScale
+        self.symbolTrait = symbolConfiguration
+    }
 }
 
 extension Image: SwiftValueRepresentable {
     private func writeAssetCatalog<Target: IndentTextOutputStream>(target: inout Target, context: CodeGenContext) throws {
-        target.write("UIImage(named: \"\(name)\", in: Bundle(for: Self.self), compatibleWith: nil)")
+        target.write("UIImage(named: \"\(name)\", in: Bundle(for: Self.self), compatibleWith: nil)!")
+        if let renderingMode = renderingMode {
+            target.write(".withRenderingMode(.\(renderingMode))")
+        }
+    }
+    private func writeSymbolConfiguration<Target: IndentTextOutputStream>(target: inout Target) {
+        guard let symbolScale = symbolScale else {
+            target.write("UIImage.SymbolConfiguration.unspecified")
+            return
+        }
+        target.write("UIImage.SymbolConfiguration(scale: .\(symbolScale))")
     }
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         if let catalog = catalog, catalog == "system" {
@@ -285,9 +321,18 @@ extension Image: SwiftValueRepresentable {
                 try target.indented { target in
                     try target.writeLine { line in
                         line.write("return UIImage(systemName: \"\(name)\", withConfiguration: ")
-                        try context.defaultDefinition(for: .UIImageSymbolConfiguration)
-                            .writeValue(target: &line, context: context)
-                        line.write(")")
+                        if let trait = symbolTrait {
+                            writeSymbolConfiguration(target: &line)
+                            line.write(".withTraitCollection(")
+                            try trait.writeValue(target: &line, context: context)
+                            line.write(")")
+                        } else {
+                            writeSymbolConfiguration(target: &line)
+                        }
+                        line.write(")!")
+                        if let renderingMode = renderingMode {
+                            line.write(".withRenderingMode(.\(renderingMode))")
+                        }
                     }
                 }
                 target.writeLine("} else {")
@@ -304,5 +349,63 @@ extension Image: SwiftValueRepresentable {
         } else {
             try writeAssetCatalog(target: &target, context: context)
         }
+    }
+}
+
+enum TraitCollection {
+    case buttonSymbolImage
+}
+
+extension TraitCollection: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write("{\n")
+        target.indented { target in
+            let content = """
+            return UITraitCollection(traitsFrom: [
+                UITraitCollection(userInterfaceIdiom: .pad),
+                UITraitCollection(displayScale: 1),
+                UITraitCollection(displayGamut: .SRGB),
+            ])
+            """
+            for line in content.split(whereSeparator: \.isNewline) {
+                target.writeLine(String(line))
+            }
+        }
+        target.writeIndent()
+        target.write("}()")
+    }
+}
+
+extension ImageReference: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        guard let image = image else {
+            target.write("UIImage()")
+            return
+        }
+        try Image(name: image, catalog: catalog, renderingMode: renderingMode, symbolScale: symbolScale)
+            .writeValue(target: &target, context: context)
+    }
+}
+
+extension PreferredSymbolConfiguration: SwiftValueRepresentable {
+    func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write("UIImage.SymbolConfiguration(")
+        var arguments: [Argument] = []
+        switch configuration {
+        case .pointSize(let size):
+            arguments.append((label: "pointSize", value: size))
+        case .font(let font):
+            arguments.append((label: "font", value: font))
+        case .unknown, nil:
+            break
+        }
+        if let weight = weight {
+            arguments.append((label: "weight", value: EnumCase(weight)))
+        }
+        if let scale = scale {
+            arguments.append((label: "scale", value: EnumCase(scale)))
+        }
+        try ArgumentList(arguments: arguments).writeValue(target: &target, context: context)
+        target.write(")")
     }
 }

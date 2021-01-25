@@ -27,7 +27,7 @@ class PaymentMethodsFooterViewOwner: NSObject {
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         view.adjustsImageWhenHighlighted = true
         view.adjustsImageWhenDisabled = true
-        view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil), for: .normal)
+        view.setImage(UIImage(named: "icon--plus", in: Bundle(for: Self.self), compatibleWith: nil)!, for: .normal)
         return view
     }()
     /// Generated from 'SB4-Lk-Ajb'

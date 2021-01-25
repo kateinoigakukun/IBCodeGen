@@ -21,6 +21,7 @@ extension AnyView: CodeGenTargetView {
         b.bindIfPresent(\.rect, name: "frame")
         b.bindIfPresent(\.userInteractionEnabled, classDefault: true, name: "isUserInteractionEnabled")
         b.bindIfPresent(\.isHidden, classDefault: false, name: "isHidden")
+        b.bindIfPresent(\.clipsSubviews, name: "clipsToBounds")
         b.bindIfPresent(\.opaque, classDefault: true, name: "isOpaque")
         b.bindIfPresent(\.backgroundColor, name: "backgroundColor")
         b.bindIfPresent(\.tintColor, name: "tintColor")

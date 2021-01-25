@@ -8,13 +8,19 @@
 import IBDecodable
 
 protocol ViewCodeBuilder {
-    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value)
+    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value, available: Availability?)
     func removeProperty(_ name: String)
     func hasExplicitProperty(_ name: String) -> Bool
     func addMethodCall(_ method: String, arguments: [Argument])
     func addSubview(_ subview: ViewElement)
     func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
     func setConstraints(_ constraints: [Constraint])
+}
+
+extension ViewCodeBuilder {
+    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
+        addProperty(name, value: value, available: nil)
+    }
 }
 
 class RootViewClass {
@@ -161,7 +167,7 @@ class ViewElement: ViewCodeBuilder {
     let elementClass: String
     let userLabel: String?
     var shouldWriteConstraintsActivation: Bool { !constraints.isEmpty }
-    private var properties: [String: SwiftValueRepresentable] = [:]
+    private var properties: [String: (SwiftValueRepresentable, Availability?)] = [:]
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
     private var subviews: [ViewElement] = []
@@ -174,8 +180,8 @@ class ViewElement: ViewCodeBuilder {
         self.userLabel = userLabel
     }
 
-    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value) {
-        properties[name] = value
+    func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value, available: Availability?) {
+        properties[name] = (value, available)
     }
     func hasExplicitProperty(_ name: String) -> Bool { properties[name] != nil }
     func removeProperty(_ name: String) { properties[name] = nil }
@@ -207,23 +213,34 @@ class ViewElement: ViewCodeBuilder {
             }
         }
         target.writeLine("lazy var \(fieldIdentifier): \(className) = {")
-        try target.indented {
+        try target.indented { target in
 
-            try $0.writeLine { line in
+            try target.writeLine { line in
                 line.write("let view = \(className)(")
                 let argList = ArgumentList(arguments: initArguments)
                 try argList.writeValue(target: &line, context: context)
                 line.write(")")
             }
-            for (name, value) in properties.sorted(by: { $0.key > $1.key }) {
-                try $0.writeLine { line in
+            func writeAssignment(target: inout Target, name: String, value: SwiftValueRepresentable) throws {
+                try target.writeLine { line in
                     line.write("view.\(name) = ")
                     try value.writeValue(target: &line, context: context)
                 }
             }
+            for (name, (value, available)) in properties.sorted(by: { $0.key > $1.key }) {
+                if let available = available {
+                    target.writeLine("if #available(iOS \(available.major).\(available.minor), *) {")
+                    try target.indented { target in
+                        try writeAssignment(target: &target, name: name, value: value)
+                    }
+                    target.writeLine("}")
+                } else {
+                    try writeAssignment(target: &target, name: name, value: value)
+                }
+            }
 
             for (method, arguments) in methodCalls {
-                try $0.writeLine { line in
+                try target.writeLine { line in
                     line.write("view.\(method)(")
                     let argList = ArgumentList(arguments: arguments)
                     try argList.writeValue(target: &line, context: context)
@@ -232,9 +249,9 @@ class ViewElement: ViewCodeBuilder {
             }
             let addSubviewMethod = elementClass == "UIStackView" ? "addArrangedSubview" : "addSubview"
             for subview in subviews {
-                $0.writeLine("view.\(addSubviewMethod)(\(context.namespace.getIdentifier(id: subview.id)))")
+                target.writeLine("view.\(addSubviewMethod)(\(context.namespace.getIdentifier(id: subview.id)))")
             }
-            $0.writeLine("return view")
+            target.writeLine("return view")
         }
         target.writeLine("}()")
     }
@@ -255,6 +272,13 @@ class ViewElement: ViewCodeBuilder {
         target.writeIndent()
         target.write("])\n")
     }
+}
+
+struct Availability {
+    let major: Int
+    let minor: Int
+
+    static let iOS13 = Availability(major: 13, minor: 0)
 }
 
 struct ViewBinder<V> {
@@ -280,32 +304,33 @@ struct ViewBinder<V> {
         builder.addProperty(name, value: transform(view[keyPath: keyPath]))
     }
     func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
-        _ keyPath: KeyPath<V, V1?>, name: String, transform: (V1) -> V2) {
+        _ keyPath: KeyPath<V, V1?>, name: String, available: Availability? = nil, transform: (V1) -> V2) {
         if let value = view[keyPath: keyPath] {
-            builder.addProperty(name, value: transform(value))
+            builder.addProperty(name, value: transform(value), available: available)
         }
     }
     func bindIfPresent<V1: SwiftValueRepresentable, V2: SwiftValueRepresentable>(
-        _ keyPath: KeyPath<V, V1?>, classDefault: V1, name: String, transform: (V1) -> V2
+        _ keyPath: KeyPath<V, V1?>, classDefault: V1, name: String,
+        available: Availability? = nil, transform: (V1) -> V2
     ) where V1: Equatable {
         if let value = view[keyPath: keyPath], !(assumeClassDefault && value == classDefault) {
-            builder.addProperty(name, value: transform(value))
+            builder.addProperty(name, value: transform(value), available: available)
         } else if view[keyPath: keyPath] == nil && !assumeClassDefault {
-            builder.addProperty(name, value: transform(classDefault))
+            builder.addProperty(name, value: transform(classDefault), available: available)
         } else if let value = view[keyPath: keyPath], assumeClassDefault && value == classDefault {
             builder.removeProperty(name)
         }
     }
     func bindIfPresent<Value: SwiftValueRepresentable>(
-        _ keyPath: KeyPath<V, Value?>, name: String
+        _ keyPath: KeyPath<V, Value?>, name: String, available: Availability? = nil
     ) {
-        bindIfPresent(keyPath, name: name, transform: { $0 })
+        bindIfPresent(keyPath, name: name, available: available, transform: { $0 })
     }
 
     func bindIfPresent<Value: SwiftValueRepresentable>(
-        _ keyPath: KeyPath<V, Value?>, classDefault: Value, name: String
+        _ keyPath: KeyPath<V, Value?>, classDefault: Value, name: String, available: Availability? = nil
     ) where Value: Equatable {
-        bindIfPresent(keyPath, classDefault: classDefault, name: name, transform: { $0 })
+        bindIfPresent(keyPath, classDefault: classDefault, name: name, available: available, transform: { $0 })
     }
     func bind<Value: SwiftValueRepresentable>(
         _ keyPath: KeyPath<V, Value?>, default: Value, name: String

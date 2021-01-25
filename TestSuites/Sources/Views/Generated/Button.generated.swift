@@ -290,9 +290,15 @@ class Button_16Owner: NSObject {
         ]), for: .normal)
         view.setImage({
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "cloud.sun.rain", withConfiguration: .interfaceBuilderDefault)
+                return UIImage(systemName: "cloud.sun.rain", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
-                return UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil)
+                return UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
         }(), for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
@@ -616,20 +622,6 @@ class Button_30Owner: NSObject {
     }()
     var contentView: UIView {
         return button0
-    }
-}
-
-@available(iOS 13.0, *)
-fileprivate extension UIImage.Configuration {
-    static var interfaceBuilderDefault: UIImage.SymbolConfiguration {
-        let traits = UITraitCollection(traitsFrom: [
-            UITraitCollection(userInterfaceIdiom: .pad),
-            UITraitCollection(displayScale: 1),
-            UITraitCollection(displayGamut: .SRGB),
-        ])
-
-        return  UIImage.SymbolConfiguration.unspecified
-            .withTraitCollection(traits)
     }
 }
 

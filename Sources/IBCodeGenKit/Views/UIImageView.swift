@@ -9,8 +9,15 @@ import IBDecodable
 
 extension ImageView: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
-        if let image = image {
-            builder.addProperty("image", value: RawValueString("UIImage(named: \"\(image)\", in: Bundle(for: Self.self), compatibleWith: nil)"))
-        }
+        let b = ViewBinder(view: self, builder: builder)
+        b.bindIfPresent(\.image, name: "image",
+                        transform: { Image(name: $0, catalog: catalog) })
+        b.bindIfPresent(\.highlightedImage, name: "highlightedImage",
+                        transform: { Image(name: $0, catalog: catalog) })
+        b.bindIfPresent(\.imageReference, name: "image")
+        b.bindIfPresent(\.preferredSymbolConfiguration,
+                        name: "preferredSymbolConfiguration", available: .iOS13)
+        b.bindIfPresent(\.adjustsImageSizeForAccessibilityContentSizeCategory,
+                        name: "adjustsImageSizeForAccessibilityContentSizeCategory")
     }
 }

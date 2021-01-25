@@ -36,58 +36,63 @@
             <point key="canvasLocation" x="-39" y="419"/>
         </imageView>
         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normal-image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="Xvp-q2-DfL" userLabel="Image View - Image (Adjust Image Size)">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="294" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-39" y="536"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="508.92857142857139"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="EDm-t4-ipS" userLabel="Image View - Symbol (Automatic)">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" id="EDm-t4-ipS" userLabel="Image View - Symbol (Automatic)">
+            <rect key="frame" x="0.0" y="0.0" width="88" height="133"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="403" y="66"/>
+            <point key="canvasLocation" x="292.75362318840581" y="67.299107142857139"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="C9j-Oi-LxO" userLabel="Image View - Symbol (Original)">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" highlightedImage="book.fill" id="xoL-bm-yQ9" userLabel="Image View - Symbol and Highlighted">
+            <rect key="frame" x="0.0" y="0.0" width="85" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="509.4202898550725" y="66.294642857142861"/>
+        </imageView>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C9j-Oi-LxO" userLabel="Image View - Symbol (Original)">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" renderingMode="original"/>
             <point key="canvasLocation" x="292.75362318840581" y="155.02232142857142"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="ERG-rl-Ghc" userLabel="Image View - Symbol (Template)">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ERG-rl-Ghc" userLabel="Image View - Symbol (Template)">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" renderingMode="template"/>
-            <point key="canvasLocation" x="513" y="155"/>
+            <point key="canvasLocation" x="511.59420289855075" y="154.35267857142856"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="3Zs-4K-fSb" userLabel="Image View - Symbol (Default Scale)">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3Zs-4K-fSb" userLabel="Image View - Symbol (Default Scale)">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" symbolScale="default"/>
             <point key="canvasLocation" x="293" y="216"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="sw3-9m-J9Q" userLabel="Image View - Symbol (Small Scale)">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sw3-9m-J9Q" userLabel="Image View - Symbol (Small Scale)">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" symbolScale="small"/>
             <point key="canvasLocation" x="512" y="216"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="ovE-Mz-Wdf" userLabel="Image View - Symbol (Medium Scale)">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ovE-Mz-Wdf" userLabel="Image View - Symbol (Medium Scale)">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" symbolScale="medium"/>
             <point key="canvasLocation" x="293" y="273"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="N7j-wQ-xh2" userLabel="Image View - Symbol (Large Scale)">
-            <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="N7j-wQ-xh2" userLabel="Image View - Symbol (Large Scale)">
+            <rect key="frame" x="0.0" y="0.5" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
             <point key="canvasLocation" x="512" y="273"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="thb-ls-lJb" userLabel="Image View - Symbol with Point Size">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="thb-ls-lJb" userLabel="Image View - Symbol with Point Size">
             <rect key="frame" x="0.0" y="0.0" width="88" height="47"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="4"/>
             <point key="canvasLocation" x="293" y="331"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="g0c-7V-auI" userLabel="Image View - Symbol with Font">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="g0c-7V-auI" userLabel="Image View - Symbol with Font">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
@@ -95,33 +100,40 @@
             </preferredSymbolConfiguration>
             <point key="canvasLocation" x="512" y="330"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="wOy-qp-I6u" userLabel="Image View - Symbol with Small Scale Configuration">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="wOy-qp-I6u" userLabel="Image View - Symbol with Small Scale Configuration">
             <rect key="frame" x="0.0" y="0.0" width="88" height="52.5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
             <point key="canvasLocation" x="293" y="391"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="Fye-tK-Ttn" userLabel="Image View - Symbol with Large Scale Configuration">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="Fye-tK-Ttn" userLabel="Image View - Symbol with Large Scale Configuration">
             <rect key="frame" x="0.0" y="0.0" width="88" height="44.5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
             <point key="canvasLocation" x="512" y="391"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="p0P-WH-QcM" userLabel="Image View - Symbol with Ultra Light Weight">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="p0P-WH-QcM" userLabel="Image View - Symbol with Ultra Light Weight">
             <rect key="frame" x="0.0" y="0.0" width="88" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
             <point key="canvasLocation" x="293" y="447"/>
         </imageView>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="DEU-a9-W74" userLabel="Image View - Symbol with Bold Weight">
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="DEU-a9-W74" userLabel="Image View - Symbol with Bold Weight">
             <rect key="frame" x="0.0" y="0.0" width="88" height="48.5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
             <point key="canvasLocation" x="511.59420289855075" y="445.81473214285711"/>
         </imageView>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="command" catalog="system" id="4OI-4J-Fyu" userLabel="Image View - Symbol with Config Combination">
+            <rect key="frame" x="0.0" y="0.0" width="88" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="small" weight="bold"/>
+            <point key="canvasLocation" x="512" y="508"/>
+        </imageView>
     </objects>
     <resources>
         <image name="book" catalog="system" width="128" height="102"/>
+        <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="command" catalog="system" width="128" height="115"/>
         <image name="highlighted-image" width="294" height="56"/>
         <image name="normal-image" width="294" height="56"/>

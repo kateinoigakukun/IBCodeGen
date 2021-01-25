@@ -164,7 +164,7 @@ extension NSObjectMirror.Value {
         let indent = String(repeating: " ", count: depth * 4)
         let parentIndent = String(repeating: " ", count: (depth - 1) * 4)
         switch self {
-        case .object(let object) where object.object is UIView:
+        case .object(let object) where object.object is UIView || object.object is UIImage:
             return """
             {
             \(object.snapshotDescription(depth: depth))

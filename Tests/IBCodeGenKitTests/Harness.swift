@@ -88,6 +88,9 @@ final class IBCodeGenKitTests: XCTestCase {
         // Exclude minimumFontSize and adjustsLetterSpacingToFitWidth related views
         try Self.runTest(excludes: ["R5g-7B-50Y", "QJM-ND-fWW"])
     }
+    func testImageView() throws {
+        try Self.runTest()
+    }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
     func testDiscoveryProjectCategoryView() throws { try Self.runTest() }
