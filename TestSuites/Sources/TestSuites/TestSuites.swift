@@ -91,6 +91,16 @@ final class IBCodeGenKitTests: XCTestCase {
         }
     }
 
+    func testLayoutConstraint() {
+        let nib = UINib(nibName: "LayoutConstraint", bundle: Bundle(for: ViewBundle.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = makeLayoutConstraintViews()
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
+        }
+    }
     func testSubview() {
         let nib = UINib(nibName: "Subview", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]

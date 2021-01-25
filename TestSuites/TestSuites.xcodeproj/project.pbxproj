@@ -30,12 +30,14 @@
 		8C1D7A0AC04C23D898FD2F21 /* AutoresizingMask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7DB799E7BA5EABB66845CE /* AutoresizingMask.xib */; };
 		8D1492261A515251A5E38CC9 /* StackView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6602F8D935EC315F0723B /* StackView.generated.swift */; };
 		8EE5E607EA931E2C932C2644 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E436B5C94E684A26DAA77 /* Exported.swift */; };
+		98CF8F7D28637E4BE04A7C07 /* LayoutConstraint.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E8E7B06BA5B5BC7F8EDBF /* LayoutConstraint.generated.swift */; };
 		A623D01A3D664E58A258D82D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01534750D6879E5EBA27927F /* Assertion.swift */; };
 		BBD5D56D4B9FC755D3C88B9B /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA7ED601BC3F82860153969 /* Button.xib */; };
 		BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */; };
 		CAF53EC7452989D08064D809 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FA7E4A3AC54E57BE50F83 /* dummy.m */; };
 		CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CCD7E34506B14D21A1349 /* SupportingClass.swift */; };
 		CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C8494713D3DE7166F819C8 /* ImageView.xib */; };
+		CF9F3812385EAA221596B43F /* LayoutConstraint.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792FB4806400EF473B56822E /* LayoutConstraint.xib */; };
 		D44CDAAAE66918346CA6E7A7 /* View.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EB2304D7667A9F2DBAA25 /* View.generated.swift */; };
 		DC8EF0CE1CDA679C73F25B42 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
@@ -88,6 +90,7 @@
 		6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuites.swift; sourceTree = "<group>"; };
 		6F0540300B5BEF81529A7925 /* TestSuites.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestSuites.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788CCD7E34506B14D21A1349 /* SupportingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingClass.swift; sourceTree = "<group>"; };
+		792FB4806400EF473B56822E /* LayoutConstraint.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutConstraint.xib; sourceTree = "<group>"; };
 		7BA7ED601BC3F82860153969 /* Button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Button.xib; sourceTree = "<group>"; };
 		7C9013594B3A913121A3CE5C /* DiscoveryProjectCategoryView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryProjectCategoryView.generated.swift; sourceTree = "<group>"; };
 		820CA87A54A2849C632D0B8E /* PrivateUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivateUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +105,7 @@
 		C9C6602F8D935EC315F0723B /* StackView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.generated.swift; sourceTree = "<group>"; };
 		D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingBarButtonItemView.xib; sourceTree = "<group>"; };
 		DA4E7D1F391B16FA192BFAD3 /* LoadingBarButtonItemView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBarButtonItemView.generated.swift; sourceTree = "<group>"; };
+		DA9E8E7B06BA5B5BC7F8EDBF /* LayoutConstraint.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.generated.swift; sourceTree = "<group>"; };
 		DF634699A116ADC5F811ED98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
 		F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedMetrics.generated.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				7C9013594B3A913121A3CE5C /* DiscoveryProjectCategoryView.generated.swift */,
 				1E0A50345789142761E09808 /* ImageView.generated.swift */,
 				6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */,
+				DA9E8E7B06BA5B5BC7F8EDBF /* LayoutConstraint.generated.swift */,
 				DA4E7D1F391B16FA192BFAD3 /* LoadingBarButtonItemView.generated.swift */,
 				3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */,
 				194F3A07BF2748CDDA89B487 /* SimpleView.generated.swift */,
@@ -200,6 +205,7 @@
 				95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */,
 				88C8494713D3DE7166F819C8 /* ImageView.xib */,
 				351FBF19842129D41592F8A5 /* Label.xib */,
+				792FB4806400EF473B56822E /* LayoutConstraint.xib */,
 				D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */,
 				85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */,
 				EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */,
@@ -331,6 +337,7 @@
 				1BF39D75343AD0D1CEA3A0A8 /* DiscoveryProjectCategoryView.xib in Resources */,
 				CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */,
 				8A3C4913573BAEE5BA729E4B /* Label.xib in Resources */,
+				CF9F3812385EAA221596B43F /* LayoutConstraint.xib in Resources */,
 				2344299BBA3CB5303087F5CB /* LoadingBarButtonItemView.xib in Resources */,
 				4DE6F3CD904C75FC4E439F73 /* Media.xcassets in Resources */,
 				DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */,
@@ -354,6 +361,7 @@
 				188F5AD276ABFD73AB49F6CD /* DiscoveryProjectCategoryView.generated.swift in Sources */,
 				5586C2017A2F099D718F4477 /* ImageView.generated.swift in Sources */,
 				FE7F38946B0F77073B315C51 /* Label.generated.swift in Sources */,
+				98CF8F7D28637E4BE04A7C07 /* LayoutConstraint.generated.swift in Sources */,
 				47F853108CBA72593E7A923C /* LoadingBarButtonItemView.generated.swift in Sources */,
 				BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */,
 				7E277F6030AC08CFC9E494F1 /* SimpleView.generated.swift in Sources */,

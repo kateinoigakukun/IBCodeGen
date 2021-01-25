@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hmo-qG-qk9" userLabel="Edge Margin">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foZ-Mt-bJs">
+                    <rect key="frame" x="16" y="16" width="208" height="121"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="iK1-S1-hyX"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="foZ-Mt-bJs" firstAttribute="leading" secondItem="iK1-S1-hyX" secondAttribute="leading" constant="16" id="5UB-B5-Nsb"/>
+                <constraint firstItem="foZ-Mt-bJs" firstAttribute="top" secondItem="hmo-qG-qk9" secondAttribute="top" constant="16" id="CdT-Y7-HEb"/>
+                <constraint firstItem="iK1-S1-hyX" firstAttribute="trailing" secondItem="foZ-Mt-bJs" secondAttribute="trailing" constant="16" id="MIz-5R-jL5"/>
+                <constraint firstItem="iK1-S1-hyX" firstAttribute="bottom" secondItem="foZ-Mt-bJs" secondAttribute="bottom" constant="16" id="de7-Yj-bwY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-130.43478260869566" y="-166.40625"/>
+        </view>
+        <view contentMode="scaleToFill" id="68f-wT-Kmk" userLabel="Baseline and Alignment">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mui-4f-4Tq">
+                    <rect key="frame" x="16" y="16" width="200" height="60"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="TlN-6P-eJX"/>
+                        <constraint firstAttribute="width" constant="200" id="f17-Hv-NYo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-fn-uGX">
+                    <rect key="frame" x="16" y="92.5" width="208" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Z6N-cD-zz9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="JaZ-xd-nyW"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S3D-fn-uGX" firstAttribute="leading" secondItem="mui-4f-4Tq" secondAttribute="leading" id="3SU-hE-BTM"/>
+                <constraint firstItem="mui-4f-4Tq" firstAttribute="top" secondItem="68f-wT-Kmk" secondAttribute="top" constant="16" id="Awq-BP-PU0"/>
+                <constraint firstItem="S3D-fn-uGX" firstAttribute="centerY" secondItem="68f-wT-Kmk" secondAttribute="centerY" id="BT6-Ef-vbp"/>
+                <constraint firstItem="mui-4f-4Tq" firstAttribute="leading" secondItem="JaZ-xd-nyW" secondAttribute="leading" constant="16" id="Pgu-zd-GMp"/>
+                <constraint firstItem="S3D-fn-uGX" firstAttribute="centerX" secondItem="68f-wT-Kmk" secondAttribute="centerX" id="su5-PH-vdt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-130.43478260869566" y="-7.03125"/>
+        </view>
+        <view contentMode="scaleToFill" id="vYD-m7-efO" userLabel="First Baseline and Aspect Ratio">
+            <rect key="frame" x="0.0" y="0.0" width="236" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwP-Jg-aaA">
+                    <rect key="frame" x="16" y="16" width="200" height="60"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="2wR-XV-oNp"/>
+                        <constraint firstAttribute="width" constant="200" id="ZVT-r3-TDC"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9u5-04-kWH">
+                    <rect key="frame" x="16" y="16" width="160" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9u5-04-kWH" secondAttribute="height" multiplier="20:5" id="Zcr-9a-UOy"/>
+                        <constraint firstAttribute="height" constant="40" id="wyf-Jm-67p"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="0MR-4q-FUm"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9u5-04-kWH" firstAttribute="firstBaseline" secondItem="BwP-Jg-aaA" secondAttribute="firstBaseline" id="2sG-lJ-Q3y"/>
+                <constraint firstItem="9u5-04-kWH" firstAttribute="leading" secondItem="0MR-4q-FUm" secondAttribute="leading" constant="16" id="Le1-FL-Z1n"/>
+                <constraint firstItem="BwP-Jg-aaA" firstAttribute="leading" secondItem="0MR-4q-FUm" secondAttribute="leading" constant="16" id="lRJ-9a-Wiz"/>
+                <constraint firstItem="BwP-Jg-aaA" firstAttribute="top" secondItem="vYD-m7-efO" secondAttribute="top" constant="16" id="nbp-gl-zOz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-133.33333333333334" y="130.58035714285714"/>
+        </view>
+        <view contentMode="scaleToFill" id="L9M-zy-IOf" userLabel="Equal Width and Height">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCo-pB-yjL">
+                    <rect key="frame" x="16" y="16" width="208" height="193"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-Kj-XIm">
+                    <rect key="frame" x="16" y="16" width="208" height="193"/>
+                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="0ZD-mX-EQ1"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="79Y-Kj-XIm" firstAttribute="centerX" secondItem="L9M-zy-IOf" secondAttribute="centerX" id="Dtw-Z1-GR1"/>
+                <constraint firstItem="79Y-Kj-XIm" firstAttribute="centerY" secondItem="L9M-zy-IOf" secondAttribute="centerY" id="NZV-4T-cQW"/>
+                <constraint firstItem="79Y-Kj-XIm" firstAttribute="height" secondItem="LCo-pB-yjL" secondAttribute="height" id="Yan-Lg-eLk"/>
+                <constraint firstItem="LCo-pB-yjL" firstAttribute="leading" secondItem="0ZD-mX-EQ1" secondAttribute="leading" constant="16" id="Zgv-Dm-hvf"/>
+                <constraint firstItem="LCo-pB-yjL" firstAttribute="centerY" secondItem="L9M-zy-IOf" secondAttribute="centerY" id="gRc-Sp-AdK"/>
+                <constraint firstItem="LCo-pB-yjL" firstAttribute="centerX" secondItem="L9M-zy-IOf" secondAttribute="centerX" id="rjX-dR-dYx"/>
+                <constraint firstItem="LCo-pB-yjL" firstAttribute="top" secondItem="L9M-zy-IOf" secondAttribute="top" constant="16" id="s6m-zf-ee0"/>
+                <constraint firstItem="79Y-Kj-XIm" firstAttribute="width" secondItem="LCo-pB-yjL" secondAttribute="width" id="xau-3k-qZ9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-130" y="281"/>
+        </view>
+    </objects>
+</document>

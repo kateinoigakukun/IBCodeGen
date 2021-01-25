@@ -98,6 +98,16 @@ extension Constraint {
         fatalError("unreachable")
     }
 
+    private static func evaluate(multiplier: String) -> Float {
+        if let validFloat = Float(multiplier) {
+            return validFloat
+        }
+        let parts = multiplier.split(separator: ":")
+        assert(parts.count == 2)
+        let lhs = Float(parts[0])!
+        let rhs = Float(parts[1])!
+        return lhs/rhs
+    }
     private func writeAnchorRelation<Target>(
         target: inout Target, context: CodeGenContext, selfView: String
     ) throws where Target : IndentTextOutputStream {
@@ -135,7 +145,7 @@ extension Constraint {
             assert(!firstAnchor.attribute.hasSystemMargin) // TODO: Support relative to margin
             arguments.append((label: "\(relation.caseName)To", value: secondAnchor))
             if let multiplier = multiplier {
-                arguments.append((label: "multiplier", value: multiplier))
+                arguments.append((label: "multiplier", value: Self.evaluate(multiplier: multiplier)))
             }
             if let constant = constant {
                 arguments.append((label: "constant", value: constant))
