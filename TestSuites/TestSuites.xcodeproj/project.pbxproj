@@ -12,6 +12,7 @@
 		1A66F09EFB686A788142DB86 /* SimulatedMetrics.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */; };
 		1BF39D75343AD0D1CEA3A0A8 /* DiscoveryProjectCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */; };
 		2344299BBA3CB5303087F5CB /* LoadingBarButtonItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */; };
+		25286283BE589496BCD2F3EA /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E52B7A92D5094FA7BEBB5A0 /* View.xib */; };
 		2C82722411BF990C77438C5B /* Views.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; };
 		3EA8CB59274BBACC5E235466 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 11E39A4B8238876C70C66113 /* SnapshotTesting */; };
 		430B0130D1312F74A79D523F /* SimulatedMetrics.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9549811E41EDFFF9226DA1AF /* SimulatedMetrics.xib */; };
@@ -33,6 +34,7 @@
 		CAF53EC7452989D08064D809 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FA7E4A3AC54E57BE50F83 /* dummy.m */; };
 		CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CCD7E34506B14D21A1349 /* SupportingClass.swift */; };
 		CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C8494713D3DE7166F819C8 /* ImageView.xib */; };
+		D44CDAAAE66918346CA6E7A7 /* View.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EB2304D7667A9F2DBAA25 /* View.generated.swift */; };
 		DC8EF0CE1CDA679C73F25B42 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
@@ -72,8 +74,10 @@
 		22E1EE825D94E1254C0EF562 /* Subview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Subview.xib; sourceTree = "<group>"; };
 		351FBF19842129D41592F8A5 /* Label.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Label.xib; sourceTree = "<group>"; };
 		3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsFooterView.generated.swift; sourceTree = "<group>"; };
+		3E52B7A92D5094FA7BEBB5A0 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		412A4F5014867ACE58EFF34F /* Button.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.generated.swift; sourceTree = "<group>"; };
 		4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectDiffing.swift; sourceTree = "<group>"; };
+		495EB2304D7667A9F2DBAA25 /* View.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.generated.swift; sourceTree = "<group>"; };
 		4B4909AFC5A7CEF40001971D /* AutoresizingMask.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMask.generated.swift; sourceTree = "<group>"; };
 		5387779A467B13B5CE483A70 /* Subview.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.generated.swift; sourceTree = "<group>"; };
 		59EBFD7EC04A8D1A1E123E3B /* Views.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Views.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 				194F3A07BF2748CDDA89B487 /* SimpleView.generated.swift */,
 				F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */,
 				5387779A467B13B5CE483A70 /* Subview.generated.swift */,
+				495EB2304D7667A9F2DBAA25 /* View.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */,
 				9549811E41EDFFF9226DA1AF /* SimulatedMetrics.xib */,
 				22E1EE825D94E1254C0EF562 /* Subview.xib */,
+				3E52B7A92D5094FA7BEBB5A0 /* View.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				47C5E4047B9BB36548E8EA74 /* SimpleView.xib in Resources */,
 				430B0130D1312F74A79D523F /* SimulatedMetrics.xib in Resources */,
 				0F7C82F2B3D6C700EA1C63E3 /* Subview.xib in Resources */,
+				25286283BE589496BCD2F3EA /* View.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +353,7 @@
 				1A66F09EFB686A788142DB86 /* SimulatedMetrics.generated.swift in Sources */,
 				6C4C141371DE1D6DE5E1574B /* Subview.generated.swift in Sources */,
 				CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */,
+				D44CDAAAE66918346CA6E7A7 /* View.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

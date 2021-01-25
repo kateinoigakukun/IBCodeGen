@@ -69,6 +69,17 @@ final class IBCodeGenKitTests: XCTestCase {
         }
     }
 
+    func testView() {
+        let nib = UINib(nibName: "View", bundle: Bundle(for: ViewBundle.self))
+        let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
+        let translatedViews = makeViewViews()
+        for (index, original) in views.enumerated() {
+            guard let translated = translatedViews[index] else { continue }
+            XCTAssertEqualProperties(original, translated, description: index.description)
+            XCTAssertEqualAppearance(original, translated, description: index.description)
+        }
+    }
+
     func testSubview() {
         let nib = UINib(nibName: "Subview", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]

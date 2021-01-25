@@ -97,6 +97,7 @@ final class IBCodeGenKitTests: XCTestCase {
             "A2l-RL-YAK", "jCR-Mx-M8z",
         ])
     }
+    func testView() throws { try Self.runTest() }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
     func testDiscoveryProjectCategoryView() throws { try Self.runTest() }
