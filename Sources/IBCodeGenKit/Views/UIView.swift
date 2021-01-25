@@ -25,6 +25,12 @@ extension AnyView: CodeGenTargetView {
         b.bindIfPresent(\.opaque, classDefault: true, name: "isOpaque")
         b.bindIfPresent(\.backgroundColor, name: "backgroundColor")
         b.bindIfPresent(\.tintColor, name: "tintColor")
+        b.bindIfPresent(\.semanticContentAttribute, name: "semanticContentAttribute",
+                        transform: EnumCase.init)
+        b.bindIfPresent(\.preservesSuperviewLayoutMargins, name: "preservesSuperviewLayoutMargins")
+        b.bindIfPresent(\.tag, name: "tag")
+        b.bindIfPresent(\.alpha, name: "alpha")
+        b.bindIfPresent(\.autoresizesSubviews, name: "autoresizesSubviews")
         b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, classDefault: true,
                         name: "translatesAutoresizingMaskIntoConstraints")
 

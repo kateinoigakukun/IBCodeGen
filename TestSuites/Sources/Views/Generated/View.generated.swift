@@ -33,6 +33,7 @@ class View_1Owner: NSObject {
     /// Generated from 'GtO-Sb-2Bs': "Semantics (Playback)"
     lazy var view0: UIView = {
         let view = UIView()
+        view.semanticContentAttribute = .playback
         view.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
@@ -60,6 +61,7 @@ class View_2Owner: NSObject {
     /// Generated from 'hRD-ZB-p8C': "Tag"
     lazy var view0: UIView = {
         let view = UIView()
+        view.tag = 42
         view.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
@@ -156,6 +158,7 @@ class View_5Owner: NSObject {
             }
         }()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.alpha = 0.5
         return view
     }()
     var contentView: UIView {
@@ -353,6 +356,7 @@ class View_13Owner: NSObject {
             }
         }()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.autoresizesSubviews = false
         return view
     }()
     var contentView: UIView {
@@ -368,32 +372,6 @@ class View_14Owner: NSObject {
         let view = UIView()
         view.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = {
-            if #available(iOS 13.0, *) {
-                return UIColor.systemBackground
-            } else {
-                return {
-                    var components: [CGFloat] = [1.0, 1.0]
-                    let colorSpace = CGColorSpace(name: CGColorSpace.genericGrayGamma2_2)!
-                    let cgColor = CGColor(colorSpace: colorSpace, components: &components)!
-                    return UIColor(cgColor: cgColor)
-                }()
-            }
-        }()
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return view
-    }()
-    var contentView: UIView {
-        return view0
-    }
-}
-
-
-
-class View_15Owner: NSObject {
-    /// Generated from '6aX-RF-FLC': "Stretching"
-    lazy var view0: UIView = {
-        let view = UIView()
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground
@@ -474,6 +452,7 @@ class View_18Owner: NSObject {
     /// Generated from 'Gfj-dM-jy1': "Preserve Superview Margins"
     lazy var view0: UIView = {
         let view = UIView()
+        view.preservesSuperviewLayoutMargins = true
         view.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
@@ -577,5 +556,5 @@ class View_21Owner: NSObject {
 }
 
 func makeViewViews() -> [UIView?] {
-    [View_0Owner().contentView, View_1Owner().contentView, View_2Owner().contentView, View_3Owner().contentView, View_4Owner().contentView, View_5Owner().contentView, View_6Owner().contentView, View_7Owner().contentView, View_8Owner().contentView, View_9Owner().contentView, View_10Owner().contentView, View_11Owner().contentView, View_12Owner().contentView, View_13Owner().contentView, View_14Owner().contentView, View_15Owner().contentView, View_16Owner().contentView, View_17Owner().contentView, View_18Owner().contentView, View_19Owner().contentView, View_20Owner().contentView, View_21Owner().contentView]
+    [View_0Owner().contentView, View_1Owner().contentView, View_2Owner().contentView, View_3Owner().contentView, View_4Owner().contentView, View_5Owner().contentView, View_6Owner().contentView, View_7Owner().contentView, View_8Owner().contentView, View_9Owner().contentView, View_10Owner().contentView, View_11Owner().contentView, View_12Owner().contentView, View_13Owner().contentView, View_14Owner().contentView, nil, View_16Owner().contentView, View_17Owner().contentView, View_18Owner().contentView, View_19Owner().contentView, View_20Owner().contentView, View_21Owner().contentView]
 }
