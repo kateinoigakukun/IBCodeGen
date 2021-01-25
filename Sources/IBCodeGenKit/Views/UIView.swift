@@ -75,3 +75,27 @@ extension AnyView: CodeGenTargetView {
         }
     }
 }
+
+extension View: CodeGenTargetView {
+    func validate() throws {
+        if let simulatedNavigationBarMetrics = simulatedNavigationBarMetrics,
+           let translucent = simulatedNavigationBarMetrics.translucent, !translucent {
+            throw Error.opaqueBarIsNotSupported(self)
+        }
+
+        if let simulatedToolbarMetrics = simulatedToolbarMetrics,
+           let translucent = simulatedToolbarMetrics.translucent, !translucent {
+            throw Error.opaqueBarIsNotSupported(self)
+        }
+
+        if let simulatedTabBarMetrics = simulatedTabBarMetrics,
+           let translucent = simulatedTabBarMetrics.translucent, !translucent {
+            throw Error.opaqueBarIsNotSupported(self)
+        }
+
+        if modalPageSheetSimulatedSizeMetrics != nil || modalFormSheetSimulatedSizeMetrics != nil {
+            throw Error.modalSheetIsNotSupported(self)
+        }
+    }
+    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {}
+}

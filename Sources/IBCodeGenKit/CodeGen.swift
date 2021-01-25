@@ -13,6 +13,8 @@ enum Error: Swift.Error {
     case catalogColorIsNotSupported(Color)
     case minimumFontSizeIsNotSupported(ViewProtocol)
     case adjustsLetterSpacingToFitWidthIsNotSupported(ViewProtocol)
+    case opaqueBarIsNotSupported(ViewProtocol)
+    case modalSheetIsNotSupported(ViewProtocol)
 }
 
 protocol CodeGenTargetView {

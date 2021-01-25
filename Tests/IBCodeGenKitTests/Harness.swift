@@ -88,8 +88,14 @@ final class IBCodeGenKitTests: XCTestCase {
         // Exclude minimumFontSize and adjustsLetterSpacingToFitWidth related views
         try Self.runTest(excludes: ["R5g-7B-50Y", "QJM-ND-fWW"])
     }
-    func testImageView() throws {
-        try Self.runTest()
+    func testImageView() throws { try Self.runTest() }
+    func testSimulatedMetrics() throws {
+        // Exclude Opaque Navigation|Tab|Tool Bar and Modal Sheet related views
+        try Self.runTest(excludes: [
+            "Nzv-CW-QKi", "TMF-cQ-ANF", "kay-jc-eiq", "Q8g-cr-4Ad",
+            "9Ag-lF-s1d", "2Md-Kf-K3o", "eTt-Sc-Fzi", "2WY-wc-VGC",
+            "A2l-RL-YAK", "jCR-Mx-M8z",
+        ])
     }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }
