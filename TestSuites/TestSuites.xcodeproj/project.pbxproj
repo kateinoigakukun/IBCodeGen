@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		A623D01A3D664E58A258D82D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01534750D6879E5EBA27927F /* Assertion.swift */; };
 		BBD5D56D4B9FC755D3C88B9B /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA7ED601BC3F82860153969 /* Button.xib */; };
 		BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */; };
+		C415851525BEEBA7004019D3 /* SimulatedMetrics.xib in Resources */ = {isa = PBXBuildFile; fileRef = C415851425BEEBA7004019D3 /* SimulatedMetrics.xib */; };
 		CAF53EC7452989D08064D809 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FA7E4A3AC54E57BE50F83 /* dummy.m */; };
 		CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CCD7E34506B14D21A1349 /* SupportingClass.swift */; };
 		CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C8494713D3DE7166F819C8 /* ImageView.xib */; };
@@ -89,6 +90,7 @@
 		9893294A8C63D3D69D8DD15D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		A89E436B5C94E684A26DAA77 /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
 		B6BF9046A22C7F02D5E2D25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C415851425BEEBA7004019D3 /* SimulatedMetrics.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulatedMetrics.xib; sourceTree = "<group>"; };
 		D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingBarButtonItemView.xib; sourceTree = "<group>"; };
 		DA4E7D1F391B16FA192BFAD3 /* LoadingBarButtonItemView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBarButtonItemView.generated.swift; sourceTree = "<group>"; };
 		DF634699A116ADC5F811ED98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				8A7DB799E7BA5EABB66845CE /* AutoresizingMask.xib */,
 				7BA7ED601BC3F82860153969 /* Button.xib */,
+				C415851425BEEBA7004019D3 /* SimulatedMetrics.xib */,
 				95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */,
 				88C8494713D3DE7166F819C8 /* ImageView.xib */,
 				351FBF19842129D41592F8A5 /* Label.xib */,
@@ -279,8 +282,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 8D6ECCA2B1CC5376E21A792A /* Build configuration list for PBXProject "TestSuites" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -308,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C415851525BEEBA7004019D3 /* SimulatedMetrics.xib in Resources */,
 				8C1D7A0AC04C23D898FD2F21 /* AutoresizingMask.xib in Resources */,
 				BBD5D56D4B9FC755D3C88B9B /* Button.xib in Resources */,
 				1BF39D75343AD0D1CEA3A0A8 /* DiscoveryProjectCategoryView.xib in Resources */,
