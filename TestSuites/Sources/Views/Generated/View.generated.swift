@@ -508,6 +508,7 @@ class View_20Owner: NSObject {
     lazy var view0: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         view.backgroundColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemBackground

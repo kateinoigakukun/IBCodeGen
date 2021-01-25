@@ -31,6 +31,7 @@ extension AnyView: CodeGenTargetView {
         b.bindIfPresent(\.tag, name: "tag")
         b.bindIfPresent(\.alpha, name: "alpha")
         b.bindIfPresent(\.autoresizesSubviews, name: "autoresizesSubviews")
+        b.bindIfPresent(\.insetsLayoutMarginsFromSafeArea, name: "insetsLayoutMarginsFromSafeArea")
         b.bindIfPresent(\.translatesAutoresizingMaskIntoConstraints, classDefault: true,
                         name: "translatesAutoresizingMaskIntoConstraints")
 
