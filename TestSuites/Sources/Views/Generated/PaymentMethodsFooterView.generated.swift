@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class PaymentMethodsFooterViewOwner: NSObject {
+class PaymentMethodsFooterView_Owner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var paymentMethodsFooterView0: PaymentMethodsFooterView = {
         let view = PaymentMethodsFooterView()
@@ -78,5 +78,5 @@ class PaymentMethodsFooterViewOwner: NSObject {
 }
 
 func makePaymentMethodsFooterViewViews() -> [UIView?] {
-    [PaymentMethodsFooterViewOwner().contentView]
+    [PaymentMethodsFooterView_Owner().contentView]
 }

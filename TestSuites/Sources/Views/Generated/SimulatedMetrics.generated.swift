@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class SimulatedMetrics_0Owner: NSObject {
+class SimulatedMetrics_0_Owner: NSObject {
     /// Generated from 'BcN-0B-eRl': "Default"
     lazy var view0: UIView = {
         let view = UIView()
@@ -29,7 +29,7 @@ class SimulatedMetrics_0Owner: NSObject {
 
 
 
-class SimulatedMetrics_1Owner: NSObject {
+class SimulatedMetrics_1_Owner: NSObject {
     /// Generated from '61i-Si-uzq': "Appearance (Light)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -56,7 +56,7 @@ class SimulatedMetrics_1Owner: NSObject {
 
 
 
-class SimulatedMetrics_2Owner: NSObject {
+class SimulatedMetrics_2_Owner: NSObject {
     /// Generated from 'DWA-Xg-hUm': "Appearance (Dark)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -83,7 +83,7 @@ class SimulatedMetrics_2Owner: NSObject {
 
 
 
-class SimulatedMetrics_3Owner: NSObject {
+class SimulatedMetrics_3_Owner: NSObject {
     /// Generated from 'Fdg-aF-MAn': "Size (Freeform)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -110,7 +110,7 @@ class SimulatedMetrics_3Owner: NSObject {
 
 
 
-class SimulatedMetrics_6Owner: NSObject {
+class SimulatedMetrics_6_Owner: NSObject {
     /// Generated from 'MjW-tz-GZL': "Size (Detail)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -137,7 +137,7 @@ class SimulatedMetrics_6Owner: NSObject {
 
 
 
-class SimulatedMetrics_7Owner: NSObject {
+class SimulatedMetrics_7_Owner: NSObject {
     /// Generated from 'AhO-sz-JPg': "Size (Master)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -164,7 +164,7 @@ class SimulatedMetrics_7Owner: NSObject {
 
 
 
-class SimulatedMetrics_8Owner: NSObject {
+class SimulatedMetrics_8_Owner: NSObject {
     /// Generated from 'bnI-Co-HwI': "Top Bar (Translucent Navigation Bar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -191,7 +191,7 @@ class SimulatedMetrics_8Owner: NSObject {
 
 
 
-class SimulatedMetrics_9Owner: NSObject {
+class SimulatedMetrics_9_Owner: NSObject {
     /// Generated from 'dmQ-8i-RWf': "Top Bar (Translucent Navigation Bar With Prompt)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -218,7 +218,7 @@ class SimulatedMetrics_9Owner: NSObject {
 
 
 
-class SimulatedMetrics_10Owner: NSObject {
+class SimulatedMetrics_10_Owner: NSObject {
     /// Generated from 'uH0-xZ-FFY': "Top Bar (Translucent Black Navigation Bar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -245,7 +245,7 @@ class SimulatedMetrics_10Owner: NSObject {
 
 
 
-class SimulatedMetrics_11Owner: NSObject {
+class SimulatedMetrics_11_Owner: NSObject {
     /// Generated from 'dDE-rB-uMP': "Top Bar (Translucent Black Navigation Bar With Prompt)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -272,7 +272,7 @@ class SimulatedMetrics_11Owner: NSObject {
 
 
 
-class SimulatedMetrics_16Owner: NSObject {
+class SimulatedMetrics_16_Owner: NSObject {
     /// Generated from 'FMr-ny-a1g': "Bottom Bar (Translucent Black Tab Bar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -299,7 +299,7 @@ class SimulatedMetrics_16Owner: NSObject {
 
 
 
-class SimulatedMetrics_17Owner: NSObject {
+class SimulatedMetrics_17_Owner: NSObject {
     /// Generated from 'wUS-LK-NT2': "Bottom Bar (Translucent Tab Bar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -326,7 +326,7 @@ class SimulatedMetrics_17Owner: NSObject {
 
 
 
-class SimulatedMetrics_18Owner: NSObject {
+class SimulatedMetrics_18_Owner: NSObject {
     /// Generated from 'stA-0U-neo': "Bottom Bar (Translucent Black Toolbar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -353,7 +353,7 @@ class SimulatedMetrics_18Owner: NSObject {
 
 
 
-class SimulatedMetrics_19Owner: NSObject {
+class SimulatedMetrics_19_Owner: NSObject {
     /// Generated from 'A9Q-4C-3ve': "Bottom Bar (Translucent Toolbar)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -379,5 +379,5 @@ class SimulatedMetrics_19Owner: NSObject {
 }
 
 func makeSimulatedMetricsViews() -> [UIView?] {
-    [SimulatedMetrics_0Owner().contentView, SimulatedMetrics_1Owner().contentView, SimulatedMetrics_2Owner().contentView, SimulatedMetrics_3Owner().contentView, nil, nil, SimulatedMetrics_6Owner().contentView, SimulatedMetrics_7Owner().contentView, SimulatedMetrics_8Owner().contentView, SimulatedMetrics_9Owner().contentView, SimulatedMetrics_10Owner().contentView, SimulatedMetrics_11Owner().contentView, nil, nil, nil, nil, SimulatedMetrics_16Owner().contentView, SimulatedMetrics_17Owner().contentView, SimulatedMetrics_18Owner().contentView, SimulatedMetrics_19Owner().contentView, nil, nil, nil, nil]
+    [SimulatedMetrics_0_Owner().contentView, SimulatedMetrics_1_Owner().contentView, SimulatedMetrics_2_Owner().contentView, SimulatedMetrics_3_Owner().contentView, nil, nil, SimulatedMetrics_6_Owner().contentView, SimulatedMetrics_7_Owner().contentView, SimulatedMetrics_8_Owner().contentView, SimulatedMetrics_9_Owner().contentView, SimulatedMetrics_10_Owner().contentView, SimulatedMetrics_11_Owner().contentView, nil, nil, nil, nil, SimulatedMetrics_16_Owner().contentView, SimulatedMetrics_17_Owner().contentView, SimulatedMetrics_18_Owner().contentView, SimulatedMetrics_19_Owner().contentView, nil, nil, nil, nil]
 }

@@ -67,8 +67,8 @@ class CodeGenContext {
     }
 }
 
-func codegen(from anyView: AnyView, rootView: OwnerClassClass,
-             context: inout CodeGenContext) throws -> ViewElement {
+func codegen(from anyView: AnyView, rootView: RootClassBuilder,
+             context: inout CodeGenContext) throws -> ViewCodeBuilder {
     let className = anyView.view.customClass ?? anyView.view.elementClass
     guard let view = anyView.view as? IBIdentifiable & ViewProtocol else {
         throw Error.unsupportedView(anyView.view)

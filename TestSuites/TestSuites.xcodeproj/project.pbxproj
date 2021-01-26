@@ -42,6 +42,7 @@
 		DC8EF0CE1CDA679C73F25B42 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
 		F271AD6325C0688C00A19948 /* CustomRootClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = F271AD6225C0688C00A19948 /* CustomRootClass.xib */; };
+		F271AD8C25C0741100A19948 /* CustomRootClass.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F271AD8B25C0741100A19948 /* CustomRootClass.generated.swift */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
 		F7AE30670013A8C0CF2E6F4C /* Button.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A4F5014867ACE58EFF34F /* Button.generated.swift */; };
 		FE7F38946B0F77073B315C51 /* Label.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */; };
@@ -109,6 +110,7 @@
 		EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
 		EF135347B894ADA8C76A8D5C /* TableViewCell.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.generated.swift; sourceTree = "<group>"; };
 		F271AD6225C0688C00A19948 /* CustomRootClass.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRootClass.xib; sourceTree = "<group>"; };
+		F271AD8B25C0741100A19948 /* CustomRootClass.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRootClass.generated.swift; sourceTree = "<group>"; };
 		F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedMetrics.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				5387779A467B13B5CE483A70 /* Subview.generated.swift */,
 				EF135347B894ADA8C76A8D5C /* TableViewCell.generated.swift */,
 				495EB2304D7667A9F2DBAA25 /* View.generated.swift */,
+				F271AD8B25C0741100A19948 /* CustomRootClass.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				1A66F09EFB686A788142DB86 /* SimulatedMetrics.generated.swift in Sources */,
 				8D1492261A515251A5E38CC9 /* StackView.generated.swift in Sources */,
 				6C4C141371DE1D6DE5E1574B /* Subview.generated.swift in Sources */,
+				F271AD8C25C0741100A19948 /* CustomRootClass.generated.swift in Sources */,
 				CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */,
 				4D3D8CED2258A809CAD5DF2C /* TableViewCell.generated.swift in Sources */,
 				D44CDAAAE66918346CA6E7A7 /* View.generated.swift in Sources */,

@@ -10,14 +10,14 @@ import Foundation
 class OwnerClassClass: RootClassBuilder {
     let className: String
     let id: String
-    var subviews: [ViewElement] = []
+    private var subviews: [ViewElement] = []
 
-    init(className: String, id: String) {
-        self.className = className
+    init(baseClassName: String, id: String) {
+        self.className = baseClassName + "_Owner"
         self.id = id
     }
 
-    func makeSubview(id: String, className: String, elementClass: String, userLabel: String?) -> ViewElement {
+    func makeSubview(id: String, className: String, elementClass: String, userLabel: String?) -> ViewCodeBuilder {
         let subview = ViewElement(id: id, className: className, elementClass: elementClass, userLabel: userLabel)
         subviews.append(subview)
         return subview

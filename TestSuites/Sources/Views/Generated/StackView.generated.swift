@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class StackView_0Owner: NSObject {
+class StackView_0_Owner: NSObject {
     /// Generated from '6G3-mR-lPD': "Default Vertical"
     lazy var stackView0: UIStackView = {
         let view = UIStackView()
@@ -49,7 +49,7 @@ class StackView_0Owner: NSObject {
 
 
 
-class StackView_1Owner: NSObject {
+class StackView_1_Owner: NSObject {
     /// Generated from 'GDo-3p-hbc': "Vertical with Alignment"
     lazy var stackView0: UIStackView = {
         let view = UIStackView()
@@ -97,7 +97,7 @@ class StackView_1Owner: NSObject {
 
 
 
-class StackView_2Owner: NSObject {
+class StackView_2_Owner: NSObject {
     /// Generated from 'sVa-4f-NCV': "Vertical with Spacing"
     lazy var stackView0: UIStackView = {
         let view = UIStackView()
@@ -149,7 +149,7 @@ class StackView_2Owner: NSObject {
 
 
 
-class StackView_3Owner: NSObject {
+class StackView_3_Owner: NSObject {
     /// Generated from 'ZgO-qD-OrE': "Vertical with Baseline Relative"
     lazy var stackView0: UIStackView = {
         let view = UIStackView()
@@ -202,7 +202,7 @@ class StackView_3Owner: NSObject {
 
 
 
-class StackView_4Owner: NSObject {
+class StackView_4_Owner: NSObject {
     /// Generated from 'BGR-50-xJW': "Default Horizontal"
     lazy var stackView0: UIStackView = {
         let view = UIStackView()
@@ -248,5 +248,5 @@ class StackView_4Owner: NSObject {
 }
 
 func makeStackViewViews() -> [UIView?] {
-    [StackView_0Owner().contentView, StackView_1Owner().contentView, StackView_2Owner().contentView, StackView_3Owner().contentView, StackView_4Owner().contentView]
+    [StackView_0_Owner().contentView, StackView_1_Owner().contentView, StackView_2_Owner().contentView, StackView_3_Owner().contentView, StackView_4_Owner().contentView]
 }

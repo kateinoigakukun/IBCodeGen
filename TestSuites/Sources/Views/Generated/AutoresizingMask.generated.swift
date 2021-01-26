@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class AutoresizingMask_0Owner: NSObject {
+class AutoresizingMask_0_Owner: NSObject {
     /// Generated from 'dsf-Di-YJM'
     lazy var view0: UIView = {
         let view = UIView()
@@ -29,7 +29,7 @@ class AutoresizingMask_0Owner: NSObject {
 
 
 
-class AutoresizingMask_1Owner: NSObject {
+class AutoresizingMask_1_Owner: NSObject {
     /// Generated from 'FVP-Xe-00x'
     lazy var view0: UIView = {
         let view = UIView()
@@ -56,7 +56,7 @@ class AutoresizingMask_1Owner: NSObject {
 
 
 
-class AutoresizingMask_2Owner: NSObject {
+class AutoresizingMask_2_Owner: NSObject {
     /// Generated from 'Sy1-3i-uGc'
     lazy var view0: UIView = {
         let view = UIView()
@@ -102,5 +102,5 @@ class AutoresizingMask_2Owner: NSObject {
 }
 
 func makeAutoresizingMaskViews() -> [UIView?] {
-    [AutoresizingMask_0Owner().contentView, AutoresizingMask_1Owner().contentView, AutoresizingMask_2Owner().contentView]
+    [AutoresizingMask_0_Owner().contentView, AutoresizingMask_1_Owner().contentView, AutoresizingMask_2_Owner().contentView]
 }

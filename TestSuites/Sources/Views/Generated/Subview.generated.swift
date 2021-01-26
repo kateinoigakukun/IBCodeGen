@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class SubviewOwner: NSObject {
+class Subview_Owner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var view0: UIView = {
         let view = UIView()
@@ -103,5 +103,5 @@ class SubviewOwner: NSObject {
 }
 
 func makeSubviewViews() -> [UIView?] {
-    [SubviewOwner().contentView]
+    [Subview_Owner().contentView]
 }

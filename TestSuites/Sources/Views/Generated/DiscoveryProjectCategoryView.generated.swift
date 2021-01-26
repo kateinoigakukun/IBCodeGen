@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class DiscoveryProjectCategoryViewOwner: NSObject {
+class DiscoveryProjectCategoryView_Owner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var discoveryProjectCategoryView0: DiscoveryProjectCategoryView = {
         let view = DiscoveryProjectCategoryView()
@@ -115,5 +115,5 @@ class DiscoveryProjectCategoryViewOwner: NSObject {
 }
 
 func makeDiscoveryProjectCategoryViewViews() -> [UIView?] {
-    [DiscoveryProjectCategoryViewOwner().contentView]
+    [DiscoveryProjectCategoryView_Owner().contentView]
 }

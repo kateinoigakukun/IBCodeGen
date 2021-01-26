@@ -8,11 +8,16 @@ public class IBCodeGenerator {
     public struct GeneratedResult {
         public var classNames: [String?]
     }
+    public enum ClassTemplate {
+        case owner, customView
+    }
     public struct Options {
         public var excludedRootViews: [String] = []
+        public var classTemplate: ClassTemplate
 
-        public init(excludedRootViews: [String] = []) {
+        public init(excludedRootViews: [String] = [], classTemplate: ClassTemplate = .owner) {
             self.excludedRootViews = excludedRootViews
+            self.classTemplate = classTemplate
         }
     }
 
@@ -52,16 +57,29 @@ public class IBCodeGenerator {
                 document: xibFile.document, namespace: ViewNamespace(),
                 hierarchy: ViewHierarchy(rootView: view.view)
             )
-            let className = namespace.makeIdentifier(forIndex: index) + "Owner"
-            let builder = OwnerClassClass(
-                className: className,
-                id: element.id
-            )
+
+            
+            func makeClassBuilder(template: ClassTemplate) -> RootClassBuilder {
+                switch template {
+                case .owner:
+                    return OwnerClassClass(
+                        baseClassName: namespace.makeIdentifier(forIndex: index),
+                        id: element.id
+                    )
+                case .customView:
+                    return CustomViewClassTemplate(
+                        baseCustomViewClassName: namespace.makeIdentifier(forIndex: index),
+                        id: element.id
+                    )
+                }
+            }
+
+            let builder = makeClassBuilder(template: options.classTemplate)
             _ = try codegen(from: view, rootView: builder, context: &context)
             target.writeLine("\n\n")
             context.namespace.resolve()
             try builder.build(target: &target, context: &context)
-            result.classNames.append(className)
+            result.classNames.append(builder.className)
             usedDefaultDefinition.formUnion(context.usedDefaultDefinition)
         }
         for definition in usedDefaultDefinition {

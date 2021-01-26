@@ -122,7 +122,7 @@ extension Constraint {
             )
         } else {
             firstAnchor = LayoutAnchor(
-                item: context.namespace.getIdentifier(id: selfView),
+                item: selfView,
                 attribute: firstAttribute
             )
         }

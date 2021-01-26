@@ -8,11 +8,13 @@
 import IBDecodable
 
 protocol ViewCodeBuilder {
+    var id: String { get }
+
     func addProperty<Value: SwiftValueRepresentable>(_ name: String, value: Value, available: Availability?)
     func removeProperty(_ name: String)
     func hasExplicitProperty(_ name: String) -> Bool
     func addMethodCall(_ method: String, arguments: [Argument])
-    func addSubview(_ subview: ViewElement)
+    func addSubview(_ subview: ViewCodeBuilder)
     func setInit(arguments: [(label: String, value: SwiftValueRepresentable)])
     func setConstraints(_ constraints: [Constraint])
 }
@@ -24,7 +26,8 @@ extension ViewCodeBuilder {
 }
 
 protocol RootClassBuilder {
-    func makeSubview(id: String, className: String, elementClass: String, userLabel: String?) -> ViewElement
+    var className: String { get }
+    func makeSubview(id: String, className: String, elementClass: String, userLabel: String?) -> ViewCodeBuilder
     func build<Target: IndentTextOutputStream>(target: inout Target, context: inout CodeGenContext) throws
 }
 
@@ -125,7 +128,7 @@ class ViewElement: ViewCodeBuilder {
     private var properties: [String: (SwiftValueRepresentable, Availability?)] = [:]
     private var methodCalls: [(method: String, arguments: [Argument])] = []
     private var initArguments: [Argument] = []
-    private var subviews: [ViewElement] = []
+    private var subviews: [ViewCodeBuilder] = []
     private var constraints: [Constraint] = []
 
     init(id: String, className: String, elementClass: String, userLabel: String?) {
@@ -154,7 +157,7 @@ class ViewElement: ViewCodeBuilder {
         self.constraints = constraints
     }
 
-    func addSubview(_ subview: ViewElement) {
+    func addSubview(_ subview: ViewCodeBuilder) {
         subviews.append(subview)
     }
     func build<Target: IndentTextOutputStream>(
@@ -219,7 +222,7 @@ class ViewElement: ViewCodeBuilder {
         try target.indented { target in
             for constraint in constraints {
                 try target.writeLine { line in
-                    try constraint.writeValue(target: &line, context: context, selfView: id)
+                    try constraint.writeValue(target: &line, context: context, selfView: context.namespace.getIdentifier(id: id))
                     line.write(",")
                 }
             }

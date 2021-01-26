@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class LoadingBarButtonItemViewOwner: NSObject {
+class LoadingBarButtonItemView_Owner: NSObject {
     /// Generated from 'iN0-l3-epB'
     lazy var loadingBarButtonItemView0: LoadingBarButtonItemView = {
         let view = LoadingBarButtonItemView()
@@ -96,5 +96,5 @@ class LoadingBarButtonItemViewOwner: NSObject {
 }
 
 func makeLoadingBarButtonItemViewViews() -> [UIView?] {
-    [LoadingBarButtonItemViewOwner().contentView]
+    [LoadingBarButtonItemView_Owner().contentView]
 }

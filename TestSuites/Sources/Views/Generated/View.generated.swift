@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class View_0Owner: NSObject {
+class View_0_Owner: NSObject {
     /// Generated from 'EfM-o4-cPc': "Default"
     lazy var view0: UIView = {
         let view = UIView()
@@ -29,7 +29,7 @@ class View_0Owner: NSObject {
 
 
 
-class View_1Owner: NSObject {
+class View_1_Owner: NSObject {
     /// Generated from 'GtO-Sb-2Bs': "Semantics (Playback)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -57,7 +57,7 @@ class View_1Owner: NSObject {
 
 
 
-class View_2Owner: NSObject {
+class View_2_Owner: NSObject {
     /// Generated from 'hRD-ZB-p8C': "Tag"
     lazy var view0: UIView = {
         let view = UIView()
@@ -85,7 +85,7 @@ class View_2Owner: NSObject {
 
 
 
-class View_3Owner: NSObject {
+class View_3_Owner: NSObject {
     /// Generated from '7bD-wU-Pog': "User Interaction Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -113,7 +113,7 @@ class View_3Owner: NSObject {
 
 
 
-class View_4Owner: NSObject {
+class View_4_Owner: NSObject {
     /// Generated from 'H5v-Uh-Ya5': "Multiple Touch Enabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -140,7 +140,7 @@ class View_4Owner: NSObject {
 
 
 
-class View_5Owner: NSObject {
+class View_5_Owner: NSObject {
     /// Generated from 'yHO-fv-F5C': "Alpha"
     lazy var view0: UIView = {
         let view = UIView()
@@ -168,7 +168,7 @@ class View_5Owner: NSObject {
 
 
 
-class View_6Owner: NSObject {
+class View_6_Owner: NSObject {
     /// Generated from 'Izd-Iw-YV1': "Background Color"
     lazy var view0: UIView = {
         let view = UIView()
@@ -184,7 +184,7 @@ class View_6Owner: NSObject {
 
 
 
-class View_7Owner: NSObject {
+class View_7_Owner: NSObject {
     /// Generated from 'Igr-d9-4QY': "Tint Color"
     lazy var view0: UIView = {
         let view = UIView()
@@ -212,7 +212,7 @@ class View_7Owner: NSObject {
 
 
 
-class View_8Owner: NSObject {
+class View_8_Owner: NSObject {
     /// Generated from 'wsu-3v-PaI': "Default Background Color"
     lazy var view0: UIView = {
         let view = UIView()
@@ -227,7 +227,7 @@ class View_8Owner: NSObject {
 
 
 
-class View_9Owner: NSObject {
+class View_9_Owner: NSObject {
     /// Generated from '3Qz-O0-uVB': "Opaque Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -255,7 +255,7 @@ class View_9Owner: NSObject {
 
 
 
-class View_10Owner: NSObject {
+class View_10_Owner: NSObject {
     /// Generated from 'dSX-oa-yGp': "Hidden"
     lazy var view0: UIView = {
         let view = UIView()
@@ -283,7 +283,7 @@ class View_10Owner: NSObject {
 
 
 
-class View_11Owner: NSObject {
+class View_11_Owner: NSObject {
     /// Generated from '86r-Rv-6AT': "Clears Graphics Context Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -310,7 +310,7 @@ class View_11Owner: NSObject {
 
 
 
-class View_12Owner: NSObject {
+class View_12_Owner: NSObject {
     /// Generated from 'Gpc-NE-HWr': "Clips to Bounds"
     lazy var view0: UIView = {
         let view = UIView()
@@ -338,7 +338,7 @@ class View_12Owner: NSObject {
 
 
 
-class View_13Owner: NSObject {
+class View_13_Owner: NSObject {
     /// Generated from 'Hnr-mc-KfV': "Autoresize Subviews Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -366,7 +366,7 @@ class View_13Owner: NSObject {
 
 
 
-class View_14Owner: NSObject {
+class View_14_Owner: NSObject {
     /// Generated from 'CHL-0I-fEM': "Content Mode (Aspect To Fit)"
     lazy var view0: UIView = {
         let view = UIView()
@@ -394,7 +394,7 @@ class View_14Owner: NSObject {
 
 
 
-class View_16Owner: NSObject {
+class View_16_Owner: NSObject {
     /// Generated from 'TCW-UF-I8K': "Frame Rectangle"
     lazy var view0: UIView = {
         let view = UIView()
@@ -421,7 +421,7 @@ class View_16Owner: NSObject {
 
 
 
-class View_17Owner: NSObject {
+class View_17_Owner: NSObject {
     /// Generated from '5h2-Ef-9G3': "Language Directional"
     lazy var view0: UIView = {
         let view = UIView()
@@ -448,7 +448,7 @@ class View_17Owner: NSObject {
 
 
 
-class View_18Owner: NSObject {
+class View_18_Owner: NSObject {
     /// Generated from 'Gfj-dM-jy1': "Preserve Superview Margins"
     lazy var view0: UIView = {
         let view = UIView()
@@ -476,7 +476,7 @@ class View_18Owner: NSObject {
 
 
 
-class View_19Owner: NSObject {
+class View_19_Owner: NSObject {
     /// Generated from 'QRp-b7-FW9': "Follow Readable Width"
     lazy var view0: UIView = {
         let view = UIView()
@@ -503,7 +503,7 @@ class View_19Owner: NSObject {
 
 
 
-class View_20Owner: NSObject {
+class View_20_Owner: NSObject {
     /// Generated from 'u8a-Ai-yS0': "Safe Area Relative Margin Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -531,7 +531,7 @@ class View_20Owner: NSObject {
 
 
 
-class View_21Owner: NSObject {
+class View_21_Owner: NSObject {
     /// Generated from 'rWG-IS-tas': "Safe Area Layout Guide Disabled"
     lazy var view0: UIView = {
         let view = UIView()
@@ -557,5 +557,5 @@ class View_21Owner: NSObject {
 }
 
 func makeViewViews() -> [UIView?] {
-    [View_0Owner().contentView, View_1Owner().contentView, View_2Owner().contentView, View_3Owner().contentView, View_4Owner().contentView, View_5Owner().contentView, View_6Owner().contentView, View_7Owner().contentView, View_8Owner().contentView, View_9Owner().contentView, View_10Owner().contentView, View_11Owner().contentView, View_12Owner().contentView, View_13Owner().contentView, View_14Owner().contentView, nil, View_16Owner().contentView, View_17Owner().contentView, View_18Owner().contentView, View_19Owner().contentView, View_20Owner().contentView, View_21Owner().contentView]
+    [View_0_Owner().contentView, View_1_Owner().contentView, View_2_Owner().contentView, View_3_Owner().contentView, View_4_Owner().contentView, View_5_Owner().contentView, View_6_Owner().contentView, View_7_Owner().contentView, View_8_Owner().contentView, View_9_Owner().contentView, View_10_Owner().contentView, View_11_Owner().contentView, View_12_Owner().contentView, View_13_Owner().contentView, View_14_Owner().contentView, nil, View_16_Owner().contentView, View_17_Owner().contentView, View_18_Owner().contentView, View_19_Owner().contentView, View_20_Owner().contentView, View_21_Owner().contentView]
 }
