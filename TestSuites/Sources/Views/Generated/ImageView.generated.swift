@@ -137,7 +137,13 @@ class ImageView_6Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "book", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "book", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "book", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -164,14 +170,26 @@ class ImageView_7Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "book", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "book", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "book", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
         }()
         view.highlightedImage = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "book.fill", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "book.fill", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "book.fill", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -363,7 +381,13 @@ class ImageView_14Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -393,7 +417,13 @@ class ImageView_15Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -423,7 +453,13 @@ class ImageView_16Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -453,7 +489,13 @@ class ImageView_17Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -483,7 +525,13 @@ class ImageView_18Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -513,7 +561,13 @@ class ImageView_19Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }
@@ -543,7 +597,13 @@ class ImageView_20Owner: NSObject {
         view.isUserInteractionEnabled = false
         view.image = {
             if #available(iOS 13.0, *) {
-                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified)!
+                return UIImage(systemName: "command", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
+                    return UITraitCollection(traitsFrom: [
+                        UITraitCollection(userInterfaceIdiom: .pad),
+                        UITraitCollection(displayScale: 1),
+                        UITraitCollection(displayGamut: .SRGB),
+                    ])
+                }()))!
             } else {
                 return UIImage(named: "command", in: Bundle(for: Self.self), compatibleWith: nil)!
             }

@@ -354,22 +354,45 @@ extension Image: SwiftValueRepresentable {
 
 enum TraitCollection {
     case buttonSymbolImage
+    case imageViewSymbolImage
 }
 
 extension TraitCollection: SwiftValueRepresentable {
+    var userInterfaceIdiom: String? {
+        switch self {
+        case .buttonSymbolImage, .imageViewSymbolImage:
+            return "pad"
+        }
+    }
+
+    var displayScale: Int? {
+        switch self {
+        case .buttonSymbolImage, .imageViewSymbolImage:
+            return 1
+        }
+    }
+
+    var displayGamut: String? {
+        switch self {
+        case .buttonSymbolImage, .imageViewSymbolImage:
+            return "SRGB"
+        }
+    }
+
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
         target.write("{\n")
         target.indented { target in
-            let content = """
-            return UITraitCollection(traitsFrom: [
-                UITraitCollection(userInterfaceIdiom: .pad),
-                UITraitCollection(displayScale: 1),
-                UITraitCollection(displayGamut: .SRGB),
-            ])
-            """
-            for line in content.split(whereSeparator: \.isNewline) {
-                target.writeLine(String(line))
+            target.writeLine("return UITraitCollection(traitsFrom: [")
+            if let userInterfaceIdiom = userInterfaceIdiom {
+                target.indented { $0.writeLine("UITraitCollection(userInterfaceIdiom: .\(userInterfaceIdiom)),") }
             }
+            if let displayScale = displayScale {
+                target.indented { $0.writeLine("UITraitCollection(displayScale: \(displayScale)),") }
+            }
+            if let displayGamut = displayGamut {
+                target.indented { $0.writeLine("UITraitCollection(displayGamut: .\(displayGamut)),") }
+            }
+            target.writeLine("])")
         }
         target.writeIndent()
         target.write("}()")

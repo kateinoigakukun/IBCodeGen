@@ -10,10 +10,12 @@ import IBDecodable
 extension ImageView: CodeGenTargetView {
     func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self, builder: builder)
-        b.bindIfPresent(\.image, name: "image",
-                        transform: { Image(name: $0, catalog: catalog) })
-        b.bindIfPresent(\.highlightedImage, name: "highlightedImage",
-                        transform: { Image(name: $0, catalog: catalog) })
+        b.bindIfPresent(\.image, name: "image", transform: {
+            Image(name: $0, catalog: catalog, symbolConfiguration: .imageViewSymbolImage)
+        })
+        b.bindIfPresent(\.highlightedImage, name: "highlightedImage", transform: {
+            Image(name: $0, catalog: catalog, symbolConfiguration: .imageViewSymbolImage)
+        })
         b.bindIfPresent(\.imageReference, name: "image")
         b.bindIfPresent(\.preferredSymbolConfiguration,
                         name: "preferredSymbolConfiguration", available: .iOS13)
