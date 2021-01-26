@@ -29,10 +29,3 @@ targets:
     dependencies:
       - package: SnapshotTesting
       - target: Views
-  PrivateUIKit:
-    type: framework
-    platform: iOS
-    sources: [Sources/PrivateUIKit]
-    settings:
-      MODULEMAP_FILE: $(SRCROOT)/Sources/PrivateUIKit/include/module.modulemap
-      CODE_SIGN_IDENTITY: Apple Development

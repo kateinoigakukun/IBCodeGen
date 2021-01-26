@@ -21,7 +21,6 @@
 		4DE6F3CD904C75FC4E439F73 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF634699A116ADC5F811ED98 /* Media.xcassets */; };
 		51FB38F40310DE8078BE0B4F /* TestSuites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C8BB43D40D2772F5FCF12 /* TestSuites.swift */; };
 		5586C2017A2F099D718F4477 /* ImageView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0A50345789142761E09808 /* ImageView.generated.swift */; };
-		6A77594CB6B74A2C0D22E420 /* UIButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C4E5E0B9E65D61FDEE4EA42 /* UIButtonLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C4C141371DE1D6DE5E1574B /* Subview.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5387779A467B13B5CE483A70 /* Subview.generated.swift */; };
 		7E277F6030AC08CFC9E494F1 /* SimpleView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194F3A07BF2748CDDA89B487 /* SimpleView.generated.swift */; };
 		873BC0B25E3EBD7C8E05FD16 /* StackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294812F16953D3665A6DBBF1 /* StackView.xib */; };
@@ -34,7 +33,6 @@
 		A623D01A3D664E58A258D82D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01534750D6879E5EBA27927F /* Assertion.swift */; };
 		BBD5D56D4B9FC755D3C88B9B /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA7ED601BC3F82860153969 /* Button.xib */; };
 		BD78932880AE99E4E6D9C350 /* PaymentMethodsFooterView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEBCD66CBF5DCC73C052E2 /* PaymentMethodsFooterView.generated.swift */; };
-		CAF53EC7452989D08064D809 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FA7E4A3AC54E57BE50F83 /* dummy.m */; };
 		CB5046A919CAA629C059306F /* SupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CCD7E34506B14D21A1349 /* SupportingClass.swift */; };
 		CC9CE9B4023B289EA8C7EF0B /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C8494713D3DE7166F819C8 /* ImageView.xib */; };
 		CF9F3812385EAA221596B43F /* LayoutConstraint.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792FB4806400EF473B56822E /* LayoutConstraint.xib */; };
@@ -72,7 +70,6 @@
 
 /* Begin PBXFileReference section */
 		01534750D6879E5EBA27927F /* Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
-		0C4E5E0B9E65D61FDEE4EA42 /* UIButtonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonLabel.h; sourceTree = "<group>"; };
 		194F3A07BF2748CDDA89B487 /* SimpleView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleView.generated.swift; sourceTree = "<group>"; };
 		1E0A50345789142761E09808 /* ImageView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.generated.swift; sourceTree = "<group>"; };
 		22E1EE825D94E1254C0EF562 /* Subview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Subview.xib; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 		8A7DB799E7BA5EABB66845CE /* AutoresizingMask.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoresizingMask.xib; sourceTree = "<group>"; };
 		9549811E41EDFFF9226DA1AF /* SimulatedMetrics.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulatedMetrics.xib; sourceTree = "<group>"; };
 		95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryProjectCategoryView.xib; sourceTree = "<group>"; };
-		9893294A8C63D3D69D8DD15D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		A89E436B5C94E684A26DAA77 /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
 		B6BF9046A22C7F02D5E2D25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9C6602F8D935EC315F0723B /* StackView.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.generated.swift; sourceTree = "<group>"; };
@@ -109,7 +105,6 @@
 		DF634699A116ADC5F811ED98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
 		F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedMetrics.generated.swift; sourceTree = "<group>"; };
-		FE8FA7E4A3AC54E57BE50F83 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +153,6 @@
 		1B6F7E1ECC9349B296F81065 /* PrivateUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				FE8FA7E4A3AC54E57BE50F83 /* dummy.m */,
-				4E9783EC00688F15FBF22D03 /* include */,
 			);
 			name = PrivateUIKit;
 			path = Sources/PrivateUIKit;
@@ -173,15 +166,6 @@
 				6115BCEF9C31867BA2BF3522 /* Views */,
 				0ACA8FDC6BDE9BA452921BC3 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		4E9783EC00688F15FBF22D03 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				9893294A8C63D3D69D8DD15D /* module.modulemap */,
-				0C4E5E0B9E65D61FDEE4EA42 /* UIButtonLabel.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		6115BCEF9C31867BA2BF3522 /* Views */ = {
@@ -231,23 +215,11 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		32C4E5275A6A6E9D7171FCEF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A77594CB6B74A2C0D22E420 /* UIButtonLabel.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		10F796228BD22F8995CA334F /* PrivateUIKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D0CBBBC6F84C83E10892C36 /* Build configuration list for PBXNativeTarget "PrivateUIKit" */;
 			buildPhases = (
-				32C4E5275A6A6E9D7171FCEF /* Headers */,
 				F87321DE1F0BF8AE12A1520D /* Sources */,
 			);
 			buildRules = (
@@ -388,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF53EC7452989D08064D809 /* dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
