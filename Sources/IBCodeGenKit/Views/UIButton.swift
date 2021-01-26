@@ -9,7 +9,7 @@ import IBDecodable
 
 
 extension Button: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self, builder: builder)
         if let buttonType = buttonType {
             builder.setInit(arguments: [(label: "type", value: EnumCase(buttonType))])

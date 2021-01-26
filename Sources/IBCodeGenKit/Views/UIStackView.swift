@@ -8,7 +8,7 @@
 import IBDecodable
 
 extension StackView: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self, builder: builder)
         b.bind(\.axis, name: "axis", transform: EnumCase.init)
         b.bindIfPresent(\.distribution, name: "distribution", transform: EnumCase.init)

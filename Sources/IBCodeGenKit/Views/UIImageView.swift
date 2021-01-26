@@ -8,7 +8,7 @@
 import IBDecodable
 
 extension ImageView: CodeGenTargetView {
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self, builder: builder)
         b.bindIfPresent(\.image, name: "image",
                         transform: { Image(name: $0, catalog: catalog) })

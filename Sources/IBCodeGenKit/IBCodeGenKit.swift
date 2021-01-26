@@ -53,7 +53,7 @@ public class IBCodeGenerator {
                 hierarchy: ViewHierarchy(rootView: view.view)
             )
             let className = namespace.makeIdentifier(forIndex: index) + "Owner"
-            let builder = RootViewClass(
+            let builder = OwnerClassClass(
                 className: className,
                 id: element.id
             )

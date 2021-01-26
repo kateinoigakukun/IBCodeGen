@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,7 @@
 		D44CDAAAE66918346CA6E7A7 /* View.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EB2304D7667A9F2DBAA25 /* View.generated.swift */; };
 		DC8EF0CE1CDA679C73F25B42 /* Views.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBFD7EC04A8D1A1E123E3B /* Views.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */; };
+		F271AD6325C0688C00A19948 /* CustomRootClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = F271AD6225C0688C00A19948 /* CustomRootClass.xib */; };
 		F5C9929F8412E37FA741E01C /* NSObjectDiffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845579B6F76527E96D55A92 /* NSObjectDiffing.swift */; };
 		F7AE30670013A8C0CF2E6F4C /* Button.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A4F5014867ACE58EFF34F /* Button.generated.swift */; };
 		FE7F38946B0F77073B315C51 /* Label.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C4FD0A2B49CD56FE041BB /* Label.generated.swift */; };
@@ -107,6 +108,7 @@
 		DF634699A116ADC5F811ED98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		EAA7B50C2FC14B01A8D04692 /* SimpleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleView.xib; sourceTree = "<group>"; };
 		EF135347B894ADA8C76A8D5C /* TableViewCell.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.generated.swift; sourceTree = "<group>"; };
+		F271AD6225C0688C00A19948 /* CustomRootClass.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRootClass.xib; sourceTree = "<group>"; };
 		F3629ED7CBC58DFA0C35CB90 /* SimulatedMetrics.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedMetrics.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 				95F4F9EDB3A628287456A5BB /* DiscoveryProjectCategoryView.xib */,
 				88C8494713D3DE7166F819C8 /* ImageView.xib */,
 				351FBF19842129D41592F8A5 /* Label.xib */,
+				F271AD6225C0688C00A19948 /* CustomRootClass.xib */,
 				792FB4806400EF473B56822E /* LayoutConstraint.xib */,
 				D1AB9A5C2BF88B9A6AB7E76B /* LoadingBarButtonItemView.xib */,
 				85AE6770303AE3EDAB3744BE /* PaymentMethodsFooterView.xib */,
@@ -255,8 +258,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 8D6ECCA2B1CC5376E21A792A /* Build configuration list for PBXProject "TestSuites" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -292,6 +293,7 @@
 				2344299BBA3CB5303087F5CB /* LoadingBarButtonItemView.xib in Resources */,
 				4DE6F3CD904C75FC4E439F73 /* Media.xcassets in Resources */,
 				DCD5036DD00FD318D6C557D0 /* PaymentMethodsFooterView.xib in Resources */,
+				F271AD6325C0688C00A19948 /* CustomRootClass.xib in Resources */,
 				47C5E4047B9BB36548E8EA74 /* SimpleView.xib in Resources */,
 				430B0130D1312F74A79D523F /* SimulatedMetrics.xib in Resources */,
 				873BC0B25E3EBD7C8E05FD16 /* StackView.xib in Resources */,

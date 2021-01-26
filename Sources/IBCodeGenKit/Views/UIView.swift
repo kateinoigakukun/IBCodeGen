@@ -14,7 +14,7 @@ extension AnyView: CodeGenTargetView {
         }
     }
 
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self.view, builder: builder,
                            assumeClassDefault: view.customClass == nil)
         builder.addProperty("autoresizingMask", value: view.autoresizingMask ?? .default)
@@ -104,5 +104,5 @@ extension View: CodeGenTargetView {
             throw Error.modalSheetIsNotSupported(self)
         }
     }
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {}
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {}
 }

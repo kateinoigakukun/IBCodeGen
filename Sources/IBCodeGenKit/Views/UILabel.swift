@@ -17,7 +17,7 @@ extension Label: CodeGenTargetView {
             throw Error.adjustsLetterSpacingToFitWidthIsNotSupported(self)
         }
     }
-    func codegen(builder: ViewCodeBuilder, rootView: RootViewClass) throws {
+    func codegen(builder: ViewCodeBuilder, rootView: RootClassBuilder) throws {
         let b = ViewBinder(view: self, builder: builder)
         b.bindIfPresent(\.text, name: "text")
         b.bindIfPresent(\.attributedText, name: "attributedText")

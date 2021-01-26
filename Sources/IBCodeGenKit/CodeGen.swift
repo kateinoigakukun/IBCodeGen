@@ -21,7 +21,7 @@ protocol CodeGenTargetView {
     func validate() throws
     func codegen(
         builder: ViewCodeBuilder,
-        rootView: RootViewClass
+        rootView: RootClassBuilder
     ) throws
 }
 
@@ -67,7 +67,7 @@ class CodeGenContext {
     }
 }
 
-func codegen(from anyView: AnyView, rootView: RootViewClass,
+func codegen(from anyView: AnyView, rootView: OwnerClassClass,
              context: inout CodeGenContext) throws -> ViewElement {
     let className = anyView.view.customClass ?? anyView.view.elementClass
     guard let view = anyView.view as? IBIdentifiable & ViewProtocol else {

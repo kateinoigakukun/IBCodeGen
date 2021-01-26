@@ -20,3 +20,7 @@ public final class PaymentMethodsFooterView: UIView {
 public final class ViewBundle {
     public static let bundle = Bundle(for: ViewBundle.self)
 }
+
+public final class CustomRootClass0: UIView {
+    
+}
