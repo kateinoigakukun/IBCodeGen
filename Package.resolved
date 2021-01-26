@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "IBDecodable",
+        "repositoryURL": "https://github.com/kateinoigakukun/IBDecodable.git",
+        "state": {
+          "branch": "ibcodegen",
+          "revision": "e84279fcb17bdb3172241e023502e7ae42f46c84",
+          "version": null
+        }
+      },
+      {
         "package": "swift-argument-parser",
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
