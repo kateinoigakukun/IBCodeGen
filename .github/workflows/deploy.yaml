@@ -7,15 +7,17 @@ on:
 jobs:
   swiftwasm_deploy:
     runs-on: ubuntu-20.04
-
+    defaults:
+      run:
+        working-directory: ./Site
     steps:
       - uses: actions/checkout@v2
-      - run: cd ./Site/lib && make all
+      - run: cd ./lib && make all
       - uses: swiftwasm/swiftwasm-action@v5.3
         with:
-          shell-action: cd ./Site && carton bundle --custom-index-page public/index.html
+          shell-action: carton bundle --custom-index-page public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Site/Bundle
+          publish_dir: ./Bundle
