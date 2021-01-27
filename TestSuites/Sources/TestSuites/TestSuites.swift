@@ -3,7 +3,7 @@ import UIKit
 @testable import Views
 
 final class IBCodeGenKitTests: XCTestCase {
-    /*
+
     func testSimpleView() {
         let nib = UINib(nibName: "SimpleView", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIView]
@@ -25,20 +25,18 @@ final class IBCodeGenKitTests: XCTestCase {
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
-     */
 
     func testButton() {
         let nib = UINib(nibName: "Button", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UIButton]
         let translatedViews = makeButtonViews()
-        for (index, original) in views.enumerated() where index == 16 {
+        for (index, original) in views.enumerated() {
             guard let translated = translatedViews[index] else { continue }
             XCTAssertEqualProperties(original, translated, description: index.description)
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
 
-    /*
     func testLabel() {
         let nib = UINib(nibName: "Label", bundle: Bundle(for: ViewBundle.self))
         let views = nib.instantiate(withOwner: nil, options: nil) as! [UILabel]
@@ -148,24 +146,23 @@ final class IBCodeGenKitTests: XCTestCase {
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
-     */
 }
 
-extension LoadingBarButtonItemView: CustomNSObjectReflectable {
-    var ignoringReflectionProperties: [String] {
-        ["activityIndicator", "titleButton"]
+extension LoadingBarButtonItemView {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["activityIndicator", "titleButton"]
     }
 }
 
-extension DiscoveryProjectCategoryView: CustomNSObjectReflectable {
-    var ignoringReflectionProperties: [String] {
-        ["blurView", "categoryStackView", "categoryViewImageView", "categoryViewLabel"]
+extension DiscoveryProjectCategoryView {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["blurView", "categoryStackView", "categoryViewImageView", "categoryViewLabel"]
     }
 }
 
-extension PaymentMethodsFooterView: CustomNSObjectReflectable {
-    var ignoringReflectionProperties: [String] {
-        ["addCardButton", "separatorView"]
+extension PaymentMethodsFooterView {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["addCardButton", "separatorView"]
     }
 }
 
@@ -181,8 +178,27 @@ extension NSAttributedString: CustomNSObjectReflectable {
     }
 }
 
-extension UILabel: CustomNSObjectReflectable {
-    var ignoringReflectionProperties: [String] {
-        ["minimumFontSize"]
+
+extension UIView: CustomNSObjectReflectable {
+    @objc var ignoringReflectionProperties: [String] {
+        ["layoutMarginsGuide", "readableContentGuide"]
+    }
+}
+
+extension UILabel {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["minimumFontSize"]
+    }
+}
+
+extension UIButton {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["largeContentImage"]
+    }
+}
+
+extension UIImageView {
+    override var ignoringReflectionProperties: [String] {
+        super.ignoringReflectionProperties + ["imageContentGuide", "layoutMarginsGuide", "layoutMarginsGuide"]
     }
 }

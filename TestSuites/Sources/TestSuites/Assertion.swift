@@ -48,12 +48,12 @@ func XCTAssertEqualSnapshot<Value, Format>(
     }
     XCTFail("\(description) \(failure)", file: file, line: line)
 }
+
 func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
                               file: StaticString = #file, line: UInt = #line) {
+    prepareForHierarchyTesting(view: lhs)
+    prepareForHierarchyTesting(view: rhs)
     let snapshottings: [Snapshotting<UIView, String>] = [.recursiveDescription, .deepRecursiveDescription]
-    for snapshotting in snapshottings {
-        XCTAssertEqualSnapshot(lhs, rhs, as: snapshotting, timeout: timeout, description: description, ignore: true, file: file, line: line)
-    }
     for snapshotting in snapshottings {
         XCTAssertEqualSnapshot(lhs, rhs, as: snapshotting, timeout: timeout, description: description, file: file, line: line)
     }
@@ -62,4 +62,16 @@ func XCTAssertEqualProperties(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterva
 func XCTAssertEqualAppearance(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterval = 5, description: String = "",
                               file: StaticString = #file, line: UInt = #line) {
     XCTAssertEqualSnapshot(lhs, rhs, as: .image, timeout: timeout, description: description, file: file, line: line)
+}
+
+func prepareForHierarchyTesting(view: UIView) {
+    if let button = view as? UIButton {
+        // Workaround: Touch UIButtonLabel before taking hierarchy snapshot
+        // because UIButton adds UIButtonLabel as its subview even though title is empty
+        _ = button.titleLabel
+    }
+
+    for subview in view.subviews {
+        prepareForHierarchyTesting(view: subview)
+    }
 }
