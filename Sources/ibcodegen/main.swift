@@ -20,8 +20,10 @@ struct IBCodeGenTool: ParsableCommand {
     func run() throws {
         let generator = IBCodeGenerator()
         var writer = ContentWriter()
+        let xmlContent = try String(contentsOf: input)
         _ = try generator.generate(
-            from: input,
+            from: xmlContent,
+            fileBaseName: input.deletingPathExtension().lastPathComponent,
             target: &writer)
         try writer.content.write(to: output, atomically: true, encoding: .utf8)
     }

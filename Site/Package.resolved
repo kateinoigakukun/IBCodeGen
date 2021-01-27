@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IBDecodable",
+        "repositoryURL": "https://github.com/kateinoigakukun/IBDecodable.git",
+        "state": {
+          "branch": "ibcodegen",
+          "revision": "17e73bc9ce817dca42e9ea4fc6b6c52daf2e56b2",
+          "version": null
+        }
+      },
+      {
+        "package": "JavaScriptKit",
+        "repositoryURL": "https://github.com/swiftwasm/JavaScriptKit",
+        "state": {
+          "branch": null,
+          "revision": "ebd9ca04215397f0e3cb72d6e96406a980a424e5",
+          "version": "0.10.0"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "9564d61b08a5335ae0a36f789a7d71493eacadfc",
+          "version": "0.3.2"
+        }
+      },
+      {
+        "package": "SWXMLHash",
+        "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
+        "state": {
+          "branch": null,
+          "revision": "a4931e5c3bafbedeb1601d3bb76bbe835c6d475a",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

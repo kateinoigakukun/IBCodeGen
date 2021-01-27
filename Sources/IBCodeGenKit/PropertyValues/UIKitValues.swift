@@ -198,8 +198,6 @@ extension Color: SwiftValueRepresentable {
     }
 }
 
-import AppKit
-import CoreGraphics
 extension Constraint.LayoutAttribute: SwiftValueRepresentable {
     var caseName: String {
         switch self {

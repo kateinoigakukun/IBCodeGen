@@ -1,4 +1,3 @@
-import Foundation
 import IBDecodable
 
 public class IBCodeGenerator {
@@ -22,21 +21,20 @@ public class IBCodeGenerator {
     }
 
     public func generate<Target: TextOutputStream>(
-        from url: URL, options: Options = Options(),
+        from xmlContent: String, fileBaseName: String, options: Options = Options(),
         target: inout Target
     ) throws -> GeneratedResult {
         var output = GenericIndentTextOutputStream(downstream: target)
-        return try generate(from: url, options: options, target: &output)
+        return try generate(from: xmlContent, fileBaseName: fileBaseName, options: options, target: &output)
     }
 
     func generate<Target: IndentTextOutputStream>(
-        from url: URL, options: Options, target: inout Target
+        from xmlContent: String, fileBaseName: String, options: Options, target: inout Target
     ) throws -> GeneratedResult {
-        let xibFile = try XibFile(url: url)
+        let xibFile = try XibFile(xml: xmlContent)
         guard let views = xibFile.document.views else { return GeneratedResult(classNames: []) }
         target.writeLine("import UIKit")
-        var namespace = ViewClassNamespace(
-            fileName: url.deletingPathExtension().lastPathComponent, viewCount: views.count)
+        var namespace = ViewClassNamespace(fileName: fileBaseName, viewCount: views.count)
 
         for (index, view) in views.enumerated() {
             guard let customClass = view.view.customClass else { continue }

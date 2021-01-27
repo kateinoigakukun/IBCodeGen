@@ -10,6 +10,7 @@ let package = Package(
         .executable(
             name: "ibcodegen",
             targets: ["ibcodegen"]),
+        .library(name: "IBCodeGenKit", targets: ["IBCodeGenKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/kateinoigakukun/IBDecodable.git", .branch("ibcodegen")),
