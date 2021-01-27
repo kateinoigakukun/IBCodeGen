@@ -65,13 +65,18 @@ func XCTAssertEqualAppearance(_ lhs: UIView, _ rhs: UIView, timeout: TimeInterva
 }
 
 func prepareForHierarchyTesting(view: UIView) {
-    if let button = view as? UIButton {
-        // Workaround: Touch UIButtonLabel before taking hierarchy snapshot
-        // because UIButton adds UIButtonLabel as its subview even though title is empty
-        _ = button.titleLabel
-    }
+    func prepare(view: UIView) {
+        if let button = view as? UIButton {
+            // Workaround: Touch UIButtonLabel before taking hierarchy snapshot
+            // because UIButton adds UIButtonLabel as its subview even though title is empty
+            _ = button.titleLabel
+        }
 
-    for subview in view.subviews {
-        prepareForHierarchyTesting(view: subview)
+        for subview in view.subviews {
+            prepare(view: subview)
+        }
     }
+    prepare(view: view)
+    view.setNeedsLayout()
+    view.layoutIfNeeded()
 }
