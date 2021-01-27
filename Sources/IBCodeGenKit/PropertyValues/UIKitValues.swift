@@ -380,22 +380,27 @@ extension TraitCollection: SwiftValueRepresentable {
     }
 
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
-        target.write("{\n")
-        target.indented { target in
-            target.writeLine("return UITraitCollection(traitsFrom: [")
-            if let userInterfaceIdiom = userInterfaceIdiom {
-                target.indented { $0.writeLine("UITraitCollection(userInterfaceIdiom: .\(userInterfaceIdiom)),") }
+        switch self {
+        case .imageViewSymbolImage:
+            target.write("UITraitCollection.current")
+        default:
+            target.write("{\n")
+            target.indented { target in
+                target.writeLine("return UITraitCollection(traitsFrom: [")
+                if let userInterfaceIdiom = userInterfaceIdiom {
+                    target.indented { $0.writeLine("UITraitCollection(userInterfaceIdiom: .\(userInterfaceIdiom)),") }
+                }
+                if let displayScale = displayScale {
+                    target.indented { $0.writeLine("UITraitCollection(displayScale: \(displayScale)),") }
+                }
+                if let displayGamut = displayGamut {
+                    target.indented { $0.writeLine("UITraitCollection(displayGamut: .\(displayGamut)),") }
+                }
+                target.writeLine("])")
             }
-            if let displayScale = displayScale {
-                target.indented { $0.writeLine("UITraitCollection(displayScale: \(displayScale)),") }
-            }
-            if let displayGamut = displayGamut {
-                target.indented { $0.writeLine("UITraitCollection(displayGamut: .\(displayGamut)),") }
-            }
-            target.writeLine("])")
+            target.writeIndent()
+            target.write("}()")
         }
-        target.writeIndent()
-        target.write("}()")
     }
 }
 
