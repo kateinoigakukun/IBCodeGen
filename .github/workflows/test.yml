@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         xcode-version:
-          - /Applications/Xcode_12.app
+          - /Applications/Xcode_12.2.app
     runs-on: macOS-10.15
     steps:
       - uses: actions/checkout@v2
