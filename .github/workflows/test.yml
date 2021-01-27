@@ -15,9 +15,15 @@ jobs:
       - uses: actions/checkout@v2
       - run: sudo xcode-select -s "${{ matrix.xcode-version }}"
       - run: swift --version
-      - run: swift test
+      - run: |
+          swift test
+          xcodebuild -project TestSuites/TestSuites.xcodeproj \
+                     -destination "$IBCODEGEN_TEST_DESTINATION" \
+                     -scheme TestSuites test
+
         env:
           IBCODEGEN_TEST_DESTINATION: "platform=iOS Simulator,name=iPhone 11 Pro"
+          IBCODEGEN_TEST_ONLY_CODEGEN: true
   coverage:
     name: Collect test coverage
     runs-on: macOS-10.15
@@ -26,6 +32,7 @@ jobs:
       - run: swift test --enable-code-coverage
         env:
           IBCODEGEN_TEST_DESTINATION: "platform=iOS Simulator,name=iPhone 11 Pro"
+          IBCODEGEN_TEST_ONLY_CODEGEN: true
       - run: echo "SWIFT_CODECOV_PATH=$(swift test --show-codecov-path)" >> $GITHUB_ENV
       - uses: codecov/codecov-action@v1
         with:
