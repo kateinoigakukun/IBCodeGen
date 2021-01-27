@@ -380,9 +380,15 @@ extension TraitCollection: SwiftValueRepresentable {
     }
 
     func writeValue<Target>(target: inout Target, context: CodeGenContext) throws where Target : IndentTextOutputStream {
+        target.write(".current")
+        // FIXME: The default value of UITraitCollection in UIImage.SymbolConfiguration can be changed
+        // based on runtime OS version, but I don't have enough time to investigate each default value,
+        // so use `.current` for every OSs.
+
+        /*
         switch self {
-        case .imageViewSymbolImage:
-            target.write("UITraitCollection.current")
+        case .imageViewSymbolImage, .buttonSymbolImage:
+            target.write(".current")
         default:
             target.write("{\n")
             target.indented { target in
@@ -401,6 +407,7 @@ extension TraitCollection: SwiftValueRepresentable {
             target.writeIndent()
             target.write("}()")
         }
+        */
     }
 }
 

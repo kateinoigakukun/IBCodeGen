@@ -98,14 +98,23 @@ final class IBCodeGenKitTests: XCTestCase {
     func testSimpleView() throws { try Self.runTest() }
     func testAutoresizingMask() throws { try Self.runTest() }
     func testButton() throws {
-        // Exclude size class related views
-        try Self.runTest(options: Self.buildOptions(excludes: ["6nx-GC-s3f", "hxo-wv-kpq", "bhv-xe-538"]))
+        try Self.runTest(options: Self.buildOptions(excludes: [
+            "6nx-GC-s3f", "hxo-wv-kpq", "bhv-xe-538", // size class related views
+            "0bE-DR-Zja", // SF symbol related views
+        ]))
     }
     func testLabel() throws {
         // Exclude minimumFontSize and adjustsLetterSpacingToFitWidth related views
         try Self.runTest(options: Self.buildOptions(excludes: ["R5g-7B-50Y", "QJM-ND-fWW"]))
     }
-    func testImageView() throws { try Self.runTest() }
+    func testImageView() throws {
+        try Self.runTest(options: Self.buildOptions(excludes: [
+            // SF symbol related views
+            "EDm-t4-ipS", "xoL-bm-yQ9", "C9j-Oi-LxO", "ERG-rl-Ghc", "3Zs-4K-fSb",
+            "sw3-9m-J9Q", "ovE-Mz-Wdf", "N7j-wQ-xh2", "thb-ls-lJb", "g0c-7V-auI",
+            "wOy-qp-I6u", "Fye-tK-Ttn", "p0P-WH-QcM", "DEU-a9-W74", "4OI-4J-Fyu"
+        ]))
+    }
     func testSimulatedMetrics() throws {
         // Exclude Opaque Navigation|Tab|Tool Bar and Modal Sheet related views
         try Self.runTest(options: Self.buildOptions(excludes: [

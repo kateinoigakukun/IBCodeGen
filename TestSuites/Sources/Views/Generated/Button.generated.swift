@@ -276,41 +276,6 @@ class Button_15_Owner: NSObject {
 
 
 
-class Button_16_Owner: NSObject {
-    /// Generated from '0bE-DR-Zja': "System with Attributed Text - Image"
-    lazy var button0: UIButton = {
-        let view = UIButton()
-        view.titleLabel?.lineBreakMode = .byTruncatingMiddle
-        view.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        view.frame = CGRect(x: 0.0, y: 0.0, width: 215.0, height: 26.0)
-        view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
-        view.setAttributedTitle(NSAttributedString(string: "System with Attributed Text", attributes: [
-            .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
-            .font: UIFont.systemFont(ofSize: 15)
-        ]), for: .normal)
-        view.setImage({
-            if #available(iOS 13.0, *) {
-                return UIImage(systemName: "cloud.sun.rain", withConfiguration: UIImage.SymbolConfiguration.unspecified.withTraitCollection({
-                    return UITraitCollection(traitsFrom: [
-                        UITraitCollection(userInterfaceIdiom: .pad),
-                        UITraitCollection(displayScale: 1),
-                        UITraitCollection(displayGamut: .SRGB),
-                    ])
-                }()))!
-            } else {
-                return UIImage(named: "cloud.sun.rain", in: Bundle(for: Self.self), compatibleWith: nil)!
-            }
-        }(), for: .normal)
-        view.setTitleColor(UIColor.white, for: .normal)
-        return view
-    }()
-    var contentView: UIView {
-        return button0
-    }
-}
-
-
-
 class Button_17_Owner: NSObject {
     /// Generated from 'F1U-lG-xOU': "Detail Disclosure"
     lazy var button0: UIButton = {
@@ -703,5 +668,5 @@ class Button_34_Owner: NSObject {
 }
 
 func makeButtonViews() -> [UIView?] {
-    [Button_0_Owner().contentView, Button_1_Owner().contentView, Button_2_Owner().contentView, Button_3_Owner().contentView, Button_4_Owner().contentView, Button_5_Owner().contentView, Button_6_Owner().contentView, Button_7_Owner().contentView, nil, nil, nil, Button_11_Owner().contentView, Button_12_Owner().contentView, Button_13_Owner().contentView, Button_14_Owner().contentView, Button_15_Owner().contentView, Button_16_Owner().contentView, Button_17_Owner().contentView, Button_18_Owner().contentView, Button_19_Owner().contentView, Button_20_Owner().contentView, Button_21_Owner().contentView, Button_22_Owner().contentView, Button_23_Owner().contentView, Button_24_Owner().contentView, Button_25_Owner().contentView, Button_26_Owner().contentView, Button_27_Owner().contentView, Button_28_Owner().contentView, Button_29_Owner().contentView, Button_30_Owner().contentView, Button_31_Owner().contentView, Button_32_Owner().contentView, Button_33_Owner().contentView, Button_34_Owner().contentView]
+    [Button_0_Owner().contentView, Button_1_Owner().contentView, Button_2_Owner().contentView, Button_3_Owner().contentView, Button_4_Owner().contentView, Button_5_Owner().contentView, Button_6_Owner().contentView, Button_7_Owner().contentView, nil, nil, nil, Button_11_Owner().contentView, Button_12_Owner().contentView, Button_13_Owner().contentView, Button_14_Owner().contentView, Button_15_Owner().contentView, nil, Button_17_Owner().contentView, Button_18_Owner().contentView, Button_19_Owner().contentView, Button_20_Owner().contentView, Button_21_Owner().contentView, Button_22_Owner().contentView, Button_23_Owner().contentView, Button_24_Owner().contentView, Button_25_Owner().contentView, Button_26_Owner().contentView, Button_27_Owner().contentView, Button_28_Owner().contentView, Button_29_Owner().contentView, Button_30_Owner().contentView, Button_31_Owner().contentView, Button_32_Owner().contentView, Button_33_Owner().contentView, Button_34_Owner().contentView]
 }
