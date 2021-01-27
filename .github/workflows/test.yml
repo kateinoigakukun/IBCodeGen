@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: sudo xcode-select -s "${{ matrix.xcode-version }}"
       - run: swift --version
+      - uses: mxschmitt/action-tmate@v3
       - run: |
           swift test
           xcodebuild -project TestSuites/TestSuites.xcodeproj \
