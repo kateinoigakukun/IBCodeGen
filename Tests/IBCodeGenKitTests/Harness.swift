@@ -66,7 +66,11 @@ final class IBCodeGenKitTests: XCTestCase {
         let xibPath = targetPath.appendingPathComponent("Resources/\(fileName).xib")
         let options = try options ?? buildOptions(testSuite: testSuite)
         var writer = ContentWriter()
-        let result = try generator.generate(from: xibPath, options: options, target: &writer)
+        let xmlContent = try String(contentsOf: xibPath)
+        let result = try generator.generate(
+            from: xmlContent, fileBaseName: xibPath.deletingPathExtension().lastPathComponent,
+            options: options, target: &writer
+        )
         let views = "[" + result.classNames.map { name in
             guard let name = name else { return "nil" }
             if options.classTemplate == .customView {

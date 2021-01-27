@@ -29,11 +29,16 @@ func handleFileSelect(_ file: JSValue) {
 
     JSPromise(file.text().object!)!.then { value in
         var writer = ContentWriter()
-        _ = try! generator.generate(
-            from: value.string!, fileBaseName: baseName,
-            target: &writer
-        )
-        _ = editor.setValue(JSValue.string(writer.content))
+        print(value.string!)
+        do {
+            _ = try generator.generate(
+                from: value.string!, fileBaseName: baseName,
+                target: &writer
+            )
+//            _ = editor.setValue(JSValue.string(writer.content))
+        } catch {
+            print(error)
+        }
         return JSValue.undefined
     }
 }
