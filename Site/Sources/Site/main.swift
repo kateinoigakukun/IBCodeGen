@@ -28,10 +28,9 @@ let editor = ace.edit!(codeArea)
 _ = editor.session.setMode("ace/mode/swift")
 
 func handleFileSelect(_ file: JSValue) {
-    let fileName = file.name.string!
-    let baseName = String(fileName.split(separator: ".").dropLast().joined(separator: "."))
-
     JSPromise(file.text().object!)!.then { value in
+        let fileName = file.name.string!
+        let baseName = String(fileName.split(separator: ".").dropLast().joined(separator: "."))
         var writer = ContentWriter()
         print(value.string!)
         do {
@@ -44,6 +43,18 @@ func handleFileSelect(_ file: JSValue) {
         } catch {
             errorArea.innerText = .string("🔴 " + String(describing: error))
         }
+        return JSValue.undefined
+    }
+    .catch { error in
+        errorArea.innerHTML = .string("""
+        <div>
+            🔴 Sorry unexpected runtime error happened. Please try again with CLI version:
+            <a class="underline font-medium text-yellow-500 hover:text-yellow-400" target="_blank" rel="noopener noreferrer" href=https://github.com/kateinoigakukun/IBCodeGen>
+                https://github.com/kateinoigakukun/IBCodeGen
+            </a>
+        </div>
+        <div>\(error)</div>
+        """)
         return JSValue.undefined
     }
 }
