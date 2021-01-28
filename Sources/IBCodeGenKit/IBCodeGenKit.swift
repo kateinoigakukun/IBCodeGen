@@ -42,7 +42,6 @@ public class IBCodeGenerator {
         }
 
         var result = GeneratedResult(classNames: [])
-        var usedDefaultDefinition: Set<DefaultDefinition> = []
         
         for (index, view) in views.enumerated() {
             guard let element = view.view as? IBIdentifiable,
@@ -78,10 +77,6 @@ public class IBCodeGenerator {
             context.namespace.resolve()
             try builder.build(target: &target, context: &context)
             result.classNames.append(builder.className)
-            usedDefaultDefinition.formUnion(context.usedDefaultDefinition)
-        }
-        for definition in usedDefaultDefinition {
-            try definition.writeValue(target: &target)
         }
         return result
     }

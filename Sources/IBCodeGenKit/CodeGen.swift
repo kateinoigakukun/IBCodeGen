@@ -36,8 +36,6 @@ class CodeGenContext {
     var namespace: ViewNamespace
     let hierarchy: ViewHierarchy
 
-    private(set) var usedDefaultDefinition: Set<DefaultDefinition> = []
-
     public init(deploymentTarget: Version, document: InterfaceBuilderDocument, namespace: ViewNamespace, hierarchy: ViewHierarchy) {
         self.deploymentTarget = deploymentTarget
         self.document = document
@@ -49,10 +47,6 @@ class CodeGenContext {
         Version(major: 13, minor: 0, patch: 0) <= deploymentTarget
     }
 
-    func defaultDefinition(for definition: DefaultDefinition) -> SwiftValueRepresentable {
-        usedDefaultDefinition.insert(definition)
-        return definition.reference
-    }
     func systemColor(name: String) -> Color? {
         guard let resources = document.resources else {
             return nil
