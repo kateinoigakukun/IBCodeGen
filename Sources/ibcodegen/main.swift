@@ -11,11 +11,14 @@ class ContentWriter: TextOutputStream {
 
 
 struct IBCodeGenTool: ParsableCommand {
-    @Argument(transform: URL.init(fileURLWithPath: ))
+    static let configuration = CommandConfiguration(
+        commandName: "ibcodegen", abstract: "Translate .xib or .storyboard into Swift"
+    )
+    @Argument(help: "An input .xib or .storyboard", transform: URL.init(fileURLWithPath: ))
     var input: URL
 
-    @Option(name: .short, transform: URL.init(fileURLWithPath: ))
-    var output: URL
+    @Option(name: .shortAndLong, help: "Write to file", transform: URL.init(fileURLWithPath: ))
+    var output: URL?
 
     func run() throws {
         let generator = IBCodeGenerator()
@@ -25,7 +28,11 @@ struct IBCodeGenTool: ParsableCommand {
             from: xmlContent,
             fileBaseName: input.deletingPathExtension().lastPathComponent,
             target: &writer)
-        try writer.content.write(to: output, atomically: true, encoding: .utf8)
+        if let output = output {
+            try writer.content.write(to: output, atomically: true, encoding: .utf8)
+        } else {
+            print(writer.content)
+        }
     }
 }
 
