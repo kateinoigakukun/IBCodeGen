@@ -13,7 +13,7 @@ let package = Package(
         .target(
             name: "Site",
             dependencies: [
-                .product(name: "JavaScriptKit", package: "JavaScriptKit"),
+//                .product(name: "JavaScriptKit", package: "JavaScriptKit"),
                 .product(name: "IBCodeGenKit", package: "IBCodeGenKit"),
                 .target(name: "POSIXSupport"),
             ],
