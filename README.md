@@ -14,7 +14,7 @@ Please visit: https://kateinoigakukun.github.io/IBCodeGen
 ### Installation
 
 ```
-$ mint install kateinoigakukun/IBCodeGen
+$ mint install kateinoigakukun/IBCodeGen@main
 # or
 $ swift build -c release && cp .build/release/ibcodegen /usr/local/bin/
 ```
