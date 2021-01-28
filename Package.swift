@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "IBCodeGenKit",
+    name: "IBCodeGen",
     platforms: [.macOS(.v10_10)],
     products: [
         .executable(
