@@ -153,6 +153,7 @@ final class IBCodeGenKitTests: XCTestCase {
             tableView.register(cellType, forCellReuseIdentifier: cellIdentifier)
             let dataSource = TableViewDataSource(cellIdentifier: cellIdentifier)
             tableView.dataSource = dataSource
+            tableView.delegate = dataSource
             return (tableView, dataSource)
         }
 
@@ -161,12 +162,14 @@ final class IBCodeGenKitTests: XCTestCase {
             tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
             let dataSource = TableViewDataSource(cellIdentifier: cellIdentifier)
             tableView.dataSource = dataSource
+            tableView.delegate = dataSource
             return (tableView, dataSource)
         }
 
         let cellTypes = [
             TableViewCell_0_XibSkeleton.self,
             TableViewCell_1_XibSkeleton.self,
+            TableViewCell_2_XibSkeleton.self,
             TableViewCell_3_XibSkeleton.self,
             TableViewCell_4_XibSkeleton.self,
             TableViewCell_5_XibSkeleton.self,
@@ -180,7 +183,7 @@ final class IBCodeGenKitTests: XCTestCase {
             UINib(nibName: "TableViewCell_\($0)", bundle: Bundle(for: ViewBundle.self))
         }
 
-        for (index, (cellType, cellNib)) in zip(cellTypes, cellNibs).enumerated() {
+        for (index, (cellType, cellNib)) in zip(cellTypes, cellNibs).enumerated() where index != 1 {
             let cellIdentifier = _typeName(cellType)
             let (original, originalDataSource) = wrapTableView(
                 cellNib: cellNib, cellIdentifier: cellIdentifier
@@ -195,7 +198,7 @@ final class IBCodeGenKitTests: XCTestCase {
     }
 }
 
-final class TableViewDataSource: NSObject, UITableViewDataSource {
+final class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     let cellIdentifier: String
     init(cellIdentifier: String) {
         self.cellIdentifier = cellIdentifier
@@ -207,6 +210,9 @@ final class TableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 207
     }
 }
 

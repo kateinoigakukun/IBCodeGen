@@ -19,6 +19,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-cV-z4F">
                         <rect key="frame" x="16" y="16" width="382" height="175"/>
                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="175" id="OQd-BN-T1j"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>

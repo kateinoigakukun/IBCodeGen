@@ -7,13 +7,16 @@ class TableViewCell_10_XibSkeleton: UITableViewCell {
     /// Generated from 'Ge4-cV-z4F'
     lazy var view1: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.frame = CGRect(x: 16.0, y: 16.0, width: 382.0, height: 175.0)
         view.backgroundColor = UIColor(red: 1.0, green: 0.14913142, blue: 0.0, alpha: 1.0)
         view.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin]
         return view
     }()
     func activateConstraints() {
+        NSLayoutConstraint.activate([
+            view1.heightAnchor.constraint(equalToConstant: 175.0),
+        ])
         NSLayoutConstraint.activate([
             self.trailingAnchor.constraint(equalTo: view1.trailingAnchor, constant: 16.0),
             view1.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0),
@@ -29,7 +32,9 @@ class TableViewCell_10_XibSkeleton: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .default
         self.preservesSuperviewLayoutMargins = true
+        self.indentationWidth = 10
         self.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 207.0)
         self.clipsToBounds = true
         self.autoresizingMask = []

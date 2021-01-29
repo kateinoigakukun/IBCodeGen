@@ -12,7 +12,9 @@ class TableViewCell_0_XibSkeleton: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .default
         self.preservesSuperviewLayoutMargins = true
+        self.indentationWidth = 10
         self.frame = CGRect(x: 0.0, y: 0.0, width: 414.0, height: 101.0)
         self.clipsToBounds = true
         self.autoresizingMask = []

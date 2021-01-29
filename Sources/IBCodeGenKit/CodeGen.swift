@@ -9,6 +9,7 @@ import IBDecodable
 
 enum Error: Swift.Error {
     case unsupportedView(ViewProtocol)
+    case invalidTableViewCellStyle(String)
     case sizeClassIsNotSupported(ViewProtocol)
     case catalogColorIsNotSupported(Color)
     case minimumFontSizeIsNotSupported(ViewProtocol)

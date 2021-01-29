@@ -99,7 +99,6 @@ final class TableViewCellTemplate: RootClassBuilder {
 
         target.writeLine("override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {")
         try target.indented { target in
-            target.writeLine("super.init(style: style, reuseIdentifier: reuseIdentifier)")
             try cellElement?.writeInitBody(target: &target, context: &context)
             target.writeLine("")
             try contentElement?.writeInitBody(
@@ -158,7 +157,11 @@ fileprivate final class TableViewCellElement: ViewCodeBuilder {
                 try value.writeValue(target: &line, context: context)
             }
         }
-
+        try target.writeLine { line in
+            line.write("super.init(")
+            try ArgumentList(arguments: initArguments).writeValue(target: &line, context: context)
+            line.write(")")
+        }
         for (name, (value, available)) in properties.sorted(by: { $0.key > $1.key }) {
             if let available = available {
                 target.writeLine("if #available(iOS \(available.major).\(available.minor), *) {")
