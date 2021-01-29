@@ -90,7 +90,11 @@ struct ViewNamespace {
     }
     mutating func resolve() {
         for (id, hint) in hintById.sorted(by: { $0.value.index < $1.value.index }) {
-            resolved[id] = _makeIdentifier(from: hint)
+            if hint.className == "UITableViewContentView" {
+                resolved[id] = "contentView"
+            } else {
+                resolved[id] = _makeIdentifier(from: hint)
+            }
         }
     }
 

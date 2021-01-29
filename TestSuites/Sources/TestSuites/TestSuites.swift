@@ -146,6 +146,68 @@ final class IBCodeGenKitTests: XCTestCase {
             XCTAssertEqualAppearance(original, translated, description: index.description)
         }
     }
+
+    func testTableViewCell() {
+        func wrapTableView<Cell: UITableViewCell>(cellType: Cell.Type, cellIdentifier: String) -> (UITableView, UITableViewDataSource) {
+            let tableView = UITableView(frame: UIScreen.main.bounds)
+            tableView.register(cellType, forCellReuseIdentifier: cellIdentifier)
+            let dataSource = TableViewDataSource(cellIdentifier: cellIdentifier)
+            tableView.dataSource = dataSource
+            return (tableView, dataSource)
+        }
+
+        func wrapTableView(cellNib: UINib, cellIdentifier: String) -> (UITableView, UITableViewDataSource) {
+            let tableView = UITableView(frame: UIScreen.main.bounds)
+            tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
+            let dataSource = TableViewDataSource(cellIdentifier: cellIdentifier)
+            tableView.dataSource = dataSource
+            return (tableView, dataSource)
+        }
+
+        let cellTypes = [
+            TableViewCell_0_XibSkeleton.self,
+            TableViewCell_1_XibSkeleton.self,
+            TableViewCell_3_XibSkeleton.self,
+            TableViewCell_4_XibSkeleton.self,
+            TableViewCell_5_XibSkeleton.self,
+            TableViewCell_6_XibSkeleton.self,
+            TableViewCell_7_XibSkeleton.self,
+            TableViewCell_8_XibSkeleton.self,
+            TableViewCell_9_XibSkeleton.self,
+            TableViewCell_10_XibSkeleton.self,
+        ]
+        let cellNibs = (0...10).map {
+            UINib(nibName: "TableViewCell_\($0)", bundle: Bundle(for: ViewBundle.self))
+        }
+
+        for (index, (cellType, cellNib)) in zip(cellTypes, cellNibs).enumerated() {
+            let cellIdentifier = _typeName(cellType)
+            let (original, originalDataSource) = wrapTableView(
+                cellNib: cellNib, cellIdentifier: cellIdentifier
+            )
+            let (translated, translatedDataSource) = wrapTableView(
+                cellType: cellType, cellIdentifier: cellIdentifier
+            )
+            withExtendedLifetime((originalDataSource, translatedDataSource)) {
+                XCTAssertEqualAppearance(original, translated, description: index.description)
+            }
+        }
+    }
+}
+
+final class TableViewDataSource: NSObject, UITableViewDataSource {
+    let cellIdentifier: String
+    init(cellIdentifier: String) {
+        self.cellIdentifier = cellIdentifier
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        return cell
+    }
 }
 
 extension LoadingBarButtonItemView {

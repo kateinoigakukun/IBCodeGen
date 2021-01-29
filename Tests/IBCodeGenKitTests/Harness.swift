@@ -43,32 +43,29 @@ final class IBCodeGenKitTests: XCTestCase {
     }
 
     private class func buildOptions(excludes: [String] = [], only: String? = nil, testSuite: String = #function) throws -> IBCodeGenerator.Options {
-        let xibPath = targetPath.appendingPathComponent("Resources/\(Self.fileName(testSuite: testSuite)).xib")
+        let xibPath = targetPath.appendingPathComponent("Resources/\(Self.fileBaseName(testSuite: testSuite)).xib")
         return try Self.buildOptions(excludes: excludes, only: only, xibPath: xibPath)
     }
 
-    private class func fileName(testSuite: String) -> String {
+    private class func fileBaseName(testSuite: String) -> String {
         guard testSuite.hasPrefix("test") && testSuite.hasSuffix("()") else {
             fatalError("Invalid testSuite name: \(testSuite)")
         }
         return String(testSuite.dropFirst("test".count).dropLast("()".count))
     }
 
-    private class func runTest(options: IBCodeGenerator.Options? = nil, testSuite: String = #function) throws {
-        let fileName = self.fileName(testSuite: testSuite)
+    private class func codegen(options: IBCodeGenerator.Options? = nil, xib: URL, output: URL, fileBaseName: String) throws {
         let generator = IBCodeGenerator()
         let fileManager = FileManager.default
 
-        let path = targetPath.appendingPathComponent("Generated/\(fileName).generated.swift")
-        if !fileManager.fileExists(atPath: path.path) {
-            fileManager.createFile(atPath: path.path, contents: nil, attributes: nil)
+        if !fileManager.fileExists(atPath: output.path) {
+            fileManager.createFile(atPath: output.path, contents: nil, attributes: nil)
         }
-        let xibPath = targetPath.appendingPathComponent("Resources/\(fileName).xib")
-        let options = try options ?? buildOptions(testSuite: testSuite)
+        let options = try options ?? buildOptions(xibPath: xib)
         var writer = ContentWriter()
-        let xmlContent = try String(contentsOf: xibPath)
+        let xmlContent = try String(contentsOf: xib)
         let result = try generator.generate(
-            from: xmlContent, fileBaseName: xibPath.deletingPathExtension().lastPathComponent,
+            from: xmlContent, fileBaseName: xib.deletingPathExtension().lastPathComponent,
             options: options, target: &writer
         )
         let views = "[" + result.classNames.map { name in
@@ -82,13 +79,18 @@ final class IBCodeGenKitTests: XCTestCase {
         
         writer.write("""
 
-            func make\(fileName)Views() -> [UIView?] {
+            func make\(fileBaseName)Views() -> [UIView?] {
                 \(views)
             }
 
             """)
-        try writer.content.write(to: path, atomically: true, encoding: .utf8)
-
+        try writer.content.write(to: output, atomically: true, encoding: .utf8)
+    }
+    private class func runTest(options: IBCodeGenerator.Options? = nil, testSuite: String = #function) throws {
+        let fileBaseName = Self.fileBaseName(testSuite: testSuite)
+        let outputPath = targetPath.appendingPathComponent("Generated/\(fileBaseName).generated.swift")
+        let xibPath = targetPath.appendingPathComponent("Resources/\(fileBaseName).xib")
+        try codegen(options: options, xib: xibPath, output: outputPath, fileBaseName: fileBaseName)
         guard !onlyCodeGen else { return }
         try Process.exec(
             bin: "/usr/bin/xcodebuild",
@@ -137,7 +139,14 @@ final class IBCodeGenKitTests: XCTestCase {
         options.classTemplate = .customView
         try Self.runTest(options: options)
     }
-    // func testTableViewCell() throws { try Self.runTest() }
+    func testTableViewCell() throws {
+        let fileNames = (0...10).map { "TableViewCell_\($0)" }
+        for fileName in fileNames {
+            let output = Self.targetPath.appendingPathComponent("Generated/TableViewCell/\(fileName).generated.swift")
+            let xib = Self.targetPath.appendingPathComponent("Resources/TableViewCell/\(fileName).xib")
+            try Self.codegen(xib: xib, output: output, fileBaseName: fileName)
+        }
+    }
     func testLayoutConstraint() throws { try Self.runTest() }
     func testSubview() throws { try Self.runTest() }
     func testLoadingBarButtonItemView() throws { try Self.runTest() }

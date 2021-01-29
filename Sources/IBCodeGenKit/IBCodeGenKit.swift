@@ -57,6 +57,12 @@ public class IBCodeGenerator {
 
             
             func makeClassBuilder(template: ClassTemplate) -> RootClassBuilder {
+                if element is TableViewCell {
+                    return TableViewCellTemplate(
+                        baseCustomViewClassName: namespace.makeIdentifier(forIndex: index),
+                        id: element.id
+                    )
+                }
                 switch template {
                 case .owner:
                     return OwnerClassClass(
