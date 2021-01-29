@@ -18,7 +18,6 @@ let package = Package(
                 .target(name: "POSIXSupport"),
             ],
             linkerSettings: [
-                .linkedLibrary("CFXMLInterface"),
                 .linkedLibrary("xml2"),
                 .unsafeFlags(["-Llib"]),
             ]),
