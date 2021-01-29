@@ -7,14 +7,14 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "JavaScriptKit", url: "https://github.com/swiftwasm/JavaScriptKit", from: "0.10.0"),
-        .package(name: "IBCodeGenKit", path: "../"),
+        .package(name: "IBCodeGen", path: "../"),
     ],
     targets: [
         .target(
             name: "Site",
             dependencies: [
                 .product(name: "JavaScriptKit", package: "JavaScriptKit"),
-                .product(name: "IBCodeGenKit", package: "IBCodeGenKit"),
+                .product(name: "IBCodeGenKit", package: "IBCodeGen"),
                 .target(name: "POSIXSupport"),
             ],
             linkerSettings: [
