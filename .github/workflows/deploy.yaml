@@ -15,7 +15,7 @@ jobs:
       - run: cd ./lib && make all
       - uses: swiftwasm/swiftwasm-action@v5.3
         with:
-          shell-action: carton bundle --custom-index-page public/index.html
+          shell-action: ./.ci/bundle-site.sh
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
